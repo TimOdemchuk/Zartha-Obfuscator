@@ -1,3 +1,4 @@
 - Unstable opcodes
 - Constant protection being a buggy mess
 - Anti-Tamper requires a rework
+- Performance issues with closure opcode
