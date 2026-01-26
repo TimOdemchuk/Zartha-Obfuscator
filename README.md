@@ -1,5 +1,5 @@
 # Zartha-Obfuscator
-Zartha is a lua 5.1 obfuscator. Zartha can only obfuscator lua 5.1 files as of now.
+Zartha is a lua 5.1 obfuscator. Zartha can only obfuscate lua 5.1 files as of now.
 
 ## Installation
 ```batch
