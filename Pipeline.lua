@@ -9,7 +9,7 @@ local function readFile(file)
     local bytecode = io.open(file, "rb")
     local content = bytecode:read("*all")
     bytecode:close()
-    
+
     return content
 end
 
@@ -39,41 +39,41 @@ local function dump(tableData, indent) --// print out tables
 	return result
 end
 
-return function(inputFile)
+return function(inputFile,outputTo)
     -- Compile to bytecode
     os.execute("luac -o Input/luac.out " .. inputFile)
     local bytecode = readFile("Input/luac.out")
 
     -- Parser bytecode
-    _G.sendToClient("Parsering bytecode...", "green")
+    _G.display("Parsering bytecode...", "green")
     local parsered = parser(bytecode)
 
     -- Generate VM tree
-    _G.sendToClient("Generating VM tree...", "green")
+    _G.display("Generating VM tree...", "green")
     local vmTree = treeGenerator(parsered)
 
     -- Insert anti-env logger
-    _G.sendToClient("Adding Anti-Env Logger...", "green")
+    _G.display("Adding Anti-Env Logger...", "green")
     vmTree = vmTree:gsub("INSERTENVLOG", antiEnvLogger)
 
     -- Insert anti-tamper
-    _G.sendToClient("Adding Anti-Tamper...", "green")
+    _G.display("Adding Anti-Tamper...", "green")
     vmTree = vmTree:gsub("ANTITAMPER", antitamper)
 
     -- Minify
-    if settings.MinifyTest then
-        _G.sendToClient("Minifying output...", "green")
+    if settings.Minify then
+        _G.display("Minifying output...", "green")
         vmTree = luasrcdiet.optimize(luasrcdiet.MAXIMUM_OPTS, vmTree)
     end
 
     -- Write output to file
-    local outputFile = io.open("Input/Output.lua", "w")
+    local outputFile = io.open(outputTo or "Input/Output.lua", "w")
     
     if outputFile then
         outputFile:write(vmTree)
         outputFile:close()
-        _G.sendToClient("Output written to Input/Output.lua", "green")
+        _G.display("Output written to "..(outputTo or "Input/Output.lua"), "green")
     else
-        _G.sendToClient("Error writing to Input/Output.lua", "red")
+        _G.display("Error writing to "..(outputTo or "Input/Output.lua"), "red")
     end
 end

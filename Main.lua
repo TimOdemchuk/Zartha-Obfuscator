@@ -14,7 +14,7 @@ local function hasArg(str)
 end
 
 -- Global functions
-_G.sendToClient = function(msg, color)
+_G.display = function(msg, color)
     if hasArg("-silent") then
         return
     end
@@ -99,5 +99,6 @@ if not args[1] then
 end
 
 local inputFile = args[1]
+local outputFile = args[2]
 
-pipeline(inputFile)
+pipeline(inputFile, outputFile)

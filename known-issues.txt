@@ -1,0 +1,3 @@
+- Unstable opcodes
+- Constant protection being a buggy mess
+- Anti-Tamper requires a rework

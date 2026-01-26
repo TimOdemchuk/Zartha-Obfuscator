@@ -70,12 +70,12 @@ return function(parasedBytecode)
 	local prototypes = parasedBytecode.Prototypes
 	local instructions,constants = require("Vm.Resources.ModifyInstructions")(parasedBytecode.Instructions,constants,prototypes) 
 
-    _G.sendToClient("---------------- CONSTANTS ---------------","yellow")
-	_G.sendToClient(dump(constants))
-    _G.sendToClient("---------------- INSTRUCTIONS ---------------","yellow")
-	_G.sendToClient(dump(instructions))
-    _G.sendToClient("---------------- PROTOTYPES ---------------","yellow")
-	_G.sendToClient(dump(prototypes))
+    _G.display("---------------- CONSTANTS ---------------","yellow")
+	_G.display(dump(constants))
+    _G.display("---------------- INSTRUCTIONS ---------------","yellow")
+	_G.display(dump(instructions))
+    _G.display("---------------- PROTOTYPES ---------------","yellow")
+	_G.display(dump(prototypes))
 	--// Get opcode path
 	local function getOpcode(num,name)
 		num = tostring(num)
@@ -88,7 +88,7 @@ return function(parasedBytecode)
 		else
 			local missing  = ("--> OP_MISSING:	(%s, [%s])"):format(num,name)
 
-			_G.sendToClient(missing,"red")
+			_G.display(missing,"red")
 			return nil
 		end
 	end
@@ -255,9 +255,9 @@ return function(parasedBytecode)
             if settingsSelected.ControlFlowFlattening then
             
 		        if extraString then
-                    _G.sendToClient("--> Generating Control Flow Flattening ("..extraString..")", "yellow")
+                    _G.display("--> Generating Control Flow Flattening ("..extraString..")", "yellow")
                     else
-                    _G.sendToClient("--> Generating Control Flow Flattening", "yellow")
+                    _G.display("--> Generating Control Flow Flattening", "yellow")
                 end
 	        end
 			local controlFlowwed = ControlFlowFlattening:generateState(opcodeMap)
@@ -275,7 +275,7 @@ return function(parasedBytecode)
 			protoAt = protoAt+1
 			local protoName = ("PROTOTYPE%sHERE"):format(tostring(prototypeNumber-1))
 
-			_G.sendToClient("--> Reading prototype: "..tostring(protoAt)..(extra or ""),"yellow")
+			_G.display("--> Reading prototype: "..tostring(protoAt)..(extra or ""),"yellow")
 
 			local numParams = proto.NumUpvalues
 			local newInstructions = readInstructions(require("Vm.Resources.ModifyInstructions")(proto.Instructions,constants,proto.Prototypes),nil,"PROTOTYPE "..tostring(protoAt),extra)
