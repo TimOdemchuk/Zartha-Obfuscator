@@ -9,6 +9,7 @@ local function readFile(file)
     local bytecode = io.open(file, "rb")
     local content = bytecode:read("*all")
     bytecode:close()
+    
     return content
 end
 

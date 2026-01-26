@@ -50,6 +50,39 @@ _G.table.find =function(t,value)
     return nil
 end
 
+_G.bit32 = {
+    bxor = function(...)
+        local args = {...}
+        if #args == 0 then
+            return 0
+        end
+        
+        local result = args[1]
+        for i = 2, #args do
+            local a, b = result, args[i]
+            local xor = 0
+            local bit = 1
+            
+            while a > 0 or b > 0 do
+                local ra = a % 2
+                local rb = b % 2
+                
+                if ra ~= rb then
+                    xor = xor + bit
+                end
+                
+                a = math.floor(a / 2)
+                b = math.floor(b / 2)
+                bit = bit * 2
+            end
+            
+            result = xor
+        end
+        
+        return result
+    end
+}
+
 -- Show help message
 if hasArg("-h") or hasArg("--help") then
     print("Usage: lua Main.lua <input_file>")
