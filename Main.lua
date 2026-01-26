@@ -16,6 +16,25 @@ local function hasArg(str)
     return nil
 end
 
+--// Check if arg is a flag
+local function isFlag(value)
+    return type(value) == "string" and value:sub(1, 2) == "--"
+end
+
+local function fileExists(path)
+    if type(path) ~= "string" then
+        return false
+    end
+
+    local f = io.open(path, "r")
+    if f then
+        f:close()
+        return true
+    end
+
+    return false
+end
+
 -- Global functions
 _G.display = function(msg, color)
     if hasArg("-silent") then
@@ -97,8 +116,17 @@ if hasArg("-h") or hasArg("--help") then
 end
 
 -- Check if input file is provided
-if not args[1] or args[1]:find("--") then
-    print("Error: You need to input file and file output")
+local inputFile = args[1]
+local outputFile = args[2]
+
+if not inputFile or isFlag(inputFile) or not fileExists(inputFile) then
+    print("Error: first argument must be an existing input file path (not a flag)")
+    print("Usage: lua Main.lua <input_file> <output_file>")
+    os.exit(1)
+end
+
+if not outputFile or isFlag(outputFile) then
+    print("Error: second argument must be an output file path (not a flag)")
     print("Usage: lua Main.lua <input_file> <output_file>")
     os.exit(1)
 end
@@ -110,9 +138,5 @@ settings.Debug = hasArg("--debug")
 settings.AntiTamper = hasArg("--antitamper")
 settings.EncryptStrings = hasArg("--encryptstrings")
 settings.ControlFlowFlattening = hasArg("--controlflowflattening")
-
--- Files
-local inputFile = args[1]
-local outputFile = args[2]
 
 pipeline(inputFile, outputFile)
