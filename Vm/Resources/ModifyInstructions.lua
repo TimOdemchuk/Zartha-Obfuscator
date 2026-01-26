@@ -40,10 +40,10 @@ return function(instructions,constants,prototypes)
 		if inst.OpcodeName == "GETGLOBAL" then
 			local registerB = _G.getReg(inst,"B")+1
 			local constant = constants[registerB]
-			
 			if constant then
 				constant = constant.Value
-                local opcodeExists = fileExists("Bytecode.OpCodes."..tostring(constant)..".lua")
+                local opcodeExists = pcall(require,"Bytecode.OpCodes."..tostring(constant))
+				
 				if constant and opcodeExists then
 					local callOpcode = (instructions[i+1])
 
@@ -53,7 +53,7 @@ return function(instructions,constants,prototypes)
 						-- Check if correct
 						if callingIndex.OpcodeName == "CALL" and callingIndex.A == inst.A then
 							-- Transform opcode into custom macro
-							local customInstruction = require("Bytecode.OpCodes."..tostring(constant)..".lua")("custom",callOpcode)
+							local customInstruction = require("Bytecode.OpCodes."..tostring(constant))("custom",callOpcode)
 
 							instructions[i+1] = customInstruction
 

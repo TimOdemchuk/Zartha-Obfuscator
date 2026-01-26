@@ -358,7 +358,7 @@ return function(parasedBytecode)
 	tree = tree:gsub(":SHIFTAMOUNT:",tostring(_G.shiftAmount))
 	
 	-- Wrap in function
-	tree = ([[return (("%s") and (function() return(function(Env,Constants,shiftKey,decrypt)%s %s end)((_ENV or getfenv()),{},0%s) end)())]]):format(settingsSelected.Watermark,settingsSelected.LuaU_Syntax and ":any" or "",tree,settingsSelected.EncryptStrings and ","..stringEncryptorTemplate or "")
+	tree = ([[return (("%s") and (function() return(function(Env,Constants,shiftKey,decrypt)%s %s end)((_ENV or getfenv()),{},0%s) end)())]]):format(settingsSelected.Watermark,settingsSelected.LuaU_Syntax and ":any" or "",tree,","..stringEncryptorTemplate)
 
 	return tree
 end

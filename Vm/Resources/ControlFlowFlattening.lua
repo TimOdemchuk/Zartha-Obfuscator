@@ -2,7 +2,8 @@ math.randomseed(os.time())
 
 local main = {}
 
-local function shuffle(targetTable) -- vm scramble function lol
+-- Shuffle function (Vm scramble lol)
+local function shuffle(targetTable)
 	local output = {}
 	
 	for i, v in pairs(targetTable) do 
@@ -23,6 +24,7 @@ end
 function main:generateState(opcodeMap)
 	local output = {}
 
+	-- Obfuscated check generator
 	local function getObfuscatedCheck(target)
 		local m = math.random(17, 189)  
 		local a = math.random(1500, 99999) 
@@ -36,6 +38,7 @@ function main:generateState(opcodeMap)
 		end
 	end
 
+	-- Junk generator
 	local function getJunk()
 		local v = math.random(100, 999)
 		local junkOptions = {
@@ -71,7 +74,7 @@ function main:generateState(opcodeMap)
 			)
 		end
 
-        -- pointer checker
+        -- Pointer checker
 		local line = string.format(
 			"%s %s then\n\tdo\n\t\t%s\n\tend",
 			i == 1 and "if" or "elseif",

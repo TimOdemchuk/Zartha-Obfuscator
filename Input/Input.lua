@@ -1,7 +1,14 @@
-local function abc() -- CLOSURE 0 0
-    print("Hello, World!") -- GETGLOBAL 0 -1, LOADK 1 -2, CALL 0 2 1
-    -- RETURN 0 1
+local function f(a, b, c) 
+    return a + b * c 
 end
--- MOVE 1 0
-abc() -- CALL
--- RETURN
+
+local start = os.clock()
+
+for i = 1, 400000 do
+     f(i, 2, 3)
+end
+
+local elapsed = os.clock() - start
+
+print("Function Benchmark Results")
+print(elapsed)

@@ -22,6 +22,7 @@ local function isFlag(value)
     return type(value) == "string" and value:sub(1, 2) == "--"
 end
 
+-- Check if file exists
 local function fileExists(path)
     if type(path) ~= "string" then
         return false
@@ -61,6 +62,7 @@ _G.Random = function(a,b)
     return math.random(a,b)
 end
 
+-- Lua 5.1 doesn't have table.find, so we implement it here
 _G.table.find =function(t,value)
     for i, v in ipairs(t) do
         if v == value then

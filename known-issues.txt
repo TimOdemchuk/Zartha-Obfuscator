@@ -1,4 +1,4 @@
 - Unstable opcodes
-- Constant protection being a buggy mess
+- Constant protection requires a rework
 - Anti-Tamper requires a rework
-- Performance issues with closure opcode
+- Performance issues with closure opcode (Due to setmetatable)
