@@ -1,3 +1,7 @@
+-- This file generates the VM tree from parsed bytecode
+-- It uses templates and fills them with the generated opcodes and constants
+-- I will rewrite this later to be more efficient and cleaner
+
 math.randomseed(os.time())
 
 return function(parasedBytecode)
