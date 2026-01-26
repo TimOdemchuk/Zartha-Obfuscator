@@ -1,4 +1,4 @@
---// MOVE 
+-- MOVE 
 return [=[
 	Temp[1] = :A:
 	Temp[2] = :B:
@@ -7,4 +7,4 @@ return [=[
 	Temp[3][Temp[1]] = Temp[4]
 ]=]
 
---// Stack[:A:] = Stack[:B:] 
+-- Stack[:A:] = Stack[:B:] 

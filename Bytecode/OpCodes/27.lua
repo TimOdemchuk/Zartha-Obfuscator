@@ -1,4 +1,4 @@
---// LEN
+-- LEN
 return [[
 if (not Stack[:B:]) == (:C: ~= 0) then
 	pointer = pointer + 1

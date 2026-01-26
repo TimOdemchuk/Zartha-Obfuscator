@@ -1,13 +1,17 @@
 --[[
+
+-- Env log detection (Template)
 (function()
 	local function ooptest(...)
-		local a = true and #{
+		local a = true and #{ -- solvers would make this 1 instead of 3
 			...
 		}
 		return a
 	end
+
 	local Tamper = false
-	getfenv()["runtime"] = function() --// Env loggers would run to see what this function is
+
+	getfenv()["runtime"] = function() -- Env loggers would run to see what this function is
 		Tamper = true
 	end
 	
@@ -33,7 +37,7 @@ end)()
 ]]
 
 return [=[
-(function() --// Env log detection
+(function() -- Env log detection
 	local function ooptest(...)
 		local a = true and #{ -- troll
 			...

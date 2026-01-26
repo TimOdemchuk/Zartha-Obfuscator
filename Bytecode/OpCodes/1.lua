@@ -1,4 +1,4 @@
---// LOADK
+-- LOADK
 local settingsGot = require("input.Settings")
 
 return function(inst,shift,const,settings)

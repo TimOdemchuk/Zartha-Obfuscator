@@ -1,4 +1,4 @@
---// TAILCALL
+-- TAILCALL
 return [=[
     Temp[1] = :A:   -- Function Register
     Temp[2] = :B:   -- Argument Count (0 = Variable)

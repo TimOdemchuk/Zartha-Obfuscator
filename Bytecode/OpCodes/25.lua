@@ -1,4 +1,4 @@
---// LE
+-- LE
 return function(instruction,shiftAmount,constant,settings)
 	local reg_a = _G.getReg(instruction,"A")
 	local reg_b = _G.getReg(instruction,"B",true)

@@ -5,17 +5,6 @@ local settings = require("Input.Settings")
 -- Arguments
 local args = {...}
 
--- Check args
-local function hasArg(str)
-    for index, value in ipairs(args) do
-        if value == str then
-            return true
-        end
-    end
-
-    return nil
-end
-
 -- Colors for display
 local displayColors = {
     red = "\27[31m",
@@ -28,7 +17,7 @@ local displayColors = {
     reset = "\27[0m"
 }
 
---// Check if arg is a flag
+-- Check if arg is a flag
 local function isFlag(value)
     return type(value) == "string" and value:sub(1, 2) == "--"
 end
@@ -48,8 +37,16 @@ local function fileExists(path)
 end
 
 -- Global functions
+_G.readFile = function(file)
+    local bytecode = io.open(file, "rb")
+    local content = bytecode:read("*all")
+    bytecode:close()
+
+    return content
+end
+
 _G.display = function(msg, color)
-    if hasArg("--silent") then
+    if table.find(args,"--silent") then
         return
     end
 
@@ -109,7 +106,7 @@ _G.bit32 = {
 }
 
 -- Check for arguments
-if hasArg("--help") then
+if table.find(args,"--help") then
     print("Usage: lua Main.lua <input_file>")
     print("Options:")
     print("  --minify                   minifies the output for smaller output size")
@@ -140,12 +137,12 @@ if not outputFile or isFlag(outputFile) then
 end
 
 -- Settings inputs
-settings.ConstantProtect = hasArg("--constantprotection")
-settings.Minify = hasArg("--minify")
-settings.Debug = hasArg("--debug")
-settings.AntiTamper = hasArg("--antitamper")
-settings.EncryptStrings = hasArg("--encryptstrings")
-settings.ControlFlowFlattening = hasArg("--controlflowflattening")
+settings.ConstantProtect = table.find(args,"--constantprotection") and true or false
+settings.Minify = table.find(args,"--minify") and true or false
+settings.Debug = table.find(args,"--debug") and true or false
+settings.AntiTamper = table.find(args,"--antitamper") and true or false
+settings.EncryptStrings = table.find(args,"--encryptstrings") and true or false
+settings.ControlFlowFlattening = table.find(args,"--controlflowflattening") and true or false
 
 -- Run pipeline
 _G.display("Starting obfuscation pipeline...", "green")

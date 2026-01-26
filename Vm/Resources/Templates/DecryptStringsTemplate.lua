@@ -1,5 +1,5 @@
 return [=[
-function(str, key) --// Decrypt vars
+function(str, key) -- Decrypt vars
 	local result = {}
 	for i = (6*9-32+(((-21)))), #str do
 		local strByte = string.byte(str, i)

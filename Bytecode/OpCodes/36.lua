@@ -1,4 +1,4 @@
---// CLOSURE
+-- CLOSURE
 return function(inst,shiftAmount,constant,settingsGot)
 	local output = ([=[
 	local prevStack = Stack

@@ -1,4 +1,5 @@
 math.randomseed(os.time())
+
 local main = {}
 
 local function shuffle(targetTable) -- vm scramble function lol
@@ -57,13 +58,13 @@ function main:generateState(opcodeMap)
 		local content = nil
 
 		if math.random() > 0.5 then
-			--// Real opcode in 'then', Junk in 'else'
+			-- Real opcode in 'then', Junk in 'else'
 			content = string.format(
 				"local %s = pointer + %d\n\t\tif %s > pointer then\n\t\t\tdo\n\t\t\t\t%s\n\t\t\tend\n\t\telse\n\t\t\t%s\n\t\tend", 
 				vName, offset, vName, op, junk
 			)
 		else
-			--// Junk in 'then', Real opcode in 'else'
+			-- Junk in 'then', Real opcode in 'else'
 			content = string.format(
 				"local %s = pointer - %d\n\t\tif %s > pointer then\n\t\t\t%s\n\t\telse\n\t\t\tdo\n\t\t\t\t%s\n\t\t\tend\n\t\tend", 
 				vName, offset, vName, junk, op

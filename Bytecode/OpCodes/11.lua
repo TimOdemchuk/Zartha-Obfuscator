@@ -1,4 +1,4 @@
---// SELF
+-- SELF
 return [=[
 local C = :C:+1
 Stack[:A:+1] = Stack[:B:]

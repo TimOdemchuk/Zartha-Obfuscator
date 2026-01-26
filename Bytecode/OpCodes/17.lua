@@ -1,4 +1,4 @@
---// POW
+-- POW
 return function(Inst,shiftAmount,constant,settings)
 	local reg_a = _G.getReg(Inst,"A")
 	local reg_b = _G.getReg(Inst,"B",true)

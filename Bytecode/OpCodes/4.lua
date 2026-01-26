@@ -1,4 +1,2 @@
---// SETUPVAL
-local settingsGot = require("input.Settings")
-
+-- SETUPVAL
 return [=[Stack[:A:] = Upvalues[:B:]]=]

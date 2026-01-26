@@ -1,4 +1,4 @@
---// RETURN:
+-- RETURN:
 
 return function(instruction,shiftAmount,constant,settings)
 	local output = [=[

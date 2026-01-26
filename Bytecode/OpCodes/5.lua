@@ -1,4 +1,4 @@
---// GETGLOBAL
+-- GETGLOBAL
 local settingsGot = require("input.Settings")
 
 return function(inst,shift,constant,settings)

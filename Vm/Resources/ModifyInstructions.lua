@@ -1,4 +1,4 @@
---// Modify any instructions that have a macro
+-- Modify any instructions that have a macro (This is a simple custom way of doing it from my own opinion)
 local function fileExists(path)
     local f = io.open(path, "r")
     if f then 
@@ -9,10 +9,10 @@ local function fileExists(path)
 end
 
 return function(instructions,constants,prototypes)
-	--// Fix upvalues (PSEUDO)
+	-- Fix upvalues (PSEUDO)
 	for i, inst in ipairs(instructions) do
 		if inst.OpcodeName == "CLOSURE" then
-			--// warn("PROTOTYPE","-",inst, _G.getReg(inst, "B"),prototypes)
+			-- warn("PROTOTYPE","-",inst, _G.getReg(inst, "B"),prototypes)
 			local protoIndex = _G.getReg(inst, "B")
 			local proto = prototypes[protoIndex+1]
 			
@@ -22,11 +22,11 @@ return function(instructions,constants,prototypes)
 					if pseudoInst then
 
 						if pseudoInst.OpcodeName == "GETUPVAL" or pseudoInst.Opcode == 4 then
-							pseudoInst.C = 1 --// Upvalue
+							pseudoInst.C = 1 -- Upvalue
 						else
-							pseudoInst.C = 0 --// Stack
+							pseudoInst.C = 0 -- Stack
 						end
-						--// Mark so the VM knows to skip it later
+						-- Mark so the VM knows to skip it later
 						pseudoInst.OpcodeName = "PSEUDO"
 						pseudoInst.Opcode = -1 
 					end
@@ -35,7 +35,7 @@ return function(instructions,constants,prototypes)
 		end
 	end
 	
-	--// Modify macros
+	-- Modify macros (if the global the opcode is trying to get exists in the OpCodes folder, then we can assume its a macro function)
 	for i, inst in ipairs(instructions) do
 		if inst.OpcodeName == "GETGLOBAL" then
 			local registerB = _G.getReg(inst,"B")+1
@@ -46,17 +46,18 @@ return function(instructions,constants,prototypes)
                 local opcodeExists = fileExists("Bytecode.OpCodes."..tostring(constant)..".lua")
 				if constant and opcodeExists then
 					local callOpcode = (instructions[i+1])
+
 					if callOpcode.OpcodeName == "CALL" then
 						local callingIndex = instructions[inst.Index+1]
 
-						--// Check if correct
+						-- Check if correct
 						if callingIndex.OpcodeName == "CALL" and callingIndex.A == inst.A then
-							--// Transform opcode into custom macro
+							-- Transform opcode into custom macro
 							local customInstruction = require("Bytecode.OpCodes."..tostring(constant)..".lua")("custom",callOpcode)
 
 							instructions[i+1] = customInstruction
 
-							--// Remove unused opcodes
+							-- Remove unused opcodes
 
 							constants[tonumber(_G.getReg(inst,"B")+1)] = {
 								["Index"] = 0,
@@ -87,7 +88,7 @@ end
 					local callingIndex = instructions[callOpcode.A+1]
 					
 					if callingIndex == inst then
-						--// Transform opcode into custom macro
+						-- Transform opcode into custom macro
 						warn(callOpcode)
 						local customInstruction = require(opcodes:FindFirstChild(constant))("custom",callOpcode)
 						
@@ -103,7 +104,7 @@ end
 						local callingIndex = instructions[foundInst.A+1]
 						print(callingIndex,"----------<>",inst)
 						if callingIndex == inst then
-							--// Transform opcode into custom macro
+							-- Transform opcode into custom macro
 							warn(foundInst)
 							local customInstruction = require(opcodes:FindFirstChild(constant))("custom",foundInst)
 

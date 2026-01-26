@@ -1,4 +1,4 @@
---// NEWTABLE
+-- NEWTABLE
 return [=[
 Temp[1] = :A:
 Temp[2] = {}

@@ -1,4 +1,4 @@
---// FORPREP
+-- FORPREP
 return function(instruction,shiftAmount,constant,settings)
 	local layout = [=[
 	Temp[1] = :A:

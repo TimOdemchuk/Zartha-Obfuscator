@@ -1,2 +1,2 @@
---// LOADNIL?
+-- LOADNIL?
 return "Stack[:A:] = nil"

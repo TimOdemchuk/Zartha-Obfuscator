@@ -1,4 +1,4 @@
---// JMP
+-- JMP
 local settingsGot = require("input.Settings")
 
 return function(inst,shiftAmount,constant,settings)

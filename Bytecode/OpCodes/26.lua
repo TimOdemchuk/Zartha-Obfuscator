@@ -1,4 +1,4 @@
---// TEST
+-- TEST
 return function(Inst,shiftAmount,constant,settings)
 	local output = ([=[
 	if %s Stack[:A:] then

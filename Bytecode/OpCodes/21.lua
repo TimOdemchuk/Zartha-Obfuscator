@@ -1,4 +1,4 @@
---// CONCAT
+-- CONCAT
 return [=[
 local output = ""
 

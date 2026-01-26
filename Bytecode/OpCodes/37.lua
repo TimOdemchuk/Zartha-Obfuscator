@@ -1,4 +1,4 @@
---// VARARG
+-- VARARG
 return [[
 Temp[1] = :A:
 Temp[2] = :B:
