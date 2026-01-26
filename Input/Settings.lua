@@ -1,10 +1,10 @@
 return {
 	["ConstantProtection"] = false,
-	["EncryptStrings"] = true,
+	["EncryptStrings"] = false,
 	["AntiTamper"] = false,
-	["ControlFlowFlattening"] = true,
+	["ControlFlowFlattening"] = false,
 	--
 	["Debug"] = false,
-	["Minify"] = true,
+	["Minify"] = false,
     ["Watermark"] = "File generated using [Zartha]"
 }

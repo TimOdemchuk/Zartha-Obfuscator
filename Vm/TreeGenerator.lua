@@ -3,8 +3,8 @@ math.randomseed(os.time())
 return function(parasedBytecode)
 	parasedBytecode = parasedBytecode[2]
     
-	--// requires
-	local header = require("Vm.Resources.Templates.Base")
+	--// Requires
+	local header = require("Vm.Resources.Templates.Header")
 	local vm = require("Vm.Resources.Templates.Vm")
 	local settingsSelected = require("Input.Settings")
 	local stringEncryptor = require("Vm.Resources.EncryptStrings")
@@ -14,6 +14,7 @@ return function(parasedBytecode)
 
 	local decryptStr = tostring(_G.Random(100,400))
 
+	--// Encrypt header 
 	if settingsSelected.EncryptStrings then
 		header = stringEncryptor(header,decryptStr)
 	end
@@ -36,7 +37,8 @@ return function(parasedBytecode)
 		return type(tableType) == "table" and tableType.i or tableType
 	end
 
-    local function dump(tableData, indent) --// print out tables
+	--// print out tables
+    local function dump(tableData, indent)
         indent = indent or 0
         local function serializeValue(value, level)
             level = level or 0
@@ -70,12 +72,14 @@ return function(parasedBytecode)
 	local prototypes = parasedBytecode.Prototypes
 	local instructions,constants = require("Vm.Resources.ModifyInstructions")(parasedBytecode.Instructions,constants,prototypes) 
 
+	--// Display parsed data
     _G.display("---------------- CONSTANTS ---------------","yellow")
 	_G.display(dump(constants))
     _G.display("---------------- INSTRUCTIONS ---------------","yellow")
 	_G.display(dump(instructions))
     _G.display("---------------- PROTOTYPES ---------------","yellow")
 	_G.display(dump(prototypes))
+
 	--// Get opcode path
 	local function getOpcode(num,name)
 		num = tostring(num)
@@ -93,6 +97,7 @@ return function(parasedBytecode)
 		end
 	end
 
+	--// Replace function for templates
 	local function replace(normal,key,with) 
 		local out = normal:gsub(":"..key:upper()..":",with)
 
@@ -114,15 +119,16 @@ return function(parasedBytecode)
 				byted = string.sub(byted,1,#byted-2)
 			end
 			]]
-
-			if settingsSelected.ConstantProtection then
+			
+			--// Identifier for constant protection
+			if settingsSelected.ConstantProtection then 
 				if string.sub(byted,#byted,#byted) == "\\" then
 					byted = string.sub(byted,1,#byted-1)
 				end
 				byted = byted..""
-			end---- CONSTANT LOADED (%s) SHIFTED: %s\n
+			end
 
-			--// NUMBER SUPPORT (null byte = int)
+			--// Number Identifier
 			if const.Type == "number" then
 				byted = byted..""
 			end
@@ -137,8 +143,6 @@ return function(parasedBytecode)
 
 	--// Generate opcode template
 	local function generateOpcode(inst, index, allInstructions) 
-
-		-- [CHANGE 2] Handle PSEUDO ops to prevent errors/duplicates
 		if inst.OpcodeName == "PSEUDO" or inst.Opcode == -1 then
 			return "-- [PSEUDO] Handled by CLOSURE"
 		end
@@ -212,7 +216,6 @@ return function(parasedBytecode)
 	end
 
 	--// Generate instructions tree
-
 	local function readInstructions(currentInstructions,_,extraString)
 		local opcodeMap = {} 
 		local output = ""
@@ -234,9 +237,11 @@ return function(parasedBytecode)
 				["endType"] = pointer == #currentInstructions and "end" or "",
 			}
 
-			if settingsSelected.ControlFlowFlattening then --// ControlFlowFlattening
+			 --// ControlFlowFlattening
+			if settingsSelected.ControlFlowFlattening then
 				opcodeMap[pointer] = generatedInfo.generatedOpcode
 			else
+				--// Normal generation
 				local opcodeGenerated = ("%s pointer == %s then%s \n %s \n%s"):format(
 					i == 1 and "if" or "elseif", --// Else or elseif start with
 					tostring(i), --// pointer
@@ -251,17 +256,19 @@ return function(parasedBytecode)
 			local opcodesOutput = ("OPCODE:		%s (%s),		REG: (%s, %s, %s)"):format(inst.OpcodeName or "unknown",inst.Opcode,tostring(getCorrectRegister(inst,"A")),tostring(getCorrectRegister(inst,"B")),tostring(getCorrectRegister(inst,"C")))
 		end
 
-		if settingsSelected.ControlFlowFlattening then --// ControlFlowFlattening
-            if settingsSelected.ControlFlowFlattening then
-            
-		        if extraString then
-                    _G.display("--> Generating Control Flow Flattening ("..extraString..")", "yellow")
-                    else
-                    _G.display("--> Generating Control Flow Flattening", "yellow")
-                end
-	        end
-			local controlFlowwed = ControlFlowFlattening:generateState(opcodeMap)
-			return controlFlowwed
+		--// ControlFlowFlattening
+		if settingsSelected.ControlFlowFlattening then
+			--// Display extra info
+			if extraString then
+				_G.display("--> Generating Control Flow Flattening ("..extraString..")", "yellow")
+				else
+				_G.display("--> Generating Control Flow Flattening", "yellow")
+			end
+
+			--// Generate control flow flattened opcodes
+			local controlFlowed = ControlFlowFlattening:generateState(opcodeMap)
+
+			return controlFlowed
 		end
 
 		return output
@@ -310,6 +317,8 @@ return function(parasedBytecode)
 	getPrototypes(prototypes)
 
 	header = header:gsub("CONSTANTS_HERE_BASEVM",getConstants(constants))
+
+	--// Format VM
 	tree = vm:format(
 		header,
 		"",

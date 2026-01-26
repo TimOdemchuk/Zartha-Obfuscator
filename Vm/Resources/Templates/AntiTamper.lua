@@ -1,1 +1,2 @@
+-- Anti-Tamper Template
 return ""

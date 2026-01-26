@@ -1,5 +1,8 @@
+-- Requires
 local pipeline = require("Pipeline")
+local settings = require("Input.Settings")
 
+-- Arguments
 local args = {...}
 
 -- Check args
@@ -53,11 +56,13 @@ end
 _G.bit32 = {
     bxor = function(...)
         local args = {...}
+
         if #args == 0 then
             return 0
         end
-        
+
         local result = args[1]
+
         for i = 2, #args do
             local a, b = result, args[i]
             local xor = 0
@@ -83,7 +88,7 @@ _G.bit32 = {
     end
 }
 
--- Show help message
+-- Check for arguments
 if hasArg("-h") or hasArg("--help") then
     print("Usage: lua Main.lua <input_file>")
     print("Options:")
@@ -92,12 +97,21 @@ if hasArg("-h") or hasArg("--help") then
 end
 
 -- Check if input file is provided
-if not args[1] then
-    print("Error: You need to input file")
-    print("Usage: lua Main.lua <input_file>")
+if not args[1] or args[1]:find("--") then
+    print("Error: You need to input file and file output")
+    print("Usage: lua Main.lua <input_file> <output_file>")
     os.exit(1)
 end
 
+-- Settings inputs
+settings.ConstantProtect = hasArg("--constantprotection")
+settings.Minify = hasArg("--minify")
+settings.Debug = hasArg("--debug")
+settings.AntiTamper = hasArg("--antitamper")
+settings.EncryptStrings = hasArg("--encryptstrings")
+settings.ControlFlowFlattening = hasArg("--controlflowflattening")
+
+-- Files
 local inputFile = args[1]
 local outputFile = args[2]
 

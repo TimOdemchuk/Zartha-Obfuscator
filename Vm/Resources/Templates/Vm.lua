@@ -1,3 +1,4 @@
+-- Vm Template
 return [=[
 %s
 %s
@@ -9,7 +10,7 @@ return (function()%s
 	local pointer = {}
 	local ConstantsCopy = {}
 	local top = 0
-	local Checks,FixMeta,HandleConstants = INSERTENVLOG,(function()
+	local Checks,FixMeta,HandleConstants = :INSERTENVLOG:,(function()
 		--// Fix for metatable
 		for i, Value in pairs(Constants) do
 			ConstantsCopy[i] = Value

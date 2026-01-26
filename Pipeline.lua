@@ -54,11 +54,11 @@ return function(inputFile,outputTo)
 
     -- Insert anti-env logger
     _G.display("Adding Anti-Env Logger...", "green")
-    vmTree = vmTree:gsub("INSERTENVLOG", antiEnvLogger)
+    vmTree = vmTree:gsub(":INSERTENVLOG:", antiEnvLogger)
 
     -- Insert anti-tamper
     _G.display("Adding Anti-Tamper...", "green")
-    vmTree = vmTree:gsub("ANTITAMPER", antitamper)
+    vmTree = vmTree:gsub(":ANTITAMPER:", antitamper)
 
     -- Minify
     if settings.Minify then
