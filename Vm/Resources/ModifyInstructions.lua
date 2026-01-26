@@ -35,6 +35,7 @@ return function(instructions,constants,prototypes)
 		end
 	end
 	
+	--// Modify macros
 	for i, inst in ipairs(instructions) do
 		if inst.OpcodeName == "GETGLOBAL" then
 			local registerB = _G.getReg(inst,"B")+1

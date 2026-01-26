@@ -76,4 +76,6 @@ return function(inputFile,outputTo)
     else
         _G.display("Error writing to "..(outputTo or "Input/Output.lua"), "red")
     end
+
+    print("File has been obfuscated.")
 end

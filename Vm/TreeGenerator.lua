@@ -296,14 +296,17 @@ return function(parasedBytecode)
 
 			-- numParams
 			tree = tree:gsub("NUMBERPARAMS_"..protoName,tostring(numParams))
+
 			--:NumUpvalues:
 			tree = tree:gsub("UPVALS_"..protoName,proto.NumUpvalues)
+
 			--STACK_LOCATION
 			tree = tree:gsub(("STACK_LOCATION_PROTOTYPE%sHERE"):format(tostring(protoAt)), -- nil == not sub prototype
 				extra == nil and "prevStack" or "Upvalues"
 			)
 
-			if proto.Prototypes and #proto.Instructions>0 then --// loop through prototypes
+			--// loop through prototypes
+			if proto.Prototypes and #proto.Instructions>0 then
 				getPrototypes(proto.Prototypes,"(SUB)")
 			end
 		end
@@ -316,6 +319,7 @@ return function(parasedBytecode)
 	--// Prototypes
 	getPrototypes(prototypes)
 
+	--// Insert constants
 	header = header:gsub("CONSTANTS_HERE_BASEVM",getConstants(constants))
 
 	--// Format VM
@@ -348,6 +352,7 @@ return function(parasedBytecode)
 		settingsSelected.LuaU_Syntax and "pointer+=1" or "pointer=pointer+1"
 	)
 	tree = tree:gsub(":SHIFTAMOUNT:",tostring(_G.shiftAmount))
+	
 	--// Wrap in function
 	tree = ([[return (("%s") and (function() return(function(Env,Constants,shiftKey,decrypt)%s %s end)((_ENV or getfenv()),{},0%s) end)())]]):format(settingsSelected.Watermark,settingsSelected.LuaU_Syntax and ":any" or "",tree,settingsSelected.EncryptStrings and ","..stringEncryptorTemplate or "")
 
