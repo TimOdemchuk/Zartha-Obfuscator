@@ -109,7 +109,7 @@ _G.bit32 = {
 }
 
 -- Check for arguments
-if hasArg("--h") or hasArg("--help") then
+if hasArg("--help") then
     print("Usage: lua Main.lua <input_file>")
     print("Options:")
     print("  --minify                   minifies the output for smaller output size")
