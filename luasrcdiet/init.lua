@@ -74,7 +74,7 @@ M.DEFAULT_OPTS = merge(M.BASIC_OPTS, {
 M.MAXIMUM_OPTS = merge(M.DEFAULT_OPTS, {
   entropy = true,
   eols = true,
-  strings = false,
+  strings = false, -- changed to disabled 
 })
 
 --- Optimizes the given Lua source code.
