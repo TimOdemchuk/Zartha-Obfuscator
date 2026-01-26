@@ -11,5 +11,15 @@ git clone https://github.com/TimOdemchuk/Zartha-Obfuscator
 lua Main.lua <InputPath> <OutputPath>
 ```
 
+### CLI flags
+- `--constantprotection` – encrypts constants for stronger constant security.
+- `--minify` – minifies the output for smaller scripts.
+- `--antitamper` – injects anti-tamper checks to detect script modification.
+- `--encryptstrings` – encrypts all strings in the output.
+- `--controlflowflattening` – flattens control flow for simple obfuscation hardening.
+- `--debug` – enables debugging tools to help diagnose errors.
+
+
+
 ## Requirements
 For Zartha to function you must have Lua 5.1 installed.
