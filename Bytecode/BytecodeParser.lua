@@ -2,7 +2,7 @@ local Enums = require("Bytecode.Enums")
 local parser = require("Bytecode.BcUtils")
 
 local function readHeader()
-	return {
+	local header = {
 		signature = parser:ReadBytes(4),
 		version = parser:ReadByte(),
 		format = parser:ReadByte(),
@@ -13,6 +13,25 @@ local function readHeader()
 		luaNumberSize = parser:ReadByte(),
 		integral = parser:ReadByte(),
 	}
+
+	if header.signature ~= "\27Lua" then
+		error("Invalid Lua signature")
+	end
+	if header.version ~= 0x51 then
+		error("Unsupported Lua version (expected 5.1)")
+	end
+	if header.format ~= 0 then
+		error("Unsupported format (expected official format 0)")
+	end
+	parser.sizeT = header.sizeTSize
+	if header.endianness ~= 1 then
+		error("Unsupported endianness (expected little-endian)")
+	end
+	if header.intSize ~= 4 or header.instructionSize ~= 4 then
+		error("Unsupported int/instruction size (expected 4 bytes)")
+	end
+
+	return header
 end
 
 local function decodeRK(x)
@@ -26,10 +45,14 @@ local function decodeInstruction(raw)
 	local opcode = raw % 64
 	local a = math.floor(raw / 64) % 256
 	print("PARSER OPCODE --> ",opcode)
-	local mode = Enums[opcode].Type
+	local enum = Enums[opcode]
+	if not enum then
+		error("Unknown opcode: " .. tostring(opcode))
+	end
+	local mode = enum.Type
 	local instruction = {
 		Opcode = opcode,
-		OpcodeName = Enums[opcode].Mnemonic,
+		OpcodeName = enum.Mnemonic,
 		A = a,
 		Raw = raw
 	}
@@ -42,7 +65,7 @@ local function decodeInstruction(raw)
 	elseif mode == 'iAsBx' then
 		instruction.sBx = math.floor(raw / 16384) - 131071
 	end
-	-- zaza
+
 	return instruction
 end
 
@@ -100,6 +123,23 @@ local function readFunction(sourcename)
 	for i = 1, numPrototypes do
 		func.Prototypes[i] = readFunction(func.Source)
 		func.Prototypes[i].Index = i - 1
+	end
+
+	local numLineInfo = parser:ReadInt32()
+	for i = 1, numLineInfo do
+		parser:ReadInt32()
+	end
+
+	local numLocals = parser:ReadInt32()
+	for i = 1, numLocals do
+		parser:ReadString() -- varname
+		parser:ReadInt32() -- startpc
+		parser:ReadInt32() -- endpc
+	end
+
+	local numUpvalueNames = parser:ReadInt32()
+	for i = 1, numUpvalueNames do
+		parser:ReadString()
 	end
 	
 	return func
