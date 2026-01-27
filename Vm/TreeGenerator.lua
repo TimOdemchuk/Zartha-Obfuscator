@@ -3,18 +3,19 @@
 -- I will rewrite this later to be more efficient and cleaner
 
 math.randomseed(os.time())
+package.path = package.path .. ";" .. "./Vm/?.lua"
 
 return function(parasedBytecode)
 	parasedBytecode = parasedBytecode[2]
     
 	-- Requires
-	local header = require("Vm.Resources.Templates.Header")
-	local vm = require("Vm.Resources.Templates.Vm")
+	local header = require("Resources.Templates.Header")
+	local vm = require("Resources.Templates.Vm")
 	local settingsSelected = require("Input.Settings")
-	local stringEncryptor = require("Vm.Resources.EncryptStrings")
-	local stringEncryptorFunction = require("Vm.Resources.EncryptStrings")(nil,true)
-	local stringEncryptorTemplate = require("Vm.Resources.Templates.DecryptStringsTemplate")
-	local ControlFlowFlattening = require("Vm.Resources.ControlFlowFlattening")
+	local stringEncryptor = require("Resources.EncryptStrings")
+	local stringEncryptorFunction = require("Resources.EncryptStrings")(nil,true)
+	local stringEncryptorTemplate = require("Resources.Templates.DecryptStringsTemplate")
+	local ControlFlowFlattening = require("Resources.ControlFlowFlattening")
 
 	local decryptStr = tostring(_G.Random(100,400))
 

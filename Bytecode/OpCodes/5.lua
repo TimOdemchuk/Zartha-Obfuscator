@@ -1,6 +1,4 @@
 -- GETGLOBAL
-local settingsGot = require("input.Settings")
-
 return function(inst,shift,constant,settings)
 	local output = [=[
 	Temp[1] = :A: -- instA
@@ -10,7 +8,7 @@ return function(inst,shift,constant,settings)
 	Stack[Temp[1]] = Temp[4] -- set to stack
 	]=]
 	
-	if settingsGot.ConstantProtection then
+	if settings.ConstantProtection then
 		output = ([=[
 		local decoded = {}
 		local Constant = Constants(:B:+1)
@@ -21,7 +19,7 @@ return function(inst,shift,constant,settings)
 		
 		Stack[:A:] = Env
 		Stack[:A:] = Stack[:A:][concat(decoded)]
-		]=]):format((settingsGot.AntiTamper and "shiftKey" or shift))
+		]=]):format((settings.AntiTamper and "shiftKey" or shift))
 	end
 	
 	return output

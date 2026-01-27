@@ -1,6 +1,4 @@
 -- LOADK
-local settingsGot = require("input.Settings")
-
 return function(inst,shift,const,settings)
 	local output = [=[
 	Temp[1] = :A:
@@ -9,7 +7,7 @@ return function(inst,shift,const,settings)
 	Stack[Temp[1]] = Temp[3]
 	]=]
 	
-	if settingsGot.ConstantProtection and not const then
+	if settings.ConstantProtection and not const then
 		output = ([=[
 		Temp[1] = :A:
 		Temp[2] = :B:+1
@@ -20,8 +18,8 @@ return function(inst,shift,const,settings)
 		end
 		Temp[5] = concat(Temp[3])
 		Stack[Temp[1]] = Temp[5]
-		]=]):format((settingsGot.AntiTamper and "shiftKey" or shift))
-	elseif settingsGot.ConstantProtection and const then
+		]=]):format((settings.AntiTamper and "shiftKey" or shift))
+	elseif settings.ConstantProtection and const then
 		output = ([=[
 		Temp[1] = :A:
 		Temp[2] = :B:+1

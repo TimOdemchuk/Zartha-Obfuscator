@@ -1,5 +1,3 @@
-local settingsGot = require("Input.Settings")
-
 -- Protection from special characters
 local function toSafeString(s)
 	local safe = ""

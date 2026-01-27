@@ -17,3 +17,4 @@ return function(inst,shiftAmount,constant,settings)
 		pointer = pointer + (10^5)
 	]=]
 end
+

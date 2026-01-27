@@ -1,5 +1,5 @@
 -- CLOSURE
-return function(inst,shiftAmount,constant,settingsGot)
+return function(inst,shiftAmount,constant,settings)
 	local output = ([=[
 	local prevStack = Stack
 	local prevUpvalues = Upvalues
@@ -82,7 +82,7 @@ return function(inst,shiftAmount,constant,settingsGot)
 		pointer = pointer+1
 		end
 	end
-]=]):format((not settingsGot.ConstantProtection and [[
+]=]):format((not settings.ConstantProtection and [[
 		local removedByte = sub(toSend,1,#toSend-1)
 		return tonumber(removedByte)
 		]] or ([[
@@ -92,7 +92,7 @@ return function(inst,shiftAmount,constant,settingsGot)
 			insert(decrypted,char(byte(sub(removedByte,i,i))-%s)) 
 		end
 		return tonumber(concat(decrypted))
-		]]):format(tostring(_G.shiftAmount))),settingsGot.ConstantProtection and [=[
+		]]):format(tostring(_G.shiftAmount))),settings.ConstantProtection and [=[
 		local const = ConstantsCopy[at]
 		if byte(sub(const,#const,#const)) == 11 then
 			return Constants[at]
