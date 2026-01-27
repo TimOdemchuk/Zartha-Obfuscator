@@ -14,10 +14,10 @@ return function(Inst,shiftAmount,constant,settings)
 	end
 
 	for i = Temp[1] + 1, Temp[5] do
-		insert(Temp[3], Stack[i])
+		Temp[3][i - Temp[1]] = Stack[i]
 	end
 	
-	Temp[4] = {Stack[:A:](unpack(Temp[3]))}
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
 	%s
 	]=]):format(_G.getReg(Inst,"C") < 1 and [=[
 	top = Temp[1] + #Temp[4] - 1
@@ -34,30 +34,3 @@ return function(Inst,shiftAmount,constant,settings)
 
 	return output
 end
-
---[[
-
-        local func = stack[:a:]
-        local args = {}
-
-        local lim = :a: + :b: - 1
-        if :b: == 0 then lim = top + 1 end
-
-        for i=:a:+1, lim do
-            table_insert(args, stack[i])
-        end
-
-        top = :a:-1
-
-        local results = {func(unpack(args))}
-
-        if :c: < 1 then
-            for i=:a:, :a:+#results-1 do
-                stack[i] = results[i+1-:a:]
-            end
-        elseif :c: > 1 then
-            for i=:a:,:a:+:c:-2 do
-                stack[i] = results[i+1-:a:]
-            end
-        end
-]]

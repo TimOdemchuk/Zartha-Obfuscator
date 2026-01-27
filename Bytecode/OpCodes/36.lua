@@ -54,7 +54,7 @@ return function(inst,shiftAmount,constant,settings)
 			Stack[i - 1] = Args[i]
 		end
 		-- Params
-		for i = NUMBERPARAMS_PROTOTYPE:B:HERE + 1, #Args do
+		for i = 0 + 1, #Args do
             insert(Varargs, Args[i])
         end
 		setmeta(Constants, {
