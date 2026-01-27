@@ -25,7 +25,7 @@ end
 local function decodeInstruction(raw)
 	local opcode = raw % 64
 	local a = math.floor(raw / 64) % 256
-	
+	print("PARSER OPCODE --> ",opcode)
 	local mode = Enums[opcode].Type
 	local instruction = {
 		Opcode = opcode,
