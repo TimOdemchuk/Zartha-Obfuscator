@@ -116,6 +116,7 @@ return function(parasedBytecode)
 
 			local costAt = type(const) == "table" and tostring(const.Value) or tostring(const)
 			local byted = costAt
+
 			--[[
 			local byted = costAt:gsub(".", function(b) return "\\" .. b:byte()+(shiftAmount) end)
 			local split = string.split(byted,"\\")
@@ -124,9 +125,10 @@ return function(parasedBytecode)
 				byted = string.sub(byted,1,#byted-2)
 			end
 			]]
-			
+
+			-- CONSTANT TYPES:
 			-- Identifier for constant protection
-			if settingsSelected.ConstantProtection then 
+			if settingsSelected.ConstantProtection then  -- byte 4
 				if string.sub(byted,#byted,#byted) == "\\" then
 					byted = string.sub(byted,1,#byted-1)
 				end
@@ -134,8 +136,13 @@ return function(parasedBytecode)
 			end
 
 			-- Number Identifier
-			if const.Type == "number" then
+			if const.Type == "number" then  -- byte 11
 				byted = byted..""
+			end
+
+			-- Boolean Identifier
+			if const.Type == "boolean" then -- byte 7
+				byted = byted..""
 			end
 
 			constantsStr = constantsStr..('%s("%s")%s,'):format(tonumber(const) and "(" or "",byted,tonumber(const) and ")" or "")

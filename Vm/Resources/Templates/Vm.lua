@@ -31,6 +31,12 @@ return (function()%s
 						insert(decrypted,char(byte(sub(removedByte,i,i))-:SHIFTAMOUNT:)) 
 					end
 					return concat(decrypted)
+				elseif byte(sub(toSend,#toSend,#toSend)) == 7 then -- Boolean support
+					if byte(sub(toSend,1,1)) == 116 then
+						return true
+					else
+						return false
+					end
 				end
 				return ConstantsCopy[Key]
 			end,

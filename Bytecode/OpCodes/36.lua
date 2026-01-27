@@ -63,7 +63,14 @@ return function(inst,shiftAmount,constant,settings)
 
 			if byte(sub(toSend,#toSend,#toSend)) == 11 then
 				%s
+			elseif byte(sub(toSend,#toSend,#toSend)) == 7 then -- Boolean support
+				if byte(sub(toSend,1,1)) == 116 then
+					return true
+				else
+					return false
+				end
 			end
+
 			return ConstantsCopy[Key]
 		end,
 		[__metatable] = {},

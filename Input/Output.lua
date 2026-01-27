@@ -1,1 +1,168 @@
-return(("File generated using [Zartha]")and(function()return(function(l,e,e,n)local Y,f,r,c,n,n,y,s,u,V,Z,x,F,E,a,N,h,g,b,_,t,v,n=l[n("\066\070\074\093\095\085","1284")][n("\081\093\085\068","2546")],l[n("\069\088\090\091\084","1987")][n("\088\087\075\092\067\077","1989")],l[n("\066\076\068\090\095\095","1863")][n("\080\073\066\081","2064")],l[n("\065\069\070\093\092\086","2144")][n("\075\064\080","852")],l[n("\070\064\065\092\090\084","543")][n("\095\087\076\086\090","2685")],l[n("\069\088\091\088\084","1994")][n("\081\075\082\082\067\082","797")],l[n("\070\087\071\071\064\081\090\084","2843")],l[n("\066\083\082\092\094","2030")],l[n("\070\082\090\092\087","2380")][n("\071\095\073\089\081\090","2198")],l[n("\071\087\085\095\083","367")][n("\081\094\090\085\083\069","2146")],l[n("\069\092\092\067\092\081\087\068","1326")],l[n("\065\093\066\095\087\076\087\070\083\090\090\087","2862")],n("\109\108\095\092\070\082\070\088\080\095\087","2329"),n("\103\105\064\087\069\064\074\095\090\095","864"),n("\109\102\089\088\086\092\072","2906"),n("\109\109\082\085\094\094","2214"),l[n("\095\086\064\065\065\088\073\074","137")],l[n("\065\064\091\093\069","1223")],n("\102\108\066\088\090\064\074","932"),n("\109\104\092\073\083\094\071\074","2759"),{(n("\066\074\095\091\070","2865")),(n("\121\085\091\092\094","1070")),},l[n("\065\080\089\071\066","1105")],n("\109\111\089\093\069\089\089\092\087\072","2078")return(function()local o={}local n={}local e={}local e={}local i={}local d=0 local c,c,c=(function()local function o(...)local n=true and#{...}return n end local n=false l[a]=function()n=true end if n then e=100 else local n=nil local l,l=s(function()n=(h(g))end)if n then e=50 else e=1 end end local n=o(1,2,3)if n<2 then e=50 end end)(),(function()for n,e in v(t)do i[n]=e t[n]=nil end end)(),(function()x(t,{[a]=function(n,l)local n=i[l]if r(c(n,#n,#n))==11 then local n=c(n,1,#n-1)return Z(n)elseif r(c(n,#n,#n))==4 then local l=c(n,1,#n-1)local e={}for n=1,#l do f(e,Y(r(c(l,n,n))-0))end return V(e)end return i[l]end,[F]={},[N]=function(e,n)local n=i[n]return n end,[E]=function()e=e^10 return y(e)end,[b]=function()return function()e=e+15 end end,[_]=function()return function()e=e+10 end end})end)()for c=1,(1+10)^100 do if(e+166)*30006==5011002 then do local c=e+392 if c>e then do n[1]=0 n[2]=0+1 n[3]=t[n[2]]n[4]=l[n[3]]o[n[1]]=n[4]end else local n=o[d]if n then d=d-1 end end end elseif(e+150)*48590==7482860 then do local n=e+852 if n>e then do local n={}for e=0,0+1-2 do f(n,o[e])end return u(n)end else if(e*2)<0 then l[1]=nil end end end elseif(e*67)+28611==28745 then do local l=e-959 if l>e then o[e]=t[e]else do n[1]=1 n[2]=1+1 n[3]=t[n[2]]o[n[1]]=n[3]end end end elseif(e+150)*8561==1309833 then do local l=e+456 if l>e then do n[1]=0 n[2]=2 n[3]={}n[4]={}n[5]=n[1]+n[2]-1 if n[2]==0 then n[5]=d+1 else n[5]=n[1]+n[2]-1 end for e=n[1]+1,n[5]do f(n[3],o[e])end n[4]={o[0](u(n[3]))}for e=n[1],n[1]+1-2 do o[e]=n[4][e+1-n[1]]end n={}end else local n=o[d]if n then d=d-1 end end end end e=e+1 end end)()end)((_ENV or getfenv()),{},0,function(n,e)local l={}for o=(6*9-32+(((-21)))),#n do local d=string.byte(n,o)local n=string.byte(e,(o-(36*13-65+(((-402)))))%#e+(6*5-17+(((-12)))))table.insert(l,string.char(bit32.bxor(d,n)))end return table.concat(l)end)end)())
+return (("File generated using [Zartha]") and (function() return(function(Env,Constants,shiftKey,decrypt) -- Vars
+local char,insert,byte,sub,match,freeze,ttostring,pcall,unpack,concat,tonumber,setmeta,__metatable,__tostring,__index,__call,proxy,pnt,__pairs,__ipairs,Constants,pairs,__newindex = Env["string"]["char"],Env["table"]["insert"],Env["string"]["byte"],Env["string"]["sub"],Env["string"]["match"],Env["table"]["freeze"],Env["tostring"],Env["pcall"],Env["table"]["unpack"],Env["table"]["concat"],Env["tonumber"],Env["setmetatable"],"__metatable","__tostring","__index","__call",Env["newproxy"],Env["print"],"__pairs","__ipairs",{(decrypt("\077\064\064\092\053", "925")),(decrypt("\065\071\095\094\069", "1560")),(decrypt("\121\113", "1830")),},Env["pairs"],"__newindex"
+
+
+-- VM function
+return (function()
+	local Stack = {}
+	local Temp = {}
+	local Upvalues = {}
+	local pointer = {}
+	local ConstantsCopy = {}
+	local top = 0
+	local Checks,FixMeta,HandleConstants = (function() -- Env log detection
+	local function ooptest(...)
+		local a = true and #{ -- troll
+			...
+		}
+		return a
+	end
+	local Tamper = false
+	Env[__index] = function() 
+		Tamper = true
+	end
+	
+	if Tamper then
+		pointer = 100
+	else
+		local Checked = nil
+		local _,er = pcall(function()
+			Checked = (proxy(pnt)) 
+		end)
+		if Checked then
+			pointer = 50
+		else
+			pointer = 1
+		end
+	end
+	local counter = ooptest(1, 2, 3)
+	
+	if counter <2 then
+		pointer = 50
+	end
+end)()
+,(function()
+		-- Fix for metatable
+		for i, Value in pairs(Constants) do
+			ConstantsCopy[i] = Value
+			Constants[i] = nil
+		end
+	end)(),(function()
+		-- Handle constant table
+		setmeta(Constants, {
+			[__index] = function(Self, Key)
+				local toSend = ConstantsCopy[Key]
+
+				if byte(sub(toSend,#toSend,#toSend)) == 11 then -- tonumber (Because constants are strings)
+							local removedByte = sub(toSend,1,#toSend-1)
+		return tonumber(removedByte)
+		
+				elseif byte(sub(toSend,#toSend,#toSend)) == 4 then -- Constant shift back (String encryption)
+					local removedByte = sub(toSend,1,#toSend-1)
+					local decrypted = {}
+					for i =1,#removedByte  do
+						insert(decrypted,char(byte(sub(removedByte,i,i))-0)) 
+					end
+					return concat(decrypted)
+				elseif byte(sub(toSend,#toSend,#toSend)) == 7 then -- Boolean support
+					if byte(sub(toSend,1,1)) == 116 then
+						return true
+					else
+						return false
+					end
+				end
+				return ConstantsCopy[Key]
+			end,
+			[__metatable] = {}, -- Prevent access
+			[__call] = function(_,at)
+						local const = ConstantsCopy[at]
+		return const
+			end,
+			[__tostring] = function() -- Accessing constants as string would crash the VM
+				pointer = pointer ^10
+				return ttostring(pointer)
+			end,
+			[__pairs] = function() return function() pointer = pointer +15 end end, -- looping constants as string would crash the VM
+	        [__ipairs] = function() return function() pointer = pointer +10 end end -- looping constants as string would crash the VM
+		})
+	end)()
+	
+	-- VM STARTS HERE
+	for i = 1, (1+10)^100 do
+		if pointer == 1 then -- 2 [LOADBOOL] 
+ Stack[0] = (1 == 1) 
+elseif pointer == 2 then -- 23 [EQ] 
+ 		Temp[1] = false -- regB
+		Temp[2] = Constants[0+1] -- constants
+		Temp[3] = Stack[0] -- stack location regB
+		Temp[4] = Constants[0+1] -- constants regC
+		Temp[5] = Stack[0] -- stack location regC
+		Temp[6] = true
+		
+		if (Temp[1] and Temp[2] or Temp[3]) == (Temp[6] and Temp[4] or Temp[5] ) then
+			pointer = pointer + 1
+		end
+	 
+elseif pointer == 3 then -- 22 [JMP] 
+ pointer = pointer + 3 print('[VM]:','JMP -- >',pointer) 
+elseif pointer == 4 then -- 5 [GETGLOBAL] 
+ 	Temp[1] = 1 -- instA
+	Temp[2] = 1+1 -- instB
+	Temp[3] = Constants[Temp[2]] -- constant
+	Temp[4] = Env[Temp[3]] -- env global
+	Stack[Temp[1]] = Temp[4] -- set to stack
+	 
+elseif pointer == 5 then -- 1 [LOADK] 
+ 	Temp[1] = 2
+	Temp[2] = 2+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 6 then -- 28 [CALL] 
+ 	Temp[1] = 1	-- instA
+	Temp[2] = 2 -- instB
+	Temp[3] = {} -- args
+	Temp[4] = {} -- output table
+	Temp[5] = Temp[1] + Temp[2] - 1 -- limit
+	
+	if Temp[2] == 0 then
+		Temp[5] = top+1
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		insert(Temp[3], Stack[i])
+	end
+	
+	Temp[4] = {Stack[1](unpack(Temp[3]))}
+		for i = Temp[1], Temp[1] + 1 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 7 then -- 30 [RETURN] 
+ 	local output = {}
+
+	for i=0,0+1-2 do
+		insert(output,Stack[i])
+	end
+
+	return unpack(output)
+	 
+end
+		pointer=pointer+1
+	end
+end)()
+
+ end)((_ENV or getfenv()),{},0,function(str, key) -- Decrypt vars
+	local result = {}
+	for i = (6*9-32+(((-21)))), #str do
+		local strByte = string.byte(str, i)
+		local keyByte = string.byte(key, (i - (36*13-65+(((-402))))) % #key + (6*5-17+(((-12)))))
+		table.insert(result, string.char(bit32.bxor(strByte, keyByte)))
+	end
+	return table.concat(result)
+end
+) end)())
