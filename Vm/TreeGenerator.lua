@@ -294,39 +294,62 @@ return function(parasedBytecode)
 	-- Generate prototypes
 	local protoAt = 0
 
-	local function getPrototypes(targetPrototype,extra)
-		for prototypeNumber,proto in pairs(targetPrototype) do
-			protoAt = protoAt+1
-			local protoName = ("PROTOTYPE%sHERE"):format(tostring(prototypeNumber-1))
-
-			_G.display("--> Reading prototype: "..tostring(protoAt)..(extra or ""),"yellow")
-
-			local numParams = proto.NumUpvalues
-			local newInstructions = readInstructions(require("Vm.Resources.ModifyInstructions")(proto.Instructions,constants,proto.Prototypes),nil,"PROTOTYPE "..tostring(protoAt),extra)
-			local constants = getConstants(proto.Constants)
-
-			-- Instructions
-			tree = tree:gsub("INST_"..protoName, function() return newInstructions end)
-
-			-- Constants
-			tree = tree:gsub(("CONSTANTS_PROTOTYPE%sHERE"):format(tostring(protoAt)), function() return constants end)
-
-			-- numParams
-			tree = tree:gsub("NUMBERPARAMS_"..protoName,tostring(numParams))
-
-			--:NumUpvalues:
-			tree = tree:gsub("UPVALS_"..protoName,proto.NumUpvalues)
-
-			--STACK_LOCATION
-			tree = tree:gsub(("STACK_LOCATION_PROTOTYPE%sHERE"):format(tostring(protoAt)), -- nil == not sub prototype
-				extra == nil and "prevStack" or "Upvalues"
-			)
-
-			-- loop through prototypes
-			if proto.Prototypes and #proto.Instructions>0 then
-				getPrototypes(proto.Prototypes,"(SUB)")
-			end
+	-- Process prototypes
+	local function processPrototypes()
+		local currentLevel = {}
+		local nextLevel = {}
+		
+		for i = 1, #prototypes do
+			table.insert(currentLevel, {proto = prototypes[i], extra = nil})
 		end
+		
+		while #currentLevel > 0 do
+			-- Process all prototypes at current level
+			for _, protoData in ipairs(currentLevel) do
+				local proto = protoData.proto
+				local extra = protoData.extra
+				protoAt = protoAt + 1
+				local protoName = ("PROTOTYPE%sHERE"):format(tostring(protoAt))
+
+				_G.display("--> Reading prototype: "..tostring(protoAt)..(extra or ""),"yellow")
+
+				local numParams = proto.NumUpvalues
+				local newInstructions = readInstructions(require("Vm.Resources.ModifyInstructions")(proto.Instructions,proto.Constants,proto.Prototypes),nil,"PROTOTYPE "..tostring(protoAt),extra)
+				local constants = getConstants(proto.Constants)
+
+				-- Instructions
+				tree = tree:gsub("INST_"..protoName, function() return newInstructions end)
+
+				-- Constants
+				tree = tree:gsub("CONSTANTS_"..protoName, function() return constants end)
+
+				-- numParams
+				tree = tree:gsub("NUMBERPARAMS_"..protoName,tostring(numParams))
+
+				--:NumUpvalues:
+				tree = tree:gsub("UPVALS_"..protoName,proto.NumUpvalues)
+
+				--STACK_LOCATION
+				tree = tree:gsub("STACK_LOCATION_"..protoName,
+					extra == nil and "prevStack" or "Upvalues"
+				)
+				
+				-- Collect sub-prototypes for next level
+				if proto.Prototypes and #proto.Prototypes > 0 then
+					for _, subProto in pairs(proto.Prototypes) do
+						table.insert(nextLevel, {proto = subProto, extra = "(SUB)"})
+					end
+				end
+			end
+			
+			-- Move to next level
+			currentLevel = nextLevel
+			nextLevel = {}
+		end
+	end
+
+	local function getPrototypes(targetPrototype,extra)
+		processPrototypes()
 	end
 
 	-- Add VM

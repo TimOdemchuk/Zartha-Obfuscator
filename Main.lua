@@ -46,6 +46,7 @@ _G.readFile = function(file)
     return content
 end
 
+-- Color printed messages
 _G.display = function(msg, color)
     if table.find(args,"--silent") then
         return
@@ -72,6 +73,7 @@ _G.table.find =function(t,value)
     return nil
 end
 
+-- Lua 5.1 doesn't have bit32 library, so we implement bxor here since we only need it
 _G.bit32 = {
     bxor = function(...)
         local args = {...}

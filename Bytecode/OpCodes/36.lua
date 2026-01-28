@@ -93,7 +93,7 @@ return function(inst,shiftAmount,constant,settings)
         [__ipairs] = function() return function() pointer = pointer +10 end end
 	})
 		while true do
-		INST_PROTOTYPE:B:HERE
+		INST_PROTOTYPE:PROTOHERE:HERE
 		pointer = pointer+1
 		end
 	end
