@@ -2,10 +2,25 @@ local parser = require("Bytecode.BytecodeParser")
 local treeGenerator = require("Vm.TreeGenerator")
 local antiEnvLogger = require("Vm.Resources.Templates.EnvLogDetection")
 local antitamper = require("Vm.Resources.Templates.AntiTamper")
+local LuauSanitizer = require("Vm.LuauSanitizer")
 local luasrcdiet = require("luasrcdiet.init")
 local settings = require("Input.Settings")
 
+
 return function(inputFile,outputTo)
+
+    -- Remove all LuaU specific syntax 
+    if settings.LuaUCompatibility then
+        _G.display("LuaU Compatibility mode enabled.", "yellow")
+        
+        local rawInput = _G.readFile(inputFile)
+        local sanitized = LuauSanitizer.sanitize(rawInput)
+        local inputHandle = io.open(inputFile, "w")
+
+        inputHandle:write(sanitized)
+        inputHandle:close()
+    end
+
     -- Compile to bytecode
     os.execute("luac -o Input/luac.out " .. inputFile)
     local bytecode = _G.readFile("Input/luac.out")

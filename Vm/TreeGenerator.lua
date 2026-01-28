@@ -89,7 +89,7 @@ return function(parasedBytecode)
 	local function getOpcode(num,name)
 		num = tostring(num)
 
-		local modulePath = "Bytecode.OpCodes."..num
+		local modulePath = "Vm.OpCodes."..num
 		local success, result = pcall(require, modulePath)
 		
 		if success then

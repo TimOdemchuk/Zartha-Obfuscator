@@ -42,7 +42,7 @@ return function(instructions,constants,prototypes)
 			local constant = constants[registerB]
 			if constant then
 				constant = constant.Value
-                local opcodeExists = pcall(require,"Bytecode.OpCodes."..tostring(constant))
+                local opcodeExists = pcall(require,"Vm.OpCodes."..tostring(constant))
 				
 				if constant and opcodeExists then
 					local callOpcode = (instructions[i+1])
@@ -53,7 +53,7 @@ return function(instructions,constants,prototypes)
 						-- Check if correct
 						if callingIndex.OpcodeName == "CALL" and callingIndex.A == inst.A then
 							-- Transform opcode into custom macro
-							local customInstruction = require("Bytecode.OpCodes."..tostring(constant))("custom",callOpcode)
+							local customInstruction = require("Vm.OpCodes."..tostring(constant))("custom",callOpcode)
 
 							instructions[i+1] = customInstruction
 
