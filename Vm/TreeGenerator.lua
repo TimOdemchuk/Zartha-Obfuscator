@@ -132,17 +132,22 @@ return function(parasedBytecode)
 				if string.sub(byted,#byted,#byted) == "\\" then
 					byted = string.sub(byted,1,#byted-1)
 				end
-				byted = byted..""
+				byted = byted..string.char(4)
 			end
 
 			-- Number Identifier
 			if const.Type == "number" then  -- byte 11
-				byted = byted..""
+				byted = byted..string.char(11)
 			end
 
 			-- Boolean Identifier
 			if const.Type == "boolean" then -- byte 7
-				byted = byted..""
+				byted = byted..string.char(7)
+			end
+
+			-- nil Identifier
+			if const.Type == "nil" then -- byte 6
+				byted = byted..string.char(6)
 			end
 
 			constantsStr = constantsStr..('%s("%s")%s,'):format(tonumber(const) and "(" or "",byted,tonumber(const) and ")" or "")

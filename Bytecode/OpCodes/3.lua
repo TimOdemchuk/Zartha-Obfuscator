@@ -1,2 +1,2 @@
 -- LOADNIL
-return "Stack[:A:] = Stack[:A:]"
+return "Stack[:A:] = nil"

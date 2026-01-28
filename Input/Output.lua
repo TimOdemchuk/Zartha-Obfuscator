@@ -1,1 +1,1881 @@
-return(("File generated using [Zartha]")and(function()return(function(l,e,e,f)local Y,s,c,h,e,e,V,_,i,x,b,r,u,w,a,E,W,M,g,y,t,N,Z=l[f("\068\067\064\094\089\085","772")][f("\082\095\089\070","1784")],l[f("\070\086\091\091\087","2797")][f("\088\091\064\086\067\065","1533")],l[f("\064\068\068\090\094\081","306")][f("\080\072\066\093","2168")],l[f("\066\076\069\094\095\095","1877")][f("\071\069\081","403")],l[f("\066\067\064\088\095\080","1721")][f("\092\083\064\084\089","1247")],l[f("\070\085\085\090\087","2476")][f("\084\066\085\086\072\085","2003")],l[f("\069\087\064\069\067\081\093\086","1831")],l[f("\065\091\080\093\093","1811")],l[f("\065\084\084\089\080","556")][f("\068\094\072\087\082\091","1086")],l[f("\070\086\091\094\082","279")][f("\081\091\091\083\083\064","2450")],l[f("\065\092\088\064\094\084\080\065","536")],l[f("\065\083\076\088\087\066\089\065\083\084\084\080","2685")],f("\110\111\091\093\069\081\066\089\083\092\083","1068"),f("\109\111\070\086\065\068\064\080\092\087","2029"),f("\104\103\089\089\092\085\079","780"),f("\109\110\090\085\094\093","2194"),l[f("\095\083\071\069\067\089\072\076","1605")],l[f("\073\075\089\087\077","990")],f("\110\103\070\080\081\068\066","186"),f("\104\105\089\071\087\089\069\069","760"),{(f("\066\066\089\091\070","2005")),(f("\089\085\094\084\094","1028")),(f("\001\058","1190")),(f("\065\068\095\090\069\080","1664")),(f("\106\107\088\091\080\084\077","541")),(f("\089\086\065","736")),(f("\065\083\067\065\105\067\080\090\086\106\089\064\086\089\084\080","560")),(f("\090\080\089\088\093\021\091\091\093\087\070","2554")),(f("\006\050","2940")),(f("\003\058","1138")),(f("\008\001\058","971")),(f("\089\092\021\095\072\021\091\083\092\080\021\091\066\021","1552")),(f("\017\087\095\085\017\095\069\017\088\069\017\086\067\083\080\069\017\066\094\017\092\083\084\069\017\079\094\068","1611")),(f("\003\050","2952")),(f("\004\058","1168")),(f("\002\058","1182")),(f("\011\001\062","2851")),(f("\010\057","2242")),},l[f("\069\085\081\071\071","548")],f("\110\107\094\080\070\093\094\081\084\076","1405")return(function()local d={}local e={}local v={}local n={}local F={}local o=0 local F,F,F=(function()local function d(...)local e=true and#{...}return e end local e=false l[a]=function()e=true end if e then n=100 else local e=nil local d,d=_(function()e=(W(M))end)if e then n=50 else n=1 end end local e=d(1,2,3)if e<2 then n=50 end end)(),(function()for e,n in N(t)do F[e]=n t[e]=nil end end)(),(function()r(t,{[a]=function(e,n)local e=F[n]if c(h(e,#e,#e))==11 then local e=h(e,1,#e-1)return b(e)elseif c(h(e,#e,#e))==4 then local e=h(e,1,#e-1)local d={}for n=1,#e do s(d,Y(c(h(e,n,n))-0))end return x(d)elseif c(h(e,#e,#e))==7 then if c(h(e,1,1))==116 then return true else return false end end return F[n]end,[u]={},[E]=function(n,e)local e=F[e]return e end,[w]=function()n=n^10 return V(n)end,[g]=function()return function()n=n+15 end end,[y]=function()return function()n=n+10 end end})end)()for F=1,(1+10)^100 do if(n+20)*25602==793662 then do local l=n-950 if l>n then local e=d[o]if e then o=o-1 end else do e[1]=14 e[2]=7 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n+82)*95761==18098829 then do local f=n+331 if f>n then do e[1]=27 e[2]=5 e[3]={}e[4]={}e[5]=e[1]+e[2]-1 if e[2]==0 then e[5]=o+1 else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=d[n]end e[4]={d[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+4-2 do d[n]=e[4][n+1-e[1]]end e={}end else local e=l[t[1]]d[o]=e end end elseif(n+122)*91751==11744128 then do local l=n+856 if l>n then do e[1]=9 e[2]=0 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else d[n]=t[n]end end elseif(n*122)+21252==27474 then do local f=n-993 if f>n then local e=d[o]if e then o=o-1 end else do e[1]=22 e[2]=3+1 e[3]=t[e[2]]e[4]=l[e[3]]d[e[1]]=e[4]end end end elseif(n*22)+77186==78462 then do local l=n+325 if l>n then do e[1]=21 e[2]=2 e[3]={}e[4]={}e[5]=e[1]+e[2]-1 if e[2]==0 then e[5]=o+1 else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=d[n]end e[4]={d[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+1-2 do d[n]=e[4][n+1-e[1]]end e={}end else d[n]=t[n]end end elseif(n*60)+50147==56387 then do local f=n-433 if f>n then local e=l[t[1]]d[o]=e else do e[1]=29 e[2]=14+1 e[3]=t[e[2]]d[e[1]]=e[3]end end end elseif(n*103)+82961==94806 then do local f=n+191 if f>n then do e[1]=37 e[2]=10 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else local e=l[t[1]]d[o]=e end end elseif(n*33)+9252==12915 then do local l=n-687 if l>n then local e=d[o]if e then o=o-1 end else do e[1]=33 e[2]=27 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n+158)*34100==5660600 then do local l=n+755 if l>n then do e[1]=11 e[2]=4 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else local e=d[o]if e then o=o-1 end end end elseif(n+80)*97258==13324346 then do local l=n-231 if l>n then local e=d[o]if e then o=o-1 end else do e[1]=22 e[2]=18 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n+19)*85910==7817810 then do local f=n+479 if f>n then do e[1]=25 e[2]=21 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else local e=l[t[1]]d[o]=e end end elseif(n+69)*10533==1063833 then do local l=n+276 if l>n then do e[1]=13 e[2]=8+1 e[3]=t[e[2]]d[e[1]]=e[3]end else local e=d[o]if e then o=o-1 end end end elseif(n+182)*45283==9826411 then do local l=n+381 if l>n then do e[1]=16 e[2]=9+1 e[3]=t[e[2]]d[e[1]]=e[3]end else d[n]=t[n]end end elseif(n+158)*38958==8687634 then do local e=n+607 if e>n then do local x=d local _=v d[21]=function(...)local o={(f("\003\002\057","1025")),(f("\012\003\050","879")),(f("\011\004\058","831")),}local Y={}local d={}local F={...}local n={}local v={}local e=1 local t=0 local f={}for e,n in N(o)do f[e]=n o[e]=nil end local N={[0]={0,10}}r(v,{[a]=function(n,e)local e=N[e]if not e then return nil end if e[1]==0 then return x[e[2]]else return _[e[2]]end end,[Z]=function(d,e,n)local e=N[e]if not e then return end if e[1]==0 then x[e[2]]=n else _[e[2]]=n end end,[u]={}})for e=1,#F do d[e-1]=F[e]end for e=0+1,#F do s(Y,F[e])end r(o,{[a]=function(e,n)local e=f[n]if c(h(e,#e,#e))==11 then local e=h(e,1,#e-1)return b(e)elseif c(h(e,#e,#e))==7 then if c(h(e,1,1))==116 then return true else return false end end return f[n]end,[u]={},[w]=function()e=e^10 return V(e)end,[E]=function(n,e)local e=f[e]return e end,[g]=function()return function()e=e+15 end end,[y]=function()return function()e=e+10 end end})while true do if(e*70)+93215==93635 then do local n=e+277 if n>e then do local e={}for n=0,t do s(e,d[n])end return i(e)end else d[e]=o[e]end end elseif(e*55)+20465==20740 then do local l=e+163 if l>e then do n[1]=0 n[2]=4 n[3]={}local e=0 if n[2]==0 then e=t else e=n[1]+n[2]-1 end for e=n[1]+1,e do s(n[3],d[e])end return d[n[1]](i(n[3]))end else d[e]=o[e]end end elseif(e+106)*48773==5267484 then do local l=e-244 if l>e then local e=d[t]if e then t=t-1 end else do n[1]=1 n[2]=0+1 n[3]=o[n[2]]d[n[1]]=n[3]end end end elseif(e*95)+59318==59698 then do local l=e-597 if l>e then d[e]=o[e]else do n[1]=3 n[2]=2+1 n[3]=o[n[2]]d[n[1]]=n[3]end end end elseif(e+38)*45160==2032200 then do local n=e+929 if n>e then do local e={}for n=0,0+1-2 do s(e,d[n])end return i(e)end else if(e*2)<0 then l[1]=nil end end end elseif(e+77)*39289==3143120 then do local l=e-668 if l>e then d[e]=o[e]else do n[1]=2 n[2]=1+1 n[3]=o[n[2]]d[n[1]]=n[3]end end end elseif(e+58)*54996==3244764 then do local n=e-602 if n>e then d[e]=o[e]else do d[0]=v[0]end end end end e=e+1 end end end else local e=l[t[1]]d[o]=e end end elseif(n+188)*72530==19873220 then do local l=n+827 if l>n then do e[1]=24 e[2]=21 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else local e=d[o]if e then o=o-1 end end end elseif(n+32)*93224==13890376 then do local l=n-182 if l>n then local e=d[o]if e then o=o-1 end else do e[1]=31 e[2]=8 e[3]={}e[4]={}e[5]=e[1]+e[2]-1 if e[2]==0 then e[5]=o+1 else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=d[n]end e[4]={d[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+1-2 do d[n]=e[4][n+1-e[1]]end e={}end end end elseif(n+113)*4172==675864 then do local e=n-225 if e>n then d[n]=t[n]else do n=n+4 end end end elseif(n*54)+12640==15178 then do local f=n+571 if f>n then do e[1]=21 e[2]=7 e[3]={}e[4]={}e[5]=e[1]+e[2]-1 if e[2]==0 then e[5]=o+1 else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=d[n]end e[4]={d[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+1-2 do d[n]=e[4][n+1-e[1]]end e={}end else local e=l[t[1]]d[o]=e end end elseif(n*158)+54773==73417 then do local e=n+371 if e>n then do local e={}for n=0,0+1-2 do s(e,d[n])end return i(e)end else if(n*2)<0 then l[1]=nil end end end elseif(n*160)+69966==72526 then do local e=n+854 if e>n then do local Y=d local v=v d[10]=function(...)local o={(f("\005\056","536")),(f("\065\089\092\067\075","185")),(f("\003\006\057","1521")),(f("\004\061","1642")),(f("\002\003\058","1515")),(f("\005\000\002\050","2479")),(f("\002\057","1203")),(f("\000\063","248")),(f("\000\001\057","1327")),(f("\004\006\010\060","1097")),(f("\006\057","1272")),(f("\004\002\057","1423")),(f("\010\050","2997")),(f("\007\000\051","1783")),(f("\003\056","2397")),}local F={}local d={}local _={...}local e={}local f={}local n=1 local t=0 local x={}for e,n in N(o)do x[e]=n o[e]=nil end local N={[0]={0,0},[1]={0,9}}r(f,{[a]=function(n,e)local e=N[e]if not e then return nil end if e[1]==0 then return Y[e[2]]else return v[e[2]]end end,[Z]=function(d,e,n)local e=N[e]if not e then return end if e[1]==0 then Y[e[2]]=n else v[e[2]]=n end end,[u]={}})for e=1,#_ do d[e-1]=_[e]end for e=0+1,#_ do s(F,_[e])end r(o,{[a]=function(e,n)local e=x[n]if c(h(e,#e,#e))==11 then local e=h(e,1,#e-1)return b(e)elseif c(h(e,#e,#e))==7 then if c(h(e,1,1))==116 then return true else return false end end return x[n]end,[u]={},[w]=function()n=n^10 return V(n)end,[E]=function(n,e)local e=x[e]return e end,[g]=function()return function()n=n+15 end end,[y]=function()return function()n=n+10 end end})while true do if(n*99)+29754==33615 then do local o=n+153 if o>n then do e[1]=5 e[2]=3 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else if(n*2)<0 then l[1]=nil end end end elseif(n+160)*54334==9019444 then do local o=n-340 if o>n then if(n*2)<0 then l[1]=nil end else do e[1]=4 e[2]=1 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n*24)+56240==57344 then do local l=n+144 if l>n then do e[1]=o[6+1]d[6]=d[3][e[1]]end else local e=d[t]if e then t=t-1 end end end elseif(n*44)+16067==17915 then do local e=n+637 if e>n then do d[8]=f[1]end else local e=l[o[1]]d[t]=e end end elseif(n+116)*66590==8789880 then do local e=n+488 if e>n then do d[7]=f[1]end else d[n]=o[n]end end elseif(n*110)+48361==50341 then do local e=n-892 if e>n then if(n*2)<0 then l[1]=nil end else do d[3]=f[1]end end end elseif(n*71)+62640==63208 then do local e=n+644 if e>n then do n=n+1 end else local e=l[o[1]]d[t]=e end end elseif(n*171)+51578==54143 then do local o=n-360 if o>n then if(n*2)<0 then l[1]=nil end else do e[1]=6 e[2]=2 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n+86)*80286==9794892 then do local e=n-640 if e>n then if(n*2)<0 then l[1]=nil end else do d[4]=f[1]end end end elseif(n*34)+40158==41314 then do local l=n+825 if l>n then do e[1]=16 e[2]=12+1 e[3]=o[e[2]]d[e[1]]=e[3]end else d[n]=o[n]end end elseif(n+188)*54037==12752732 then do local e=n-248 if e>n then d[n]=o[n]else do local e={}for n=0,0+1-2 do s(e,d[n])end return i(e)end end end elseif(n*36)+7190==8090 then do local f=n-75 if f>n then local e=l[o[1]]d[t]=e else do e[1]=7 e[2]=5+1 e[3]=o[e[2]]d[e[1]]=e[3]end end end elseif(n*80)+75581==77101 then do local e=n+50 if e>n then do d[3]=(false and o[3+1]or d[3])+(false and o[2+1]or d[2])end else local e=d[t]if e then t=t-1 end end end elseif(n*29)+84476==84563 then do local l=n+568 if l>n then do e[1]=1 e[2]=0 e[3]=1 local n=e[2]if n==0 then n=t-e[1]end for n=1,n do d[e[1]][(e[3]-1)*50+n]=d[e[1]+n]end end else local e=d[t]if e then t=t-1 end end end elseif(n+28)*61341==3067050 then do local l=n-608 if l>n then d[n]=o[n]else do e[1]=4 e[2]=2+1 e[3]=o[e[2]]d[e[1]]=e[3]end end end elseif(n*96)+13076==13940 then do local e=n-999 if e>n then if(n*2)<0 then l[1]=nil end else do d[2]=(false and o[2+1]or d[2])+(false and o[7+1]or d[7])end end end elseif(n*20)+11041==11241 then do local e=n-682 if e>n then d[n]=o[n]else do local e=3 local o=2 local l={d[e](d[e+1],d[e+2])}for n=1,o do d[e+2+n]=l[n]end if d[e+3]~=nil then d[e+2]=d[e+3]else n=n+1 end end end end elseif(n+48)*91399==5575339 then do local l=n-222 if l>n then local e=d[t]if e then t=t-1 end else do e[1]=4 e[2]=1 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n+132)*69274==10737470 then do local l=n-201 if l>n then d[n]=o[n]else do e[1]=5 e[2]=3+1 e[3]=o[e[2]]d[e[1]]=e[3]end end end elseif(n+144)*54734==10071056 then do local e=n+219 if e>n then do d[6]=#d[3]end else local e=d[t]if e then t=t-1 end end end elseif(n+30)*94562==3971604 then do local e=n-377 if e>n then local e=d[t]if e then t=t-1 end else do d[3]=f[0]end end end elseif(n*69)+23342==23411 then do local f=n-515 if f>n then local e=l[o[1]]d[t]=e else do e[1]=1 e[2]={}d[e[1]]=e[2]end end end elseif(n*32)+16401==17841 then do local l=n-979 if l>n then d[n]=o[n]else do e[1]=5 e[2]=2 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n+172)*71496==15443136 then do local f=n+199 if f>n then do e[1]=4 e[2]=3 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else local e=l[o[1]]d[t]=e end end elseif(n+87)*93858==10981386 then do local t=n+446 if t>n then do e[1]=12 e[2]=10+1 e[3]=o[e[2]]d[e[1]]=e[3]end else if(n*2)<0 then l[1]=nil end end end elseif(n+98)*92051==10033559 then do local e=n+894 if e>n then do n=n+-3 end else d[n]=o[n]end end elseif(n*150)+90606==97056 then do local l=n+764 if l>n then do e[1]=4 e[2]=5 e[3]={}e[4]={}e[5]=e[1]+e[2]-1 if e[2]==0 then e[5]=t+1 else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=d[n]end e[4]={d[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+1-2 do d[n]=e[4][n+1-e[1]]end e={}end else d[n]=o[n]end end elseif(n+26)*55011==3190638 then do local t=n+224 if t>n then do e[1]=14 e[2]=12+1 e[3]=o[e[2]]d[e[1]]=e[3]end else if(n*2)<0 then l[1]=nil end end end elseif(n*23)+25987==26585 then do local t=n+925 if t>n then do e[1]=8 e[2]=6+1 e[3]=o[e[2]]d[e[1]]=e[3]end else if(n*2)<0 then l[1]=nil end end end elseif(n*168)+69088==70264 then do local f=n+483 if f>n then do e[1]=3 e[2]=2 e[3]={}e[4]={}e[5]=e[1]+e[2]-1 if e[2]==0 then e[5]=t+1 else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=d[n]end e[4]={d[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+4-2 do d[n]=e[4][n+1-e[1]]end e={}end else local e=l[o[1]]d[t]=e end end elseif(n+73)*39595==3088410 then do local t=n+854 if t>n then do e[1]=3 e[2]=1+1 e[3]=o[e[2]]e[4]=l[e[3]]d[e[1]]=e[4]end else d[n]=o[n]end end elseif(n+99)*49263==6404190 then do local l=n+204 if l>n then do e[1]=13 e[2]=11+1 e[3]=o[e[2]]d[e[1]]=e[3]end else local e=d[t]if e then t=t-1 end end end elseif(n*42)+58822==60796 then do local e=n+572 if e>n then do local e={}for n=4,4+4-2 do s(e,d[n])end return i(e)end else if(n*2)<0 then l[1]=nil end end end elseif(n+165)*73853==12481157 then do local l=n-927 if l>n then d[n]=o[n]else do e[1]=2 e[2]=0+1 e[3]=o[e[2]]d[e[1]]=e[3]end end end elseif(n+105)*57421==7177625 then do local e=n-319 if e>n then local e=l[o[1]]d[t]=e else do f[1]=d[3]end end end elseif(n*118)+52068==56434 then do local e=n+671 if e>n then do d[3][o[14+1]]=d[4]end else local e=l[o[1]]d[t]=e end end elseif(n*29)+18574==19763 then do local t=n+669 if t>n then do e[1]=o[14+1]d[7]=d[3][e[1]]end else if(n*2)<0 then l[1]=nil end end end elseif(n*177)+81076==87271 then do local o=n-697 if o>n then if(n*2)<0 then l[1]=nil end else do e[1]=3 e[2]=13 e[3]=1 local n=e[2]if n==0 then n=t-e[1]end for n=1,n do d[e[1]][(e[3]-1)*50+n]=d[e[1]+n]end end end end elseif(n*58)+94952==96344 then do local t=n+753 if t>n then do e[1]=6 e[2]=4+1 e[3]=o[e[2]]d[e[1]]=e[3]end else if(n*2)<0 then l[1]=nil end end end elseif(n+184)*15060==3207780 then do local t=n-881 if t>n then if(n*2)<0 then l[1]=nil end else do e[1]=11 e[2]=9+1 e[3]=o[e[2]]d[e[1]]=e[3]end end end elseif(n+71)*79276==6738460 then do local e=n-274 if e>n then local e=l[o[1]]d[t]=e else do d[5]=#d[1]end end end elseif(n+144)*19301==3512782 then do local e=n-784 if e>n then local e=l[o[1]]d[t]=e else do d[4]=f[0]end end end elseif(n*119)+56880==59379 then do local l=n-575 if l>n then local e=d[t]if e then t=t-1 end else do e[1]=3 e[2]={}d[e[1]]=e[2]end end end elseif(n*77)+40717==42026 then do local o=n-715 if o>n then if(n*2)<0 then l[1]=nil end else do e[1]=3 e[2]=5 e[3]={}e[4]={}e[5]=e[1]+e[2]-1 if e[2]==0 then e[5]=t+1 else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=d[n]end e[4]={d[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+1-2 do d[n]=e[4][n+1-e[1]]end e={}end end end elseif(n*106)+73285==76253 then do local t=n-964 if t>n then if(n*2)<0 then l[1]=nil end else do e[1]=10 e[2]=8+1 e[3]=o[e[2]]d[e[1]]=e[3]end end end elseif(n*35)+66425==66495 then do local o=n+906 if o>n then do e[1]=2 e[2]=0 if e[2]==0 then t=e[1]+#F-1 for n=1,#F do d[e[1]+n-1]=F[n]end else for n=1,e[2]-1 do d[e[1]+n-1]=F[n]end end end else if(n*2)<0 then l[1]=nil end end end elseif(n*153)+97240==101371 then do local f=n+725 if f>n then do e[1]=9 e[2]=7+1 e[3]=o[e[2]]d[e[1]]=e[3]end else local e=l[o[1]]d[t]=e end end elseif(n*125)+86824==90949 then do local l=n-675 if l>n then d[n]=o[n]else do e[1]=15 e[2]=13+1 e[3]=o[e[2]]d[e[1]]=e[3]end end end end n=n+1 end end end else if(n*2)<0 then l[1]=nil end end end elseif(n*63)+41234==45707 then do local o=n-389 if o>n then if(n*2)<0 then l[1]=nil end else do e[1]=24 e[2]=2 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n*140)+97201==109941 then do local o=n+113 if o>n then do e[1]=30 e[2]=23 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else if(n*2)<0 then l[1]=nil end end end elseif(n*84)+84611==85787 then do local l=n-178 if l>n then d[n]=t[n]else do e[1]=9 e[2]=8 e[3]={}e[4]={}e[5]=e[1]+e[2]-1 if e[2]==0 then e[5]=o+1 else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=d[n]end e[4]={d[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+1-2 do d[n]=e[4][n+1-e[1]]end e={}end end end elseif(n+93)*88919==16627853 then do local f=n-873 if f>n then local e=l[t[1]]d[o]=e else do e[1]=33 e[2]=26 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n+61)*31434==4117854 then do local f=n-54 if f>n then local e=l[t[1]]d[o]=e else do e[1]=23 e[2]=15 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n+188)*17555==3598775 then do local e=n+202 if e>n then do end else if(n*2)<0 then l[1]=nil end end end elseif(n+44)*57022==5873266 then do local e=n-394 if e>n then local e=d[o]if e then o=o-1 end else do n=n+5 end end end elseif(n+81)*42755==4916825 then do local e=n+748 if e>n then do d[15]=(false and t[13+1]or d[13])+(false and t[14+1]or d[14])end else local e=d[o]if e then o=o-1 end end end elseif(n+56)*86776==6768528 then do local e=n-330 if e>n then local e=l[t[1]]d[o]=e else do local Y=d local _=v d[12]=function(...)local o={(f("\065\087\077\093\087\070\088\068\083\080\085\085","2290")),(f("\065\005","1414")),}local v={}local d={}local f={...}local e={}local x={}local n=1 local t=0 local F={}for e,n in N(o)do F[e]=n o[e]=nil end local N={[0]={0,11}}r(x,{[a]=function(n,e)local e=N[e]if not e then return nil end if e[1]==0 then return Y[e[2]]else return _[e[2]]end end,[Z]=function(d,e,n)local e=N[e]if not e then return end if e[1]==0 then Y[e[2]]=n else _[e[2]]=n end end,[u]={}})for e=1,#f do d[e-1]=f[e]end for e=0+1,#f do s(v,f[e])end r(o,{[a]=function(e,n)local e=F[n]if c(h(e,#e,#e))==11 then local e=h(e,1,#e-1)return b(e)elseif c(h(e,#e,#e))==7 then if c(h(e,1,1))==116 then return true else return false end end return F[n]end,[u]={},[w]=function()n=n^10 return V(n)end,[E]=function(n,e)local e=F[e]return e end,[g]=function()return function()n=n+15 end end,[y]=function()return function()n=n+10 end end})while true do if(n*43)+33493==33665 then do local l=n+309 if l>n then do e[1]=1 e[2]=3 e[3]={}e[4]={}e[5]=e[1]+e[2]-1 if e[2]==0 then e[5]=t+1 else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=d[n]end e[4]={d[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+2-2 do d[n]=e[4][n+1-e[1]]end e={}end else d[n]=o[n]end end elseif(n*132)+81064==81724 then do local e=n-662 if e>n then d[n]=o[n]else do d[1][o[1+1]]=d[0]end end end elseif(n+97)*59243==6161272 then do local e=n+453 if e>n then do local e={}for n=0,0+1-2 do s(e,d[n])end return i(e)end else local e=l[o[1]]d[t]=e end end elseif(n+121)*55846==6869058 then do local f=n-821 if f>n then local e=l[o[1]]d[t]=e else do e[1]=2 e[2]={}d[e[1]]=e[2]end end end elseif(n+97)*78629==7862900 then do local e=n-136 if e>n then local e=l[o[1]]d[t]=e else do d[3]=x[0]end end end elseif(n+109)*15634==1797910 then do local e=n+399 if e>n then do local e={}for n=1,1+2-2 do s(e,d[n])end return i(e)end else local e=l[o[1]]d[t]=e end end elseif(n+76)*51157==3939089 then do local f=n-462 if f>n then local e=l[o[1]]d[t]=e else do e[1]=1 e[2]=0+1 e[3]=o[e[2]]e[4]=l[e[3]]d[e[1]]=e[4]end end end end n=n+1 end end end end end elseif(n*62)+31142==33002 then do local e=n-888 if e>n then if(n*2)<0 then l[1]=nil end else do local e=6+1 d[13+1]=d[12]if d[13+1]then d[13]=d[12][t[e]]end end end end elseif(n+31)*5504==385280 then do local l=n+244 if l>n then do e[1]=20 e[2]=10+1 e[3]=t[e[2]]d[e[1]]=e[3]end else local e=d[o]if e then o=o-1 end end end elseif(n*121)+61170==62380 then do local o=n-68 if o>n then if(n*2)<0 then l[1]=nil end else do e[1]=13 e[2]=6 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n*89)+63752==65888 then do local e=n+459 if e>n then do d[11][t[5+1]]=d[12]end else d[n]=t[n]end end elseif(n+63)*41405==5879510 then do local e=n-350 if e>n then local e=d[o]if e then o=o-1 end else do if(not d[15])==(1~=0)then n=n+1 else d[22]=d[15]end end end end elseif(n*132)+3577==16513 then do local l=n-884 if l>n then d[n]=t[n]else do e[1]=29 e[2]=13+1 e[3]=t[e[2]]d[e[1]]=e[3]end end end elseif(n+128)*18361==2442013 then do local l=n-352 if l>n then local e=d[o]if e then o=o-1 end else do e[1]=8 e[2]=1 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n*119)+55894==62558 then do local f=n+659 if f>n then do e[1]=21 e[2]=0 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else local e=l[t[1]]d[o]=e end end elseif(n*66)+90308==95192 then do local e=n-596 if e>n then if(n*2)<0 then l[1]=nil end else do if d[2]then n=n+1 end end end end elseif(n*180)+66268==83008 then do local f=n+647 if f>n then do e[1]=32 e[2]=25 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else local e=l[t[1]]d[o]=e end end elseif(n+108)*25560==3092760 then do local l=n-299 if l>n then d[n]=t[n]else do e[1]=16 e[2]=8 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n*26)+98238==98992 then do local f=n-230 if f>n then local e=l[t[1]]d[o]=e else do e[1]=12 e[2]=2 e[3]={}e[4]={}e[5]=e[1]+e[2]-1 if e[2]==0 then e[5]=o+1 else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=d[n]end e[4]={d[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+2-2 do d[n]=e[4][n+1-e[1]]end e={}end end end elseif(n+37)*62826==3895212 then do local e=n+816 if e>n then do local x=d local _=v d[12]=function(...)local o={(f("\065\074\080\094\069","1890")),(f("\071\002","735")),}local v={}local d={}local f={...}local e={}local Y={}local n=1 local t=0 local F={}for e,n in N(o)do F[e]=n o[e]=nil end local N={}r(Y,{[a]=function(n,e)local e=N[e]if not e then return nil end if e[1]==0 then return x[e[2]]else return _[e[2]]end end,[Z]=function(d,e,n)local e=N[e]if not e then return end if e[1]==0 then x[e[2]]=n else _[e[2]]=n end end,[u]={}})for e=1,#f do d[e-1]=f[e]end for e=0+1,#f do s(v,f[e])end r(o,{[a]=function(e,n)local e=F[n]if c(h(e,#e,#e))==11 then local e=h(e,1,#e-1)return b(e)elseif c(h(e,#e,#e))==7 then if c(h(e,1,1))==116 then return true else return false end end return F[n]end,[u]={},[w]=function()n=n^10 return V(n)end,[E]=function(n,e)local e=F[e]return e end,[g]=function()return function()n=n+15 end end,[y]=function()return function()n=n+10 end end})while true do if(n+47)*4821==241050 then do local o=n+611 if o>n then do e[1]=1 e[2]=2 e[3]={}e[4]={}e[5]=e[1]+e[2]-1 if e[2]==0 then e[5]=t+1 else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=d[n]end e[4]={d[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+1-2 do d[n]=e[4][n+1-e[1]]end e={}end else if(n*2)<0 then l[1]=nil end end end elseif(n*180)+44117==44837 then do local e=n-484 if e>n then local e=d[t]if e then t=t-1 end else do local e={}for n=0,0+1-2 do s(e,d[n])end return i(e)end end end elseif(n*42)+25479==25521 then do local f=n-604 if f>n then local e=l[o[1]]d[t]=e else do e[1]=1 e[2]=0+1 e[3]=o[e[2]]e[4]=l[e[3]]d[e[1]]=e[4]end end end elseif(n*134)+25975==26243 then do local f=n+615 if f>n then do e[1]=o[1+1]d[2]=d[0][e[1]]end else local e=l[o[1]]d[t]=e end end end n=n+1 end end end else local e=l[t[1]]d[o]=e end end elseif(n*100)+51620==56620 then do local l=n-750 if l>n then d[n]=t[n]else do e[1]=21 e[2]=0 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n+160)*36995==9988650 then do local l=n+537 if l>n then do e[1]=32 e[2]=15 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else local e=d[o]if e then o=o-1 end end end elseif(n+125)*68833==12321107 then do local e=n+403 if e>n then do if(d[18]<=d[17])then n=n+1 end end else d[n]=t[n]end end elseif(n*35)+80962==81032 then do local l=n-227 if l>n then d[n]=t[n]else do e[1]=1 e[2]=1+1 e[3]=t[e[2]]d[e[1]]=e[3]end end end elseif(n+81)*54695==7055655 then do local e=n-536 if e>n then d[n]=t[n]else do if(d[16]<d[15])then n=n+1 end end end end elseif(n*130)+46924==47054 then do local f=n+774 if f>n then do e[1]=0 e[2]=0+1 e[3]=t[e[2]]e[4]=l[e[3]]d[e[1]]=e[4]end else local e=l[t[1]]d[o]=e end end elseif(n+133)*82754==11751068 then do local l=n+537 if l>n then do e[1]=12 e[2]=5 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else d[n]=t[n]end end elseif(n+36)*11218==448720 then do local e=n-928 if e>n then if(n*2)<0 then l[1]=nil end else do d[3]=d[3]end end end elseif(n+57)*13572==2198664 then do local o=n-330 if o>n then if(n*2)<0 then l[1]=nil end else do e[1]=30 e[2]=16+1 e[3]=t[e[2]]d[e[1]]=e[3]end end end elseif(n*127)+89614==97488 then do local l=n-748 if l>n then d[n]=t[n]else do e[1]=21 e[2]=0 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n+32)*98082==13142988 then do local f=n-969 if f>n then local e=l[t[1]]d[o]=e else do e[1]=27 e[2]=10 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n+111)*55627==8622185 then do local o=n+295 if o>n then do e[1]=25 e[2]=18 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else if(n*2)<0 then l[1]=nil end end end elseif(n+58)*4842==668196 then do local e=n-484 if e>n then local e=l[t[1]]d[o]=e else do n=n+1 end end end elseif(n+179)*42346==11941572 then do local o=n+225 if o>n then do e[1]=28 e[2]=15+1 e[3]=t[e[2]]d[e[1]]=e[3]end else if(n*2)<0 then l[1]=nil end end end elseif(n*67)+14414==16625 then do local o=n+170 if o>n then do e[1]=14 e[2]=9+1 e[3]=t[e[2]]d[e[1]]=e[3]end else if(n*2)<0 then l[1]=nil end end end elseif(n+73)*62228==10516532 then do local o=n+486 if o>n then do e[1]=27 e[2]=13+1 e[3]=t[e[2]]d[e[1]]=e[3]end else if(n*2)<0 then l[1]=nil end end end elseif(n+28)*46618==6712992 then do local f=n-433 if f>n then local e=l[t[1]]d[o]=e else do e[1]=38 e[2]=9 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n+61)*19419==2815755 then do local f=n-905 if f>n then local e=l[t[1]]d[o]=e else do e[1]=25 e[2]=12+1 e[3]=t[e[2]]d[e[1]]=e[3]end end end elseif(n*57)+66876==72519 then do local l=n+436 if l>n then do e[1]=27 e[2]=1 local t=b(d[e[1]])local o=b(d[e[1]+1])local l=b(d[e[1]+2])d[e[1]]=t-l d[e[1]+1]=o d[e[1]+2]=l n=n+e[2]end else local e=d[o]if e then o=o-1 end end end elseif(n+176)*17576==4165512 then do local e=n+838 if e>n then do n=n+3 end else d[n]=t[n]end end elseif(n+179)*98518==26402824 then do local l=n+590 if l>n then do e[1]=28 e[2]=2 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else d[n]=t[n]end end elseif(n+158)*76657==18627651 then do local e=n-711 if e>n then d[n]=t[n]else do local e=""for n=23,25 do e=e..d[n]end d[23]=e end end end elseif(n+87)*38089==6741753 then do local o=n+297 if o>n then do e[1]=29 e[2]=22 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else if(n*2)<0 then l[1]=nil end end end elseif(n+74)*46747==8507954 then do local e=n+717 if e>n then do d[30]=#d[27]end else local e=d[o]if e then o=o-1 end end end elseif(n*121)+61678==66155 then do local e=n-446 if e>n then local e=d[o]if e then o=o-1 end else do d[18]=(true and t[8+1]or d[8])/(false and t[14+1]or d[14])end end end elseif(n*83)+14378==17532 then do local e=n+453 if e>n then do d[19]=(false and t[13+1]or d[13])%(false and t[14+1]or d[14])end else if(n*2)<0 then l[1]=nil end end end elseif(n*160)+46206==58366 then do local o=n+208 if o>n then do e[1]=2 e[2]=15 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else if(n*2)<0 then l[1]=nil end end end elseif(n*28)+19329==22493 then do local o=n+470 if o>n then do e[1]=35 e[2]=29 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else if(n*2)<0 then l[1]=nil end end end elseif(n+77)*74258==9653540 then do local e=n-476 if e>n then local e=l[t[1]]d[o]=e else do n=n+11 end end end elseif(n*59)+66939==68119 then do local l=n+965 if l>n then do e[1]=11 e[2]={}d[e[1]]=e[2]end else d[n]=t[n]end end elseif(n+23)*52386==6181548 then do local l=n-659 if l>n then d[n]=t[n]else do e[1]=27 e[2]=7 e[3]={}e[4]={}e[5]=e[1]+e[2]-1 if e[2]==0 then e[5]=o+1 else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=d[n]end e[4]={d[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+1-2 do d[n]=e[4][n+1-e[1]]end e={}end end end elseif(n+51)*41922==4946796 then do local e=n+472 if e>n then do d[15]=-d[15]end else local e=l[t[1]]d[o]=e end end elseif(n*187)+18929==30710 then do local l=n+230 if l>n then do e[1]=22 e[2]=20 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else local e=d[o]if e then o=o-1 end end end elseif(n*55)+16193==19713 then do local l=n-263 if l>n then d[n]=t[n]else do e[1]=21 e[2]=2 e[3]={}e[4]={}e[5]=e[1]+e[2]-1 if e[2]==0 then e[5]=o+1 else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=d[n]end e[4]={d[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+1-2 do d[n]=e[4][n+1-e[1]]end e={}end end end elseif(n+38)*57812==3064036 then do local l=n+266 if l>n then do e[1]=9 e[2]=2+1 e[3]=t[e[2]]d[e[1]]=e[3]end else d[n]=t[n]end end elseif(n*68)+64155==69799 then do local f=n-180 if f>n then local e=l[t[1]]d[o]=e else do e[1]=24 e[2]=1 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n*166)+15376==18530 then do local e=n+241 if e>n then do l[t[3+1]]=d[1]end else local e=d[o]if e then o=o-1 end end end elseif(n+133)*78025==18179825 then do local e=n-192 if e>n then if(n*2)<0 then l[1]=nil end else do d[15]=(false and t[15+1]or d[15])+(false and t[25+1]or d[25])end end end elseif(n+137)*5173==1163925 then do local o=n+525 if o>n then do e[1]=27 e[2]=0 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else if(n*2)<0 then l[1]=nil end end end elseif(n*103)+75653==79773 then do local l=n-979 if l>n then d[n]=t[n]else do e[1]=21 e[2]=0 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n+163)*26300==4471000 then do local l=n-120 if l>n then d[n]=t[n]else do e[1]=10 e[2]=3 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n+98)*15823==1835468 then do local e=n-729 if e>n then d[n]=t[n]else do end end end elseif(n+170)*74186==14688828 then do local f=n+112 if f>n then do e[1]=13 e[2]=7+1 e[3]=t[e[2]]d[e[1]]=e[3]end else local e=l[t[1]]d[o]=e end end elseif(n*92)+7572==12356 then do local l=n-483 if l>n then d[n]=t[n]else do e[1]=21 e[2]=2 e[3]={}e[4]={}e[5]=e[1]+e[2]-1 if e[2]==0 then e[5]=o+1 else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=d[n]end e[4]={d[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+1-2 do d[n]=e[4][n+1-e[1]]end e={}end end end elseif(n+78)*54421==10448832 then do local f=n+459 if f>n then do e[1]=36 e[2]=30 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else local e=l[t[1]]d[o]=e end end elseif(n+23)*27000==2484000 then do local l=n-928 if l>n then d[n]=t[n]else do e[1]=22 e[2]=0 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n*83)+90569==92478 then do local e=n-585 if e>n then d[n]=t[n]else do end end end elseif(n+69)*28079==3846823 then do local e=n+138 if e>n then do d[2]=not d[2]end else d[n]=t[n]end end elseif(n*73)+43969==46232 then do local l=n+928 if l>n then do e[1]=13 e[2]=2 e[3]={}e[4]={}e[5]=e[1]+e[2]-1 if e[2]==0 then e[5]=o+1 else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=d[n]end e[4]={d[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+1-2 do d[n]=e[4][n+1-e[1]]end e={}end else local e=d[o]if e then o=o-1 end end end elseif(n+71)*53478==8182134 then do local l=n-823 if l>n then d[n]=t[n]else do e[1]=23 e[2]=11+1 e[3]=t[e[2]]d[e[1]]=e[3]end end end elseif(n+82)*18562==2914234 then do local e=n+678 if e>n then do n=n+1 end else if(n*2)<0 then l[1]=nil end end end elseif(n*156)+49855==50323 then do local e=n+467 if e>n then do d[2]=(1==1)end else if(n*2)<0 then l[1]=nil end end end elseif(n*55)+77694==79124 then do local e=n+277 if e>n then do d[11][t[6+1]]=d[12]end else d[n]=t[n]end end elseif(n+153)*77198==13895640 then do local f=n-478 if f>n then local e=l[t[1]]d[o]=e else do e[1]=t[5+1]d[12]=d[11][e[1]]end end end elseif(n*123)+59427==66807 then do local e=n+108 if e>n then do if(d[19]==d[20])then n=n+1 end end else local e=l[t[1]]d[o]=e end end elseif(n+50)*25599==3763053 then do local l=n+126 if l>n then do e[1]=28 e[2]=14+1 e[3]=t[e[2]]d[e[1]]=e[3]end else local e=d[o]if e then o=o-1 end end end elseif(n+25)*81362==5369892 then do local f=n+138 if f>n then do e[1]=22 e[2]=15 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else local e=l[t[1]]d[o]=e end end elseif(n*97)+21610==31407 then do local f=n+938 if f>n then do e[1]=27 e[2]=-2 local o=d[e[1]+2]local t=d[e[1]+1]local l=d[e[1]]+o d[e[1]]=l if(o>0 and l<=t)or(o<=0 and l>=t)then n=n+e[2]d[e[1]+3]=l end end else local e=l[t[1]]d[o]=e end end elseif(n*78)+60434==63788 then do local o=n+518 if o>n then do e[1]=24 e[2]=17 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else if(n*2)<0 then l[1]=nil end end end elseif(n+56)*46524==4280208 then do local e=n-647 if e>n then local e=l[t[1]]d[o]=e else do d[17]=(false and t[13+1]or d[13])*(true and t[9+1]or d[9])end end end elseif(n+75)*20747==2510387 then do local l=n-270 if l>n then d[n]=t[n]else do e[1]=27 e[2]=20 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n+169)*47198==12082688 then do local t=n+427 if t>n then do e[1]=24 e[2]=1 e[3]={}e[4]={}e[5]=e[1]+e[2]-1 if e[2]==0 then e[5]=o+1 else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=d[n]end e[4]={d[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+4-2 do d[n]=e[4][n+1-e[1]]end e={}end else if(n*2)<0 then l[1]=nil end end end elseif(n*85)+7367==16887 then do local l=n+734 if l>n then do e[1]=34 e[2]=28 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else d[n]=t[n]end end elseif(n+56)*46861==6935428 then do local l=n-744 if l>n then local e=d[o]if e then o=o-1 end else do e[1]=31 e[2]=24 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n*43)+98653==101792 then do local t=n-463 if t>n then if(n*2)<0 then l[1]=nil end else do e[1]=22 e[2]=4 e[3]={}e[4]={}e[5]=e[1]+e[2]-1 if e[2]==0 then e[5]=o+1 else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=d[n]end e[4]={d[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+1-2 do d[n]=e[4][n+1-e[1]]end e={}end end end elseif(n*36)+58937==60449 then do local l=n-997 if l>n then local e=d[o]if e then o=o-1 end else do e[1]=23 e[2]=16 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n+29)*24535==3312225 then do local l=n-561 if l>n then d[n]=t[n]else do e[1]=31 e[2]=17+1 e[3]=t[e[2]]d[e[1]]=e[3]end end end elseif(n*21)+99350==101051 then do local o=n+110 if o>n then do e[1]=22 e[2]=16 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else if(n*2)<0 then l[1]=nil end end end elseif(n+33)*65382==7192020 then do local e=n-535 if e>n then d[n]=t[n]else do if d[2]then n=n+1 end end end end elseif(n*148)+1833==8493 then do local o=n+931 if o>n then do e[1]=26 e[2]=19 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else if(n*2)<0 then l[1]=nil end end end elseif(n+59)*79258==9907250 then do local e=n+783 if e>n then do end else d[n]=t[n]end end elseif(n+188)*21252==5164236 then do local e=n-369 if e>n then local e=l[t[1]]d[o]=e else do n=n+4 end end end elseif(n+65)*6766==520982 then do local f=n-337 if f>n then local e=l[t[1]]d[o]=e else do e[1]=15 e[2]=2 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end end end elseif(n+181)*57908==14998172 then do local e=n-443 if e>n then d[n]=t[n]else do n=n+2 end end end elseif(n*68)+80364==81792 then do local e=n+312 if e>n then do d[11][t[4+1]]=d[11]end else if(n*2)<0 then l[1]=nil end end end elseif(n*20)+63851==66031 then do local f=n+322 if f>n then do e[1]=31 e[2]=0 e[3]=d e[4]=e[3][e[2]]e[3][e[1]]=e[4]end else local e=l[t[1]]d[o]=e end end end n=n+1 end end)()end)((_ENV or getfenv()),{},0,function(l,d)local e={}for n=(6*9-32+(((-21)))),#l do local l=string.byte(l,n)local n=string.byte(d,(n-(36*13-65+(((-402)))))%#d+(6*5-17+(((-12)))))table.insert(e,string.char(bit32.bxor(l,n)))end return table.concat(e)end)end)())
+return (("File generated using [Zartha]") and (function() return(function(Env,Constants,shiftKey,decrypt) -- Vars
+local char,insert,byte,sub,match,freeze,ttostring,pcall,unpack,concat,tonumber,setmeta,__metatable,__tostring,__index,__call,proxy,pnt,__pairs,__ipairs,Constants,pairs,__newindex = Env["string"]["char"],Env["table"]["insert"],Env["string"]["byte"],Env["string"]["sub"],Env["string"]["match"],Env["table"]["freeze"],Env["tostring"],Env["pcall"],Env["table"]["unpack"],Env["table"]["concat"],Env["tonumber"],Env["setmetatable"],"__metatable","__tostring","__index","__call",Env["newproxy"],Env["print"],"__pairs","__ipairs",{(decrypt("\065\074\090\088\069", "1836")),(decrypt("\089\086\089\093\092", "135")),(decrypt("\007\050", "795")),(decrypt("\065\075\081\095\069\095", "1981")),(decrypt("\106\105\092\091\082\080\077", "565")),(decrypt("\092\083\069", "2621")),(decrypt("\064\082\075\064\104\075\081\091\094\107\088\072\087\088\092\081", "478")),(decrypt("\089\085\089\091\094\016\091\088\094\082\070", "1057")),(decrypt("\006\062", "2559")),(decrypt("\005\050", "798")),(decrypt("\003\003\058", "2517")),(decrypt("\089\091\023\084\072\018\089\088\092\087\023\080\066\018", "1279")),(decrypt("\020\089\092\080\024\091\064\024\091\071\024\085\070\093\083\064\024\070\091\024\095\081\093\070\020\065\093\065", "482")),(decrypt("\000\050", "1926")),(decrypt("\004\051", "1824")),(decrypt("\002\057", "1235")),(decrypt("\014\015\062", "765")),(decrypt("\009\050", "1906")),},Env["pairs"],"__newindex"
+
+
+-- VM function
+return (function()
+	local Stack = {}
+	local Temp = {}
+	local Upvalues = {}
+	local pointer = {}
+	local ConstantsCopy = {}
+	local top = 0
+	local Checks,FixMeta,HandleConstants = (function() -- Env log detection
+	local function ooptest(...)
+		local a = true and #{ -- troll
+			...
+		}
+		return a
+	end
+	local Tamper = false
+	Env[__index] = function() 
+		Tamper = true
+	end
+	
+	if Tamper then
+		pointer = 100
+	else
+		local Checked = nil
+		local _,er = pcall(function()
+			Checked = (proxy(pnt)) 
+		end)
+		if Checked then
+			pointer = 50
+		else
+			pointer = 1
+		end
+	end
+	local counter = ooptest(1, 2, 3)
+	
+	if counter <2 then
+		pointer = 50
+	end
+end)()
+,(function()
+		-- Fix for metatable
+		for i, Value in pairs(Constants) do
+			ConstantsCopy[i] = Value
+			Constants[i] = nil
+		end
+	end)(),(function()
+		-- Handle constant table
+		setmeta(Constants, {
+			[__index] = function(Self, Key)
+				local toSend = ConstantsCopy[Key]
+
+				if byte(sub(toSend,#toSend,#toSend)) == 11 then -- tonumber (Because constants are strings)
+							local removedByte = sub(toSend,1,#toSend-1)
+		return tonumber(removedByte)
+		
+				elseif byte(sub(toSend,#toSend,#toSend)) == 4 then -- Constant shift back (String encryption)
+					local removedByte = sub(toSend,1,#toSend-1)
+					local decrypted = {}
+					for i =1,#removedByte  do
+						insert(decrypted,char(byte(sub(removedByte,i,i))-0)) 
+					end
+					return concat(decrypted)
+				elseif byte(sub(toSend,#toSend,#toSend)) == 7 then -- Boolean support
+					if byte(sub(toSend,1,1)) == 116 then
+						return true
+					else
+						return false
+					end
+				elseif byte(sub(toSend,#toSend,#toSend)) == 6 then -- nil support
+					return nil
+				end
+				return ConstantsCopy[Key]
+			end,
+			[__metatable] = {}, -- Prevent access
+			[__call] = function(_,at)
+						local const = ConstantsCopy[at]
+		return const
+			end,
+			[__tostring] = function() -- Accessing constants as string would crash the VM
+				pointer = pointer ^10
+				return ttostring(pointer)
+			end,
+			[__pairs] = function() return function() pointer = pointer +15 end end, -- looping constants as string would crash the VM
+	        [__ipairs] = function() return function() pointer = pointer +10 end end -- looping constants as string would crash the VM
+		})
+	end)()
+	
+	-- VM STARTS HERE
+	for i = 1, (1+10)^100 do
+		if pointer == 1 then -- 5 [GETGLOBAL] 
+ 	Temp[1] = 0 -- instA
+	Temp[2] = 0+1 -- instB
+	Temp[3] = Constants[Temp[2]] -- constant
+	Temp[4] = Env[Temp[3]] -- env global
+	Stack[Temp[1]] = Temp[4] -- set to stack
+	 
+elseif pointer == 2 then -- 1 [LOADK] 
+ 	Temp[1] = 1
+	Temp[2] = 1+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 3 then -- 2 [LOADBOOL] 
+ Stack[2] = (1 == 1) 
+elseif pointer == 4 then -- 3 [LOADNIL] 
+ Stack[3] = nil 
+elseif pointer == 5 then -- 0 [MOVE] 
+ 	Temp[1] = 8
+	Temp[2] = 1
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 6 then -- 0 [MOVE] 
+ 	Temp[1] = 9
+	Temp[2] = 0
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 7 then -- 0 [MOVE] 
+ 	Temp[1] = 10
+	Temp[2] = 3
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 8 then -- 0 [MOVE] 
+ 	Temp[1] = 11
+	Temp[2] = 4
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 9 then -- 0 [MOVE] 
+ 	Temp[1] = 12
+	Temp[2] = 5
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 10 then -- 0 [MOVE] 
+ 	Temp[1] = 13
+	Temp[2] = 6
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 11 then -- 0 [MOVE] 
+ 	Temp[1] = 14
+	Temp[2] = 7
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 12 then -- 0 [MOVE] 
+ 	Temp[1] = 15
+	Temp[2] = 2
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 13 then -- 0 [MOVE] 
+ 	Temp[1] = 16
+	Temp[2] = 8
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 14 then -- 28 [CALL] 
+ 	Temp[1] = 9   -- instA
+	Temp[2] = 8   -- instB
+	Temp[3] = {}    -- args
+	Temp[4] = {}    -- output table
+
+	if Temp[2] == 0 then
+		Temp[5] = top
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		Temp[3][i - Temp[1]] = Stack[i]
+	end
+	
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
+	
+		for i = Temp[1], Temp[1] + 1 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 15 then -- 1 [LOADK] 
+ 	Temp[1] = 9
+	Temp[2] = 2+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 16 then -- 36 [CLOSURE] 
+ 	local prevStack = Stack
+	local prevUpvalues = Upvalues
+	
+	Stack[10] = function(...) -- PROTOTYPE 1
+		local Constants = {(decrypt("\001\056", "1330")),(decrypt("\073\080\092\075\066", "915")),(decrypt("\000\005\058", "2615")),(decrypt("\004\063", "1425")),(decrypt("\001\006\051", "2086")),(decrypt("\006\006\007\057", "1222")),(decrypt("\002\062", "1517")),(decrypt("\000\051", "2899")),(decrypt("\000\006\060", "1470")),(decrypt("\007\002\003\059", "2400")),(decrypt("\005\062", "2560")),(decrypt("\004\003\063", "1546")),(decrypt("\009\059", "100")),(decrypt("\004\015\058", "2814")),(decrypt("\003\060", "2733")),}
+		
+		local Varargs = {}
+		local Stack = {}
+		local Args = {...}
+		local Temp = {}
+		local Upvalues = {}
+		local pointer = 1	
+		local top = 0
+		
+		local ConstantsCopy = {}
+		-- Fix constant int
+		for i, Value in pairs(Constants) do
+			ConstantsCopy[i] = Value
+			Constants[i] = nil
+		end
+		
+		-- upvalue mapping
+		local Map = {[0] = {0, 0}, [1] = {0, 9}}
+		
+		-- fix upvalues
+		setmeta(Upvalues, {
+            [__index] = function(self, Key)
+                local map = Map[Key]
+                if not map then return nil end
+                
+                if map[1] == 0 then -- Type 0: Parent Stack
+                    return prevStack[map[2]]
+                else -- Type 1: Parent Upvalue
+                    return prevUpvalues[map[2]]
+                end
+            end,
+            [__newindex] = function(self, Key, Value)
+                local map = Map[Key]
+                if not map then return end
+                
+                if map[1] == 0 then
+                    prevStack[map[2]] = Value
+                else
+                    prevUpvalues[map[2]] = Value
+                end
+            end,
+            [__metatable] = {}
+        })
+		-- Args
+		for i = 1, #Args do
+			Stack[i - 1] = Args[i]
+		end
+		-- Params
+		for i = 0 + 1, #Args do
+            insert(Varargs, Args[i])
+        end
+		setmeta(Constants, {
+		[__index] = function(Self, Key)
+			local toSend = ConstantsCopy[Key]
+
+			if byte(sub(toSend,#toSend,#toSend)) == 11 then
+						local removedByte = sub(toSend,1,#toSend-1)
+		return tonumber(removedByte)
+		
+			elseif byte(sub(toSend,#toSend,#toSend)) == 7 then -- Boolean support
+				if byte(sub(toSend,1,1)) == 116 then
+					return true
+				else
+					return false
+				end
+			elseif byte(sub(toSend,#toSend,#toSend)) == 7 then -- Boolean support
+				if byte(sub(toSend,1,1)) == 116 then
+					return true
+				else
+					return false
+				end
+			elseif byte(sub(toSend,#toSend,#toSend)) == 6 then -- nil support
+				return nil
+			end
+
+			return ConstantsCopy[Key]
+		end,
+		[__metatable] = {},
+		[__tostring] = function()
+			pointer = pointer ^10
+			return ttostring(pointer)
+		end,
+		[__call] = function(_,at)
+					local const = ConstantsCopy[at]
+		return const
+		end,
+		[__pairs] = function() return function() pointer = pointer +15 end end,
+        [__ipairs] = function() return function() pointer = pointer +10 end end
+	})
+		while true do
+		if pointer == 1 then -- 10 [NEWTABLE] 
+ Temp[1] = 1
+Temp[2] = {}
+Stack[Temp[1]] = Temp[2]
+ 
+elseif pointer == 2 then -- 37 [VARARG] 
+ Temp[1] = 2
+Temp[2] = 0
+
+if Temp[2] == 0 then
+    top = Temp[1] + #Varargs - 1
+    for i = 1, #Varargs do
+        Stack[Temp[1] + i - 1] = Varargs[i]
+    end
+else
+    for i = 1, Temp[2] - 1 do
+        Stack[Temp[1] + i - 1] = Varargs[i]
+    end
+end
+ 
+elseif pointer == 3 then -- 34 [SETLIST] 
+     Temp[1] = 1 -- inst a
+    Temp[2] = 0 -- inst b
+    Temp[3] = 1 -- inst c
+
+    local limit = Temp[2] -- limit
+    
+    -- If B is 0 we must calc the limit based on the stack TOPP
+    if limit == 0 then
+        limit = top - Temp[1]
+    end
+
+    for i = 1, limit do
+        Stack[Temp[1]][(Temp[3]-1)*50 + i] = Stack[Temp[1] + i]
+    end
+     
+elseif pointer == 4 then -- 1 [LOADK] 
+ 	Temp[1] = 2
+	Temp[2] = 0+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 5 then -- 5 [GETGLOBAL] 
+ 	Temp[1] = 3 -- instA
+	Temp[2] = 1+1 -- instB
+	Temp[3] = Constants[Temp[2]] -- constant
+	Temp[4] = Env[Temp[3]] -- env global
+	Stack[Temp[1]] = Temp[4] -- set to stack
+	 
+elseif pointer == 6 then -- 0 [MOVE] 
+ 	Temp[1] = 4
+	Temp[2] = 1
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 7 then -- 28 [CALL] 
+ 	Temp[1] = 3   -- instA
+	Temp[2] = 2   -- instB
+	Temp[3] = {}    -- args
+	Temp[4] = {}    -- output table
+
+	if Temp[2] == 0 then
+		Temp[5] = top
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		Temp[3][i - Temp[1]] = Stack[i]
+	end
+	
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
+	
+		for i = Temp[1], Temp[1] + 4 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 8 then -- 22 [JMP] 
+ pointer = pointer + 1 print('[VM]:','JMP -- >',pointer) 
+elseif pointer == 9 then -- 12 [ADD] 
+ 	Stack[2] = (false and Constants[2+1] or Stack[2]) + (false and Constants[7+1] or Stack[7])
+	 
+elseif pointer == 10 then -- 33 [TFORLOOP] 
+ 	local A = 3
+	local C = 2
+	local Result = {
+		Stack[A](Stack[A + 1], 
+		Stack[A + 2])
+	}
+
+	for i = 1, C do
+		Stack[A + 2 +i] = Result[i]
+	end
+
+	if Stack[A + 3] ~= nil then
+		Stack[A +2] = Stack[A + 3]
+	else
+		pointer = pointer + 1
+	end
+ 
+elseif pointer == 11 then -- 22 [JMP] 
+ pointer = pointer + -3 print('[VM]:','JMP -- >',pointer) 
+elseif pointer == 12 then -- 4 [GETUPVAL] 
+ Stack[3] = Upvalues[0] 
+elseif pointer == 13 then -- 0 [MOVE] 
+ 	Temp[1] = 4
+	Temp[2] = 1
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 14 then -- 20 [LEN] 
+ Stack[5] = #Stack[1] 
+elseif pointer == 15 then -- 0 [MOVE] 
+ 	Temp[1] = 6
+	Temp[2] = 2
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 16 then -- 4 [GETUPVAL] 
+ Stack[7] = Upvalues[1] 
+elseif pointer == 17 then -- 28 [CALL] 
+ 	Temp[1] = 3   -- instA
+	Temp[2] = 5   -- instB
+	Temp[3] = {}    -- args
+	Temp[4] = {}    -- output table
+
+	if Temp[2] == 0 then
+		Temp[5] = top
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		Temp[3][i - Temp[1]] = Stack[i]
+	end
+	
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
+	
+		for i = Temp[1], Temp[1] + 1 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 18 then -- 4 [GETUPVAL] 
+ Stack[3] = Upvalues[1] 
+elseif pointer == 19 then -- 12 [ADD] 
+ 	Stack[3] = (false and Constants[3+1] or Stack[3]) + (false and Constants[2+1] or Stack[2])
+	 
+elseif pointer == 20 then -- 8 [SETUPVAL] 
+ Upvalues[1] = Stack[3] 
+elseif pointer == 21 then -- 10 [NEWTABLE] 
+ Temp[1] = 3
+Temp[2] = {}
+Stack[Temp[1]] = Temp[2]
+ 
+elseif pointer == 22 then -- 1 [LOADK] 
+ 	Temp[1] = 4
+	Temp[2] = 2+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 23 then -- 1 [LOADK] 
+ 	Temp[1] = 5
+	Temp[2] = 3+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 24 then -- 1 [LOADK] 
+ 	Temp[1] = 6
+	Temp[2] = 4+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 25 then -- 1 [LOADK] 
+ 	Temp[1] = 7
+	Temp[2] = 5+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 26 then -- 1 [LOADK] 
+ 	Temp[1] = 8
+	Temp[2] = 6+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 27 then -- 1 [LOADK] 
+ 	Temp[1] = 9
+	Temp[2] = 7+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 28 then -- 1 [LOADK] 
+ 	Temp[1] = 10
+	Temp[2] = 8+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 29 then -- 1 [LOADK] 
+ 	Temp[1] = 11
+	Temp[2] = 9+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 30 then -- 1 [LOADK] 
+ 	Temp[1] = 12
+	Temp[2] = 10+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 31 then -- 1 [LOADK] 
+ 	Temp[1] = 13
+	Temp[2] = 11+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 32 then -- 1 [LOADK] 
+ 	Temp[1] = 14
+	Temp[2] = 12+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 33 then -- 1 [LOADK] 
+ 	Temp[1] = 15
+	Temp[2] = 13+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 34 then -- 1 [LOADK] 
+ 	Temp[1] = 16
+	Temp[2] = 12+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 35 then -- 34 [SETLIST] 
+     Temp[1] = 3 -- inst a
+    Temp[2] = 13 -- inst b
+    Temp[3] = 1 -- inst c
+
+    local limit = Temp[2] -- limit
+    
+    -- If B is 0 we must calc the limit based on the stack TOPP
+    if limit == 0 then
+        limit = top - Temp[1]
+    end
+
+    for i = 1, limit do
+        Stack[Temp[1]][(Temp[3]-1)*50 + i] = Stack[Temp[1] + i]
+    end
+     
+elseif pointer == 36 then -- 4 [GETUPVAL] 
+ Stack[4] = Upvalues[1] 
+elseif pointer == 37 then -- 9 [SETTABLE] 
+ 		Stack[3][Constants[14+1]] = Stack[4]
+	 
+elseif pointer == 38 then -- 4 [GETUPVAL] 
+ Stack[4] = Upvalues[0] 
+elseif pointer == 39 then -- 0 [MOVE] 
+ 	Temp[1] = 5
+	Temp[2] = 3
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 40 then -- 20 [LEN] 
+ Stack[6] = #Stack[3] 
+elseif pointer == 41 then -- 6 [GETTABLE] 
+ 	Temp[1] = Constants[14+1]
+	Stack[7] = Stack[3][Temp[1]]
+	 
+elseif pointer == 42 then -- 4 [GETUPVAL] 
+ Stack[8] = Upvalues[1] 
+elseif pointer == 43 then -- 28 [CALL] 
+ 	Temp[1] = 4   -- instA
+	Temp[2] = 5   -- instB
+	Temp[3] = {}    -- args
+	Temp[4] = {}    -- output table
+
+	if Temp[2] == 0 then
+		Temp[5] = top
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		Temp[3][i - Temp[1]] = Stack[i]
+	end
+	
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
+	
+		for i = Temp[1], Temp[1] + 1 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 44 then -- 0 [MOVE] 
+ 	Temp[1] = 4
+	Temp[2] = 3
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 45 then -- 0 [MOVE] 
+ 	Temp[1] = 5
+	Temp[2] = 2
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 46 then -- 6 [GETTABLE] 
+ 	Temp[1] = Constants[6+1]
+	Stack[6] = Stack[3][Temp[1]]
+	 
+elseif pointer == 47 then -- 30 [RETURN] 
+         local output = {}
+        local count = 0
+        for i = 4, 4 + 4 - 2 do
+            count = count + 1
+            output[count] = Stack[i]
+        end
+        return unpack(output, 1, count)
+     
+elseif pointer == 48 then -- 30 [RETURN] 
+         local output = {}
+        local count = 0
+        for i = 0, 0 + 1 - 2 do
+            count = count + 1
+            output[count] = Stack[i]
+        end
+        return unpack(output, 1, count)
+     
+end
+		pointer = pointer+1
+		end
+	end
+ 
+elseif pointer == 17 then -- -1 [PSEUDO] 
+ -- [PSEUDO] Handled by CLOSURE 
+elseif pointer == 18 then -- -1 [PSEUDO] 
+ -- [PSEUDO] Handled by CLOSURE 
+elseif pointer == 19 then -- 7 [SETGLOBAL] 
+ Env[Constants[3+1]] = Stack[1]  
+elseif pointer == 20 then -- 10 [NEWTABLE] 
+ Temp[1] = 11
+Temp[2] = {}
+Stack[Temp[1]] = Temp[2]
+ 
+elseif pointer == 21 then -- 9 [SETTABLE] 
+ 		Stack[11][Constants[4+1]] = Stack[11]
+	 
+elseif pointer == 22 then -- 36 [CLOSURE] 
+ 	local prevStack = Stack
+	local prevUpvalues = Upvalues
+	
+	Stack[12] = function(...) -- PROTOTYPE 2
+		local Constants = {(decrypt("\065\080\077\095\087\065\088\070\083\087\085\087", "2592")),(decrypt("\073\004", "950")),}
+		
+		local Varargs = {}
+		local Stack = {}
+		local Args = {...}
+		local Temp = {}
+		local Upvalues = {}
+		local pointer = 1	
+		local top = 0
+		
+		local ConstantsCopy = {}
+		-- Fix constant int
+		for i, Value in pairs(Constants) do
+			ConstantsCopy[i] = Value
+			Constants[i] = nil
+		end
+		
+		-- upvalue mapping
+		local Map = {[0] = {0, 11}}
+		
+		-- fix upvalues
+		setmeta(Upvalues, {
+            [__index] = function(self, Key)
+                local map = Map[Key]
+                if not map then return nil end
+                
+                if map[1] == 0 then -- Type 0: Parent Stack
+                    return prevStack[map[2]]
+                else -- Type 1: Parent Upvalue
+                    return prevUpvalues[map[2]]
+                end
+            end,
+            [__newindex] = function(self, Key, Value)
+                local map = Map[Key]
+                if not map then return end
+                
+                if map[1] == 0 then
+                    prevStack[map[2]] = Value
+                else
+                    prevUpvalues[map[2]] = Value
+                end
+            end,
+            [__metatable] = {}
+        })
+		-- Args
+		for i = 1, #Args do
+			Stack[i - 1] = Args[i]
+		end
+		-- Params
+		for i = 0 + 1, #Args do
+            insert(Varargs, Args[i])
+        end
+		setmeta(Constants, {
+		[__index] = function(Self, Key)
+			local toSend = ConstantsCopy[Key]
+
+			if byte(sub(toSend,#toSend,#toSend)) == 11 then
+						local removedByte = sub(toSend,1,#toSend-1)
+		return tonumber(removedByte)
+		
+			elseif byte(sub(toSend,#toSend,#toSend)) == 7 then -- Boolean support
+				if byte(sub(toSend,1,1)) == 116 then
+					return true
+				else
+					return false
+				end
+			elseif byte(sub(toSend,#toSend,#toSend)) == 7 then -- Boolean support
+				if byte(sub(toSend,1,1)) == 116 then
+					return true
+				else
+					return false
+				end
+			elseif byte(sub(toSend,#toSend,#toSend)) == 6 then -- nil support
+				return nil
+			end
+
+			return ConstantsCopy[Key]
+		end,
+		[__metatable] = {},
+		[__tostring] = function()
+			pointer = pointer ^10
+			return ttostring(pointer)
+		end,
+		[__call] = function(_,at)
+					local const = ConstantsCopy[at]
+		return const
+		end,
+		[__pairs] = function() return function() pointer = pointer +15 end end,
+        [__ipairs] = function() return function() pointer = pointer +10 end end
+	})
+		while true do
+		if pointer == 1 then -- 5 [GETGLOBAL] 
+ 	Temp[1] = 1 -- instA
+	Temp[2] = 0+1 -- instB
+	Temp[3] = Constants[Temp[2]] -- constant
+	Temp[4] = Env[Temp[3]] -- env global
+	Stack[Temp[1]] = Temp[4] -- set to stack
+	 
+elseif pointer == 2 then -- 10 [NEWTABLE] 
+ Temp[1] = 2
+Temp[2] = {}
+Stack[Temp[1]] = Temp[2]
+ 
+elseif pointer == 3 then -- 4 [GETUPVAL] 
+ Stack[3] = Upvalues[0] 
+elseif pointer == 4 then -- 28 [CALL] 
+ 	Temp[1] = 1   -- instA
+	Temp[2] = 3   -- instB
+	Temp[3] = {}    -- args
+	Temp[4] = {}    -- output table
+
+	if Temp[2] == 0 then
+		Temp[5] = top
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		Temp[3][i - Temp[1]] = Stack[i]
+	end
+	
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
+	
+		for i = Temp[1], Temp[1] + 2 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 5 then -- 9 [SETTABLE] 
+ 		Stack[1][Constants[1+1]] = Stack[0]
+	 
+elseif pointer == 6 then -- 30 [RETURN] 
+         local output = {}
+        local count = 0
+        for i = 1, 1 + 2 - 2 do
+            count = count + 1
+            output[count] = Stack[i]
+        end
+        return unpack(output, 1, count)
+     
+elseif pointer == 7 then -- 30 [RETURN] 
+         local output = {}
+        local count = 0
+        for i = 0, 0 + 1 - 2 do
+            count = count + 1
+            output[count] = Stack[i]
+        end
+        return unpack(output, 1, count)
+     
+end
+		pointer = pointer+1
+		end
+	end
+ 
+elseif pointer == 23 then -- -1 [PSEUDO] 
+ -- [PSEUDO] Handled by CLOSURE 
+elseif pointer == 24 then -- 9 [SETTABLE] 
+ 		Stack[11][Constants[5+1]] = Stack[12]
+	 
+elseif pointer == 25 then -- 36 [CLOSURE] 
+ 	local prevStack = Stack
+	local prevUpvalues = Upvalues
+	
+	Stack[12] = function(...) -- PROTOTYPE 3
+		local Constants = {(decrypt("\066\074\092\088\070", "2856")),(decrypt("\068\009", "486")),}
+		
+		local Varargs = {}
+		local Stack = {}
+		local Args = {...}
+		local Temp = {}
+		local Upvalues = {}
+		local pointer = 1	
+		local top = 0
+		
+		local ConstantsCopy = {}
+		-- Fix constant int
+		for i, Value in pairs(Constants) do
+			ConstantsCopy[i] = Value
+			Constants[i] = nil
+		end
+		
+		-- upvalue mapping
+		local Map = {}
+		
+		-- fix upvalues
+		setmeta(Upvalues, {
+            [__index] = function(self, Key)
+                local map = Map[Key]
+                if not map then return nil end
+                
+                if map[1] == 0 then -- Type 0: Parent Stack
+                    return prevStack[map[2]]
+                else -- Type 1: Parent Upvalue
+                    return prevUpvalues[map[2]]
+                end
+            end,
+            [__newindex] = function(self, Key, Value)
+                local map = Map[Key]
+                if not map then return end
+                
+                if map[1] == 0 then
+                    prevStack[map[2]] = Value
+                else
+                    prevUpvalues[map[2]] = Value
+                end
+            end,
+            [__metatable] = {}
+        })
+		-- Args
+		for i = 1, #Args do
+			Stack[i - 1] = Args[i]
+		end
+		-- Params
+		for i = 0 + 1, #Args do
+            insert(Varargs, Args[i])
+        end
+		setmeta(Constants, {
+		[__index] = function(Self, Key)
+			local toSend = ConstantsCopy[Key]
+
+			if byte(sub(toSend,#toSend,#toSend)) == 11 then
+						local removedByte = sub(toSend,1,#toSend-1)
+		return tonumber(removedByte)
+		
+			elseif byte(sub(toSend,#toSend,#toSend)) == 7 then -- Boolean support
+				if byte(sub(toSend,1,1)) == 116 then
+					return true
+				else
+					return false
+				end
+			elseif byte(sub(toSend,#toSend,#toSend)) == 7 then -- Boolean support
+				if byte(sub(toSend,1,1)) == 116 then
+					return true
+				else
+					return false
+				end
+			elseif byte(sub(toSend,#toSend,#toSend)) == 6 then -- nil support
+				return nil
+			end
+
+			return ConstantsCopy[Key]
+		end,
+		[__metatable] = {},
+		[__tostring] = function()
+			pointer = pointer ^10
+			return ttostring(pointer)
+		end,
+		[__call] = function(_,at)
+					local const = ConstantsCopy[at]
+		return const
+		end,
+		[__pairs] = function() return function() pointer = pointer +15 end end,
+        [__ipairs] = function() return function() pointer = pointer +10 end end
+	})
+		while true do
+		if pointer == 1 then -- 5 [GETGLOBAL] 
+ 	Temp[1] = 1 -- instA
+	Temp[2] = 0+1 -- instB
+	Temp[3] = Constants[Temp[2]] -- constant
+	Temp[4] = Env[Temp[3]] -- env global
+	Stack[Temp[1]] = Temp[4] -- set to stack
+	 
+elseif pointer == 2 then -- 6 [GETTABLE] 
+ 	Temp[1] = Constants[1+1]
+	Stack[2] = Stack[0][Temp[1]]
+	 
+elseif pointer == 3 then -- 28 [CALL] 
+ 	Temp[1] = 1   -- instA
+	Temp[2] = 2   -- instB
+	Temp[3] = {}    -- args
+	Temp[4] = {}    -- output table
+
+	if Temp[2] == 0 then
+		Temp[5] = top
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		Temp[3][i - Temp[1]] = Stack[i]
+	end
+	
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
+	
+		for i = Temp[1], Temp[1] + 1 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 4 then -- 30 [RETURN] 
+         local output = {}
+        local count = 0
+        for i = 0, 0 + 1 - 2 do
+            count = count + 1
+            output[count] = Stack[i]
+        end
+        return unpack(output, 1, count)
+     
+end
+		pointer = pointer+1
+		end
+	end
+ 
+elseif pointer == 26 then -- 9 [SETTABLE] 
+ 		Stack[11][Constants[6+1]] = Stack[12]
+	 
+elseif pointer == 27 then -- 6 [GETTABLE] 
+ 	Temp[1] = Constants[5+1]
+	Stack[12] = Stack[11][Temp[1]]
+	 
+elseif pointer == 28 then -- 1 [LOADK] 
+ 	Temp[1] = 13
+	Temp[2] = 7+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 29 then -- 28 [CALL] 
+ 	Temp[1] = 12   -- instA
+	Temp[2] = 2   -- instB
+	Temp[3] = {}    -- args
+	Temp[4] = {}    -- output table
+
+	if Temp[2] == 0 then
+		Temp[5] = top
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		Temp[3][i - Temp[1]] = Stack[i]
+	end
+	
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
+	
+		for i = Temp[1], Temp[1] + 2 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 30 then -- 11 [SELF] 
+ local C = 6+1
+Stack[13+1] = Stack[12]
+if Stack[13+1] then
+	Stack[13] = Stack[12][Constants[C]]
+end
+ 
+elseif pointer == 31 then -- 28 [CALL] 
+ 	Temp[1] = 13   -- instA
+	Temp[2] = 2   -- instB
+	Temp[3] = {}    -- args
+	Temp[4] = {}    -- output table
+
+	if Temp[2] == 0 then
+		Temp[5] = top
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		Temp[3][i - Temp[1]] = Stack[i]
+	end
+	
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
+	
+		for i = Temp[1], Temp[1] + 1 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 32 then -- 1 [LOADK] 
+ 	Temp[1] = 13
+	Temp[2] = 8+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 33 then -- 1 [LOADK] 
+ 	Temp[1] = 14
+	Temp[2] = 9+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 34 then -- 12 [ADD] 
+ 	Stack[15] = (false and Constants[13+1] or Stack[13]) + (false and Constants[14+1] or Stack[14])
+	 
+elseif pointer == 35 then -- 1 [LOADK] 
+ 	Temp[1] = 16
+	Temp[2] = 9+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 36 then -- 14 [MUL] 
+ 	Stack[17] = (false and Constants[13+1] or Stack[13]) * (true and Constants[9+1] or Stack[9])
+	 
+elseif pointer == 37 then -- 15 [DIV] 
+ 	Stack[18] = (true and Constants[8+1] or Stack[8]) / (false and Constants[14+1] or Stack[14])
+	 
+elseif pointer == 38 then -- 16 [MOD] 
+ 	Stack[19] = (false and Constants[13+1] or Stack[13]) % (false and Constants[14+1] or Stack[14])
+	 
+elseif pointer == 39 then -- 1 [LOADK] 
+ 	Temp[1] = 20
+	Temp[2] = 10+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 40 then -- 0 [MOVE] 
+ 	Temp[1] = 21
+	Temp[2] = 0
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 41 then -- 0 [MOVE] 
+ 	Temp[1] = 22
+	Temp[2] = 15
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 42 then -- 0 [MOVE] 
+ 	Temp[1] = 23
+	Temp[2] = 16
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 43 then -- 0 [MOVE] 
+ 	Temp[1] = 24
+	Temp[2] = 17
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 44 then -- 0 [MOVE] 
+ 	Temp[1] = 25
+	Temp[2] = 18
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 45 then -- 0 [MOVE] 
+ 	Temp[1] = 26
+	Temp[2] = 19
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 46 then -- 0 [MOVE] 
+ 	Temp[1] = 27
+	Temp[2] = 20
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 47 then -- 28 [CALL] 
+ 	Temp[1] = 21   -- instA
+	Temp[2] = 7   -- instB
+	Temp[3] = {}    -- args
+	Temp[4] = {}    -- output table
+
+	if Temp[2] == 0 then
+		Temp[5] = top
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		Temp[3][i - Temp[1]] = Stack[i]
+	end
+	
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
+	
+		for i = Temp[1], Temp[1] + 1 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 48 then -- 24 [LT] 
+ 		if (Stack[16] < Stack[15]) then
+			pointer = pointer + 1
+		end
+	 
+elseif pointer == 49 then -- 22 [JMP] 
+ pointer = pointer + 4 print('[VM]:','JMP -- >',pointer) 
+elseif pointer == 50 then -- 0 [MOVE] 
+ 	Temp[1] = 21
+	Temp[2] = 0
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 51 then -- 5 [GETGLOBAL] 
+ 	Temp[1] = 22 -- instA
+	Temp[2] = 3+1 -- instB
+	Temp[3] = Constants[Temp[2]] -- constant
+	Temp[4] = Env[Temp[3]] -- env global
+	Stack[Temp[1]] = Temp[4] -- set to stack
+	 
+elseif pointer == 52 then -- 28 [CALL] 
+ 	Temp[1] = 21   -- instA
+	Temp[2] = 2   -- instB
+	Temp[3] = {}    -- args
+	Temp[4] = {}    -- output table
+
+	if Temp[2] == 0 then
+		Temp[5] = top
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		Temp[3][i - Temp[1]] = Stack[i]
+	end
+	
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
+	
+		for i = Temp[1], Temp[1] + 1 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 53 then -- 22 [JMP] 
+ pointer = pointer + 11 print('[VM]:','JMP -- >',pointer) 
+elseif pointer == 54 then -- 25 [LE] 
+ 		if (Stack[18] <= Stack[17]) then
+			pointer = pointer + 1
+		end
+	 
+elseif pointer == 55 then -- 22 [JMP] 
+ pointer = pointer + 4 print('[VM]:','JMP -- >',pointer) 
+elseif pointer == 56 then -- 0 [MOVE] 
+ 	Temp[1] = 21
+	Temp[2] = 0
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 57 then -- 0 [MOVE] 
+ 	Temp[1] = 22
+	Temp[2] = 18
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 58 then -- 28 [CALL] 
+ 	Temp[1] = 21   -- instA
+	Temp[2] = 2   -- instB
+	Temp[3] = {}    -- args
+	Temp[4] = {}    -- output table
+
+	if Temp[2] == 0 then
+		Temp[5] = top
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		Temp[3][i - Temp[1]] = Stack[i]
+	end
+	
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
+	
+		for i = Temp[1], Temp[1] + 1 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 59 then -- 22 [JMP] 
+ pointer = pointer + 5 print('[VM]:','JMP -- >',pointer) 
+elseif pointer == 60 then -- 23 [EQ] 
+ 		if (Stack[19] == Stack[20]) then
+			pointer = pointer + 1
+		end
+	 
+elseif pointer == 61 then -- 22 [JMP] 
+ pointer = pointer + 3 print('[VM]:','JMP -- >',pointer) 
+elseif pointer == 62 then -- 0 [MOVE] 
+ 	Temp[1] = 21
+	Temp[2] = 0
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 63 then -- 0 [MOVE] 
+ 	Temp[1] = 22
+	Temp[2] = 20
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 64 then -- 28 [CALL] 
+ 	Temp[1] = 21   -- instA
+	Temp[2] = 2   -- instB
+	Temp[3] = {}    -- args
+	Temp[4] = {}    -- output table
+
+	if Temp[2] == 0 then
+		Temp[5] = top
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		Temp[3][i - Temp[1]] = Stack[i]
+	end
+	
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
+	
+		for i = Temp[1], Temp[1] + 1 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 65 then -- 36 [CLOSURE] 
+ 	local prevStack = Stack
+	local prevUpvalues = Upvalues
+	
+	Stack[21] = function(...) -- PROTOTYPE 4
+		local Constants = {(decrypt("\003\004\062", "1657")),(decrypt("\006\006\059", "2207")),(decrypt("\001\007\061", "2064")),}
+		
+		local Varargs = {}
+		local Stack = {}
+		local Args = {...}
+		local Temp = {}
+		local Upvalues = {}
+		local pointer = 1	
+		local top = 0
+		
+		local ConstantsCopy = {}
+		-- Fix constant int
+		for i, Value in pairs(Constants) do
+			ConstantsCopy[i] = Value
+			Constants[i] = nil
+		end
+		
+		-- upvalue mapping
+		local Map = {[0] = {0, 10}}
+		
+		-- fix upvalues
+		setmeta(Upvalues, {
+            [__index] = function(self, Key)
+                local map = Map[Key]
+                if not map then return nil end
+                
+                if map[1] == 0 then -- Type 0: Parent Stack
+                    return prevStack[map[2]]
+                else -- Type 1: Parent Upvalue
+                    return prevUpvalues[map[2]]
+                end
+            end,
+            [__newindex] = function(self, Key, Value)
+                local map = Map[Key]
+                if not map then return end
+                
+                if map[1] == 0 then
+                    prevStack[map[2]] = Value
+                else
+                    prevUpvalues[map[2]] = Value
+                end
+            end,
+            [__metatable] = {}
+        })
+		-- Args
+		for i = 1, #Args do
+			Stack[i - 1] = Args[i]
+		end
+		-- Params
+		for i = 0 + 1, #Args do
+            insert(Varargs, Args[i])
+        end
+		setmeta(Constants, {
+		[__index] = function(Self, Key)
+			local toSend = ConstantsCopy[Key]
+
+			if byte(sub(toSend,#toSend,#toSend)) == 11 then
+						local removedByte = sub(toSend,1,#toSend-1)
+		return tonumber(removedByte)
+		
+			elseif byte(sub(toSend,#toSend,#toSend)) == 7 then -- Boolean support
+				if byte(sub(toSend,1,1)) == 116 then
+					return true
+				else
+					return false
+				end
+			elseif byte(sub(toSend,#toSend,#toSend)) == 7 then -- Boolean support
+				if byte(sub(toSend,1,1)) == 116 then
+					return true
+				else
+					return false
+				end
+			elseif byte(sub(toSend,#toSend,#toSend)) == 6 then -- nil support
+				return nil
+			end
+
+			return ConstantsCopy[Key]
+		end,
+		[__metatable] = {},
+		[__tostring] = function()
+			pointer = pointer ^10
+			return ttostring(pointer)
+		end,
+		[__call] = function(_,at)
+					local const = ConstantsCopy[at]
+		return const
+		end,
+		[__pairs] = function() return function() pointer = pointer +15 end end,
+        [__ipairs] = function() return function() pointer = pointer +10 end end
+	})
+		while true do
+		if pointer == 1 then -- 4 [GETUPVAL] 
+ Stack[0] = Upvalues[0] 
+elseif pointer == 2 then -- 1 [LOADK] 
+ 	Temp[1] = 1
+	Temp[2] = 0+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 3 then -- 1 [LOADK] 
+ 	Temp[1] = 2
+	Temp[2] = 1+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 4 then -- 1 [LOADK] 
+ 	Temp[1] = 3
+	Temp[2] = 2+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 5 then -- 29 [TAILCALL] 
+     Temp[1] = 0   -- Function Register
+    Temp[2] = 4   -- Argument Count (0 = Variable)
+    Temp[3] = {}    -- Arguments Table
+    
+    local limit = 0
+    
+    if Temp[2] == 0 then
+        limit = top
+    else
+        limit = Temp[1] + Temp[2] - 1
+    end
+
+    for i = Temp[1] + 1, limit do
+        insert(Temp[3], Stack[i])
+    end
+
+    return Stack[Temp[1]](unpack(Temp[3]))
+ 
+elseif pointer == 6 then -- 30 [RETURN] 
+             local output = {}
+            local count = 0
+            for i = 0, top do
+                count = count + 1
+                output[count] = Stack[i]
+            end
+            return unpack(output, 1, count)
+         
+elseif pointer == 7 then -- 30 [RETURN] 
+         local output = {}
+        local count = 0
+        for i = 0, 0 + 1 - 2 do
+            count = count + 1
+            output[count] = Stack[i]
+        end
+        return unpack(output, 1, count)
+     
+end
+		pointer = pointer+1
+		end
+	end
+ 
+elseif pointer == 66 then -- -1 [PSEUDO] 
+ -- [PSEUDO] Handled by CLOSURE 
+elseif pointer == 67 then -- 18 [UNM] 
+ Stack[15] = -Stack[15] 
+elseif pointer == 68 then -- 19 [NOT] 
+ Stack[2] = not Stack[2] 
+elseif pointer == 69 then -- 0 [MOVE] 
+ 	Temp[1] = 22
+	Temp[2] = 0
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 70 then -- 0 [MOVE] 
+ 	Temp[1] = 23
+	Temp[2] = 15
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 71 then -- 0 [MOVE] 
+ 	Temp[1] = 24
+	Temp[2] = 2
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 72 then -- 0 [MOVE] 
+ 	Temp[1] = 25
+	Temp[2] = 21
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 73 then -- 28 [CALL] 
+ 	Temp[1] = 22   -- instA
+	Temp[2] = 4   -- instB
+	Temp[3] = {}    -- args
+	Temp[4] = {}    -- output table
+
+	if Temp[2] == 0 then
+		Temp[5] = top
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		Temp[3][i - Temp[1]] = Stack[i]
+	end
+	
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
+	
+		for i = Temp[1], Temp[1] + 1 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 74 then -- 26 [TEST] 
+ 	if  Stack[2] then
+		pointer = pointer + 1
+		print('[VM]:','JMP -- > ',pointer)
+	end 
+elseif pointer == 75 then -- 22 [JMP] 
+ pointer = pointer + 1 print('[VM]:','JMP -- >',pointer) 
+elseif pointer == 76 then -- 0 [MOVE] 
+ 	Temp[1] = 2
+	Temp[2] = 15
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 77 then -- 26 [TEST] 
+ 	if  Stack[2] then
+		pointer = pointer + 1
+		print('[VM]:','JMP -- > ',pointer)
+	end 
+elseif pointer == 78 then -- 22 [JMP] 
+ pointer = pointer + 2 print('[VM]:','JMP -- >',pointer) 
+elseif pointer == 79 then -- 27 [TESTSET] 
+ if (not Stack[15]) == (1 ~= 0) then
+	pointer = pointer + 1
+else
+	Stack[22] = Stack[15]
+end
+ 
+elseif pointer == 80 then -- 22 [JMP] 
+ pointer = pointer + 1 print('[VM]:','JMP -- >',pointer) 
+elseif pointer == 81 then -- 0 [MOVE] 
+ 	Temp[1] = 22
+	Temp[2] = 16
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 82 then -- 1 [LOADK] 
+ 	Temp[1] = 23
+	Temp[2] = 11+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 83 then -- 0 [MOVE] 
+ 	Temp[1] = 24
+	Temp[2] = 1
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 84 then -- 1 [LOADK] 
+ 	Temp[1] = 25
+	Temp[2] = 12+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 85 then -- 21 [CONCAT] 
+ local output = ""
+
+for i=23,25 do
+	output = output..Stack[i]
+end
+
+Stack[23] = output 
+elseif pointer == 86 then -- 0 [MOVE] 
+ 	Temp[1] = 24
+	Temp[2] = 21
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 87 then -- 28 [CALL] 
+ 	Temp[1] = 24   -- instA
+	Temp[2] = 1   -- instB
+	Temp[3] = {}    -- args
+	Temp[4] = {}    -- output table
+
+	if Temp[2] == 0 then
+		Temp[5] = top
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		Temp[3][i - Temp[1]] = Stack[i]
+	end
+	
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
+	
+		for i = Temp[1], Temp[1] + 4 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 88 then -- 0 [MOVE] 
+ 	Temp[1] = 27
+	Temp[2] = 0
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 89 then -- 0 [MOVE] 
+ 	Temp[1] = 28
+	Temp[2] = 2
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 90 then -- 0 [MOVE] 
+ 	Temp[1] = 29
+	Temp[2] = 22
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 91 then -- 0 [MOVE] 
+ 	Temp[1] = 30
+	Temp[2] = 23
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 92 then -- 0 [MOVE] 
+ 	Temp[1] = 31
+	Temp[2] = 24
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 93 then -- 0 [MOVE] 
+ 	Temp[1] = 32
+	Temp[2] = 25
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 94 then -- 0 [MOVE] 
+ 	Temp[1] = 33
+	Temp[2] = 26
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 95 then -- 28 [CALL] 
+ 	Temp[1] = 27   -- instA
+	Temp[2] = 7   -- instB
+	Temp[3] = {}    -- args
+	Temp[4] = {}    -- output table
+
+	if Temp[2] == 0 then
+		Temp[5] = top
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		Temp[3][i - Temp[1]] = Stack[i]
+	end
+	
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
+	
+		for i = Temp[1], Temp[1] + 1 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 96 then -- 1 [LOADK] 
+ 	Temp[1] = 27
+	Temp[2] = 13+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 97 then -- 1 [LOADK] 
+ 	Temp[1] = 28
+	Temp[2] = 14+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 98 then -- 1 [LOADK] 
+ 	Temp[1] = 29
+	Temp[2] = 13+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 99 then -- 32 [FORPREP] 
+ 	Temp[1] = 27
+	Temp[2] = 1
+
+	local Init = tonumber(Stack[Temp[1]])
+	local Limit = tonumber(Stack[Temp[1] + 1])
+	local Step = tonumber(Stack[Temp[1] + 2])
+
+	Stack[Temp[1]] = Init - Step
+	Stack[Temp[1] + 1] = Limit
+	Stack[Temp[1] + 2] = Step
+
+	pointer = pointer + Temp[2]
+
+	 
+elseif pointer == 100 then -- 12 [ADD] 
+ 	Stack[15] = (false and Constants[15+1] or Stack[15]) + (false and Constants[25+1] or Stack[25])
+	 
+elseif pointer == 101 then -- 31 [FORLOOP] 
+ 	
+
+	Temp[1] = 27
+	Temp[2] = -2
+
+	local Step = Stack[Temp[1] + 2]
+	local Limit = Stack[Temp[1] + 1]
+	local Index = Stack[Temp[1]] + Step
+
+	Stack[Temp[1]] = Index
+	
+	if (Step > 0 and Index <= Limit) or (Step <= 0 and Index >= Limit) then
+	    pointer = pointer + Temp[2] 
+	    Stack[Temp[1] + 3] = Index 
+	end
+
+
+	 
+elseif pointer == 102 then -- 0 [MOVE] 
+ 	Temp[1] = 27
+	Temp[2] = 10
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 103 then -- 1 [LOADK] 
+ 	Temp[1] = 28
+	Temp[2] = 15+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 104 then -- 1 [LOADK] 
+ 	Temp[1] = 29
+	Temp[2] = 14+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 105 then -- 1 [LOADK] 
+ 	Temp[1] = 30
+	Temp[2] = 16+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 106 then -- 1 [LOADK] 
+ 	Temp[1] = 31
+	Temp[2] = 17+1
+	Temp[3] = Constants[Temp[2]]
+	Stack[Temp[1]] = Temp[3]
+	 
+elseif pointer == 107 then -- 28 [CALL] 
+ 	Temp[1] = 27   -- instA
+	Temp[2] = 5   -- instB
+	Temp[3] = {}    -- args
+	Temp[4] = {}    -- output table
+
+	if Temp[2] == 0 then
+		Temp[5] = top
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		Temp[3][i - Temp[1]] = Stack[i]
+	end
+	
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
+	
+		for i = Temp[1], Temp[1] + 4 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 108 then -- 20 [LEN] 
+ Stack[30] = #Stack[27] 
+elseif pointer == 109 then -- 0 [MOVE] 
+ 	Temp[1] = 31
+	Temp[2] = 0
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 110 then -- 0 [MOVE] 
+ 	Temp[1] = 32
+	Temp[2] = 15
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 111 then -- 0 [MOVE] 
+ 	Temp[1] = 33
+	Temp[2] = 27
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 112 then -- 0 [MOVE] 
+ 	Temp[1] = 34
+	Temp[2] = 28
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 113 then -- 0 [MOVE] 
+ 	Temp[1] = 35
+	Temp[2] = 29
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 114 then -- 0 [MOVE] 
+ 	Temp[1] = 36
+	Temp[2] = 30
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 115 then -- 0 [MOVE] 
+ 	Temp[1] = 37
+	Temp[2] = 10
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 116 then -- 0 [MOVE] 
+ 	Temp[1] = 38
+	Temp[2] = 9
+	Temp[3] = Stack
+	Temp[4] = Temp[3][Temp[2]]
+	Temp[3][Temp[1]] = Temp[4]
+ 
+elseif pointer == 117 then -- 28 [CALL] 
+ 	Temp[1] = 31   -- instA
+	Temp[2] = 8   -- instB
+	Temp[3] = {}    -- args
+	Temp[4] = {}    -- output table
+
+	if Temp[2] == 0 then
+		Temp[5] = top
+	else
+		Temp[5] = Temp[1] + Temp[2] - 1
+	end
+
+	for i = Temp[1] + 1, Temp[5] do
+		Temp[3][i - Temp[1]] = Stack[i]
+	end
+	
+	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
+	
+		for i = Temp[1], Temp[1] + 1 - 2 do
+		Stack[i] = Temp[4][i+1-Temp[1]]
+	end
+	Temp = {}
+	
+	 
+elseif pointer == 118 then -- 30 [RETURN] 
+         local output = {}
+        local count = 0
+        for i = 0, 0 + 1 - 2 do
+            count = count + 1
+            output[count] = Stack[i]
+        end
+        return unpack(output, 1, count)
+     
+end
+		pointer=pointer+1
+	end
+end)()
+
+ end)((_ENV or getfenv()),{},0,function(str, key) -- Decrypt vars
+	local result = {}
+	for i = (6*9-32+(((-21)))), #str do
+		local strByte = string.byte(str, i)
+		local keyByte = string.byte(key, (i - (36*13-65+(((-402))))) % #key + (6*5-17+(((-12)))))
+		table.insert(result, string.char(bit32.bxor(strByte, keyByte)))
+	end
+	return table.concat(result)
+end
+) end)())

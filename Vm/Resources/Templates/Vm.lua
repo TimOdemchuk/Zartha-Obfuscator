@@ -37,6 +37,8 @@ return (function()%s
 					else
 						return false
 					end
+				elseif byte(sub(toSend,#toSend,#toSend)) == 6 then -- nil support
+					return nil
 				end
 				return ConstantsCopy[Key]
 			end,

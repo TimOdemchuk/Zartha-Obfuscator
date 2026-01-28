@@ -11,23 +11,23 @@ g(a,b,c,d,e,bool,tmp)
 
 local upval = 0
 local function closure(...) -- vararg, closure
-	local args = {...}
+    local args = {...}
 
-	local total = 0
+    local total = 0
 
-	for i,v in pairs(args) do -- tforloop
-		total = total + v
-	end
+    for i,v in pairs(args) do -- tforloop
+        total = total + v
+    end
 
-	g(args, #args, total, upval)
+    g(args, #args, total, upval)
 
-	upval = upval + total -- getupval, setupval ??
+    upval = upval + total -- getupval, setupval ??
 
-	local newt = {23,5,36,745,3,2,12,563,7,56,8,67,8} -- newtable, setlist
-	newt[1] = upval -- settable
-	g(newt,#newt,newt[1], upval)
+    local newt = {23,5,36,745,3,2,12,563,7,56,8,67,8} -- newtable, setlist
+    newt[1] = upval -- settable
+    g(newt,#newt,newt[1], upval)
 
-	return newt, total, newt[3] -- return, gettable
+    return newt, total, newt[3] -- return, gettable
 end
 
 printf = kst
@@ -36,14 +36,14 @@ local oop = {}
 oop.__index = oop
 
 function oop.new(p1)
-	local this = setmetatable({},oop)
+    local this = setmetatable({},oop)
 
-	this.p1 = p1
-	return this
+    this.p1 = p1
+    return this
 end
 
 function oop:test_self_opcode()
-	print(self.p1)
+    print(self.p1)
 end
 
 local obj = oop.new("hello noobs")
@@ -64,17 +64,17 @@ local pow = 4 ^ 2
 g(add,sub,mul,div,mod,pow)
 
 if add > sub then -- lt
-	g(printf)
+    g(printf)
 elseif mul >= div then -- le
-	g(div)
+    g(div)
 elseif mod == pow then -- eq
-	g(pow)
+    g(pow)
 end
 
 --jmp
 
 local function wrapper()
-	return closure(22,44,37)
+    return closure(22,44,37)
 end
 
 add = -add -- unm
@@ -92,7 +92,7 @@ local rt, rtotal, rnum = wrapper()
 g(bool,new,str,rt,rtotal,rnum)
 
 for i=1,5 do
-	add = add + rtotal
+    add = add + rtotal
 end
 
 local t, total, num = closure(3,5,99,8) -- call

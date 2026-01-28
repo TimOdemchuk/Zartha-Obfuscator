@@ -69,6 +69,14 @@ return function(inst,shiftAmount,constant,settings)
 				else
 					return false
 				end
+			elseif byte(sub(toSend,#toSend,#toSend)) == 7 then -- Boolean support
+				if byte(sub(toSend,1,1)) == 116 then
+					return true
+				else
+					return false
+				end
+			elseif byte(sub(toSend,#toSend,#toSend)) == 6 then -- nil support
+				return nil
 			end
 
 			return ConstantsCopy[Key]
