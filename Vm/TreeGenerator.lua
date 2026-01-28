@@ -369,24 +369,26 @@ return function(parasedBytecode)
 		settingsSelected.LuaU_Syntax and ":any" or "",
 		(not settingsSelected.ConstantProtection and [[
 		local removedByte = sub(toSend,1,#toSend-1)
-		return tonumber(removedByte)
+		value = tonumber(removedByte)
 		]] or ([[
 		local removedByte = sub(toSend,1,#toSend-2)
 		local decrypted = {}
 		for i =1,#removedByte  do
-			insert(decrypted,char(byte(sub(removedByte,i,i))-%s)) 
+			insert(decrypted,char(byte(removedByte,i)-%s)) 
 		end
-		return tonumber(concat(decrypted))
+		value = tonumber(concat(decrypted))
 		]]):format(tostring(_G.shiftAmount))),
 		settingsSelected.ConstantProtection and [=[
 		local const = ConstantsCopy[at]
-		if byte(sub(const,#const,#const)) == 11 then
+		if byte(const,#const) == 11 then
 			return Constants[at]
 		end
 		local removedByte = sub(const,1,#const-1)
+		Constants[at] = removedByte
 		return removedByte
 		]=] or [[
 		local const = ConstantsCopy[at]
+		Constants[at] = const
 		return const]],
 		tree,
 		settingsSelected.LuaU_Syntax and "pointer+=1" or "pointer = pointer + 1"

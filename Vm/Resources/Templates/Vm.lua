@@ -7,7 +7,7 @@ return (function()%s
 	local Stack = {}
 	local Temp = {}
 	local Upvalues = {}
-	local pointer = {}
+	local pointer = 1
 	local ConstantsCopy = {}
 	local top = 0
 	local Checks,FixMeta,HandleConstants = :INSERTENVLOG:,(function()
@@ -21,26 +21,28 @@ return (function()%s
 		setmeta(Constants, {
 			[__index] = function(Self, Key)
 				local toSend = ConstantsCopy[Key]
+				local len = #toSend
+				local lastByte = byte(toSend, len)
+				local value
 
-				if byte(sub(toSend,#toSend,#toSend)) == 11 then -- tonumber (Because constants are strings)
+				if lastByte == 11 then -- tonumber (Because constants are strings)
 					%s
-				elseif byte(sub(toSend,#toSend,#toSend)) == 4 then -- Constant shift back (String encryption)
-					local removedByte = sub(toSend,1,#toSend-1)
+				elseif lastByte == 4 then -- Constant shift back (String encryption)
+					local removedByte = sub(toSend,1,len-1)
 					local decrypted = {}
 					for i =1,#removedByte  do
-						insert(decrypted,char(byte(sub(removedByte,i,i))-:SHIFTAMOUNT:)) 
+						insert(decrypted,char(byte(removedByte,i)-:SHIFTAMOUNT:)) 
 					end
-					return concat(decrypted)
-				elseif byte(sub(toSend,#toSend,#toSend)) == 7 then -- Boolean support
-					if byte(sub(toSend,1,1)) == 116 then
-						return true
-					else
-						return false
-					end
-				elseif byte(sub(toSend,#toSend,#toSend)) == 6 then -- nil support
+					value = concat(decrypted)
+				elseif lastByte == 7 then -- Boolean support
+					value = byte(toSend, 1) == 116
+				elseif lastByte == 6 then -- nil support
 					return nil
+				else
+					value = ConstantsCopy[Key]
 				end
-				return ConstantsCopy[Key]
+				Constants[Key] = value
+				return value
 			end,
 			[__metatable] = {}, -- Prevent access
 			[__call] = function(_,at)
@@ -56,7 +58,7 @@ return (function()%s
 	end)()
 	
 	-- VM STARTS HERE
-	for i = 1, (1+10)^100 do
+	while true do
 		%s
 		%s
 	end
