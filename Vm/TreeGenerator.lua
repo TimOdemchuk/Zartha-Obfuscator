@@ -366,7 +366,7 @@ return function(parasedBytecode)
 		local const = ConstantsCopy[at]
 		return const]],
 		tree,
-		settingsSelected.LuaU_Syntax and "pointer+=1" or "pointer=pointer+1"
+		settingsSelected.LuaU_Syntax and "pointer+=1" or "pointer = pointer + 1"
 	)
 	tree = tree:gsub(":SHIFTAMOUNT:",tostring(_G.shiftAmount))
 	

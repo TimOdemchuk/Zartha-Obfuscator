@@ -147,7 +147,7 @@ end
 local function read_string(del)
   local i = I
   while true do
-    local p, _, r = find(z, "([\n\r\\\"\'])", i) -- (long range match)
+    local p, _, r = find(z, "([\n\r\\\"'`])", i) -- (long range match)
     if p then
       if r == "\n" or r == "\r" then
         errorline("unfinished string")
@@ -278,10 +278,17 @@ function M.lex(source, source_name)
         break -- (continue)
       end
 
+      local op = match(z, "^([%+%-%*/%%]=)", i)
+      if op then
+        I = i + #op
+        addtoken("TK_OP", op)
+        break -- (continue)
+      end
+
       local r = match(z, "^%p", i)
       if r then
         buff = i
-        local p = find("-[\"\'.=<>~", r, 1, true)  --luacheck: ignore 421
+        local p = find("-[\"'.`=<>~", r, 1, true)  --luacheck: ignore 421
         if p then
 
           -- two-level if block for punctuation/symbols
@@ -324,10 +331,14 @@ function M.lex(source, source_name)
             r = match(z, "^%.%.?%.?", i)        -- .|..|... dots
             -- (fall through)
 
-          else                                  -- relational
+          else                                  -- relational or compound assignment
+            -- Check for compound assignment operators (+=, -=, *=, /=, %=) or relational
             r = match(z, "^%p=?", i)
             -- (fall through)
           end
+        end
+        if not p then
+          r = match(z, "^%p=?", i)
         end
         I = i + #r
         addtoken("TK_OP", r)  -- for other symbols, fall through

@@ -75,6 +75,7 @@ M.MAXIMUM_OPTS = merge(M.DEFAULT_OPTS, {
   entropy = true,
   eols = true,
   strings = false, -- changed to disabled 
+  srcequiv = false, -- disabled for non-standard Lua syntax (compound operators like +=)
 })
 
 --- Optimizes the given Lua source code.

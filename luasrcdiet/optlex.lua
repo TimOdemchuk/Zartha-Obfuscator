@@ -325,7 +325,14 @@ end
 local function do_string(I)
   local info = sinfos[I]
   local delim = sub(info, 1, 1)                 -- delimiter used
-  local ndelim = (delim == "'") and '"' or "'"  -- opposite " <-> '
+  local ndelim                                   -- opposite delimiter
+  if delim == "'" then
+    ndelim = '"'
+  elseif delim == '"' then
+    ndelim = "'"
+  elseif delim == "`" then
+    ndelim = '"'  -- prefer double quotes for backticks
+  end
   local z = sub(info, 2, -2)                    -- actual string
   local i = 1
   local c_delim, c_ndelim = 0, 0                -- "/' counts
@@ -411,7 +418,7 @@ local function do_string(I)
   if c_delim > c_ndelim then
     i = 1
     while i <= #z do
-      local p, _, r = find(z, "([\'\"])", i)
+      local p, _, r = find(z, "(['\"`])", i)
       if not p then break end
       if r == delim then                -- \<delim> -> <delim>
         z = sub(z, 1, p - 2)..sub(z, p)

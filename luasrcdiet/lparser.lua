@@ -735,8 +735,14 @@ local function assignment(v)
     primaryexp(nv.v)
     -- lparser.c deals with some register usage conflict here
     assignment(nv)
-  else  -- assignment -> '=' explist1
-    checknext("=")
+  else  -- assignment -> '=' | '+=' | '-=' | '*=' | '/=' | '%=' explist1
+    local op = tok
+    if op == "=" or op == "+=" or op == "-=" or op == "*=" or
+       op == "/=" or op == "%=" then
+      nextt()
+    else
+      error_expected("=")
+    end
     explist1()
     return  -- avoid default
   end
