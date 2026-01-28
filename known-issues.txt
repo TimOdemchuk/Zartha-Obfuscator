@@ -2,4 +2,3 @@
 - Constant protection requires a rework
 - Anti-Tamper requires a rework
 - Performance issues with closure opcode (Due to setmetatable and local variables)
-- local nil values not working
