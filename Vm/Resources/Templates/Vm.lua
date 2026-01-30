@@ -25,13 +25,13 @@ return [=[
 			return toSend
 		end
 
-		local ConstantsCache = {}
-		for i, v in pairs(Constants) do
-			ConstantsCache[i] = processConstant(v)
-		end
-
 		-- VM function
 		return (function()%s
+
+			local ConstantsCache = {}
+			for i, v in pairs(Constants) do
+				ConstantsCache[i] = processConstant(v)
+			end
 			local Stack = {}
 			local Temp = {}
 			local Upvalues = {}

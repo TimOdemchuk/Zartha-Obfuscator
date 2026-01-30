@@ -1,13 +1,4 @@
 -- Modify any instructions that have a macro (This is a simple custom way of doing it from my own opinion)
-local function fileExists(path)
-    local f = io.open(path, "r")
-    if f then 
-        f:close() 
-        return true 
-    end
-    return false
-end
-
 return function(instructions,constants,prototypes)
 	-- Fix upvalues (PSEUDO)
 	for i, inst in ipairs(instructions) do
@@ -77,38 +68,3 @@ return function(instructions,constants,prototypes)
 
 	return instructions,constants
 end
-
---[[ ver1
-			local constant = tostring(constants[tonumber(_G.getReg(inst,"B")+1)].Value)
-			if opcodes:FindFirstChild(constant)  then
-				local callOpcode = (instructions[i+1])
-				
-				if callOpcode.OpcodeName == "CALL" then
-					local callingIndex = instructions[callOpcode.A+1]
-					
-					if callingIndex == inst then
-						-- Transform opcode into custom macro
-						warn(callOpcode)
-						local customInstruction = require(opcodes:FindFirstChild(constant))("custom",callOpcode)
-						
-						instructions[i+1] = customInstruction
-					end
-				end
-			end
-]]
-
---[[ ver 2
-				for _,foundInst in pairs(instructions) do
-					if foundInst.OpcodeName == "CALL" then
-						local callingIndex = instructions[foundInst.A+1]
-						print(callingIndex,"----------<>",inst)
-						if callingIndex == inst then
-							-- Transform opcode into custom macro
-							warn(foundInst)
-							local customInstruction = require(opcodes:FindFirstChild(constant))("custom",foundInst)
-
-							instructions[i+1] = customInstruction
-						end
-					end
-				end
-]]
