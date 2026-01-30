@@ -1,25 +1,17 @@
--- FORPREP
+-- FORLOOP
 return function(instruction,shiftAmount,constant,settings)
-	local layout = [=[
+	local reg_a = _G.getReg(instruction,"A")
+	local reg_b = _G.getReg(instruction,"B")
 	
-
-	Temp[1] = :A:
-	Temp[2] = :B:
-
-	local Step = Stack[Temp[1] + 2]
-	local Limit = Stack[Temp[1] + 1]
-	local Index = Stack[Temp[1]] + Step
-
-	Stack[Temp[1]] = Index
-	
-	if (Step > 0 and Index <= Limit) or (Step <= 0 and Index >= Limit) then
-	    pointer = pointer + Temp[2] 
-	    Stack[Temp[1] + 3] = Index 
+	return ([=[
+	local _step = Stack[%d]
+	local _limit = Stack[%d]
+	local _index = Stack[%d] + _step
+	Stack[%d] = _index
+	if (_step > 0 and _index <= _limit) or (_step <= 0 and _index >= _limit) then
+		pointer = pointer + %d
+		Stack[%d] = _index
 	end
-
-
-	]=]
-	
-	return layout
+	]=]):format(reg_a + 2, reg_a + 1, reg_a, reg_a, reg_b, reg_a + 3)
 end
 

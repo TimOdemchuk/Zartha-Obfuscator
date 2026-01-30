@@ -1,21 +1,16 @@
 -- FORPREP
 return function(instruction,shiftAmount,constant,settings)
-	local layout = [=[
-	Temp[1] = :A:
-	Temp[2] = :B:
-
-	local Init = tonumber(Stack[Temp[1]])
-	local Limit = tonumber(Stack[Temp[1] + 1])
-	local Step = tonumber(Stack[Temp[1] + 2])
-
-	Stack[Temp[1]] = Init - Step
-	Stack[Temp[1] + 1] = Limit
-	Stack[Temp[1] + 2] = Step
-
-	pointer = pointer + Temp[2]
-
-	]=]
+	local reg_a = _G.getReg(instruction,"A")
+	local reg_b = _G.getReg(instruction,"B")
 	
-	return layout
+	return ([=[
+	local _init = tonumber(Stack[%d])
+	local _limit = tonumber(Stack[%d])
+	local _step = tonumber(Stack[%d])
+	Stack[%d] = _init - _step
+	Stack[%d] = _limit
+	Stack[%d] = _step
+	pointer = pointer + %d
+	]=]):format(reg_a, reg_a + 1, reg_a + 2, reg_a, reg_a + 1, reg_a + 2, reg_b)
 end
 

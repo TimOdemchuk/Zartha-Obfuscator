@@ -1,41 +1,69 @@
 -- CALL (KEEP IN MIND OF C REGISTER)
 return function(Inst, shiftAmount, constant, settings)
-	local output = ([=[
-	Temp[1] = :A:   -- instA
-	Temp[2] = :B:   -- instB
-	Temp[3] = {}    -- args
-	Temp[4] = {}    -- output table
-
-	if Temp[2] == 0 then
-		Temp[5] = top
-	else
-		Temp[5] = Temp[1] + Temp[2] - 1
-	end
-
-	for i = Temp[1] + 1, Temp[5] do
-		Temp[3][i - Temp[1]] = Stack[i]
-	end
+	local reg_a = _G.getReg(Inst, "A")
+	local reg_b = _G.getReg(Inst, "B")
+	local reg_c = _G.getReg(Inst, "C")
 	
-	Temp[4] = {Stack[Temp[1]](unpack(Temp[3], 1, Temp[5] - Temp[1]))}
-	
+	local args = {}
+	if reg_b == 0 then
+		return ([=[
+	local Args = {}
+	for i = :A: + 1, top do
+		Args[i - :A:] = Stack[i]
+	end
+	local Results = {Stack[:A:](unpack(Args, 1, top - :A:))}
 	%s
-	]=]):format(_G.getReg(Inst, "C") < 1 and [=[
-	if #Temp[4] == 0 then
-		Stack[Temp[1]] = nil
-		top = Temp[1]
+	]=]):format(reg_c < 1 and [=[
+	local len = #Results
+	if len == 0 then
+		Stack[:A:] = nil
+		top = :A:
 	else
-		top = Temp[1] + #Temp[4] - 1
-		for i = Temp[1], top do
-			Stack[i] = Temp[4][i+1-Temp[1]]
+		top = :A: + len - 1
+		for i = 1, len do
+			Stack[:A: + i - 1] = Results[i]
 		end
 	end
-	Temp = {}
-	]=] or [=[
-	for i = Temp[1], Temp[1] + :C: - 2 do
-		Stack[i] = Temp[4][i+1-Temp[1]]
+	]=] or ([=[
+	for i = 1, %d do
+		Stack[:A: + i - 1] = Results[i]
 	end
-	Temp = {}
-	]=])
-
-	return output
+	]=]):format(reg_c - 1))
+	end
+	
+	local argCount = reg_b - 1
+	for i = 1, argCount do
+		args[i] = ("Stack[%d]"):format(reg_a + i)
+	end
+	local argStr = table.concat(args, ", ")
+	
+	if reg_c < 1 then
+		-- Variable return count
+		return ([=[
+	local Results = {Stack[:A:](%s)}
+	local len = #Results
+	if len == 0 then
+		Stack[:A:] = nil
+		top = :A:
+	else
+		top = :A: + len - 1
+		for i = 1, len do
+			Stack[:A: + i - 1] = Results[i]
+		end
+	end
+	]=]):format(argStr)
+	elseif reg_c == 1 then
+		-- No return values needed
+		return ("\tStack[:A:](%s)"):format(argStr)
+	elseif reg_c == 2 then
+		-- Single return value
+		return ("\tStack[:A:] = Stack[:A:](%s)"):format(argStr)
+	else
+		-- Multiple fixed return values
+		local rets = {}
+		for i = 0, reg_c - 2 do
+			rets[i + 1] = ("Stack[%d]"):format(reg_a + i)
+		end
+		return ("\t%s = Stack[:A:](%s)"):format(table.concat(rets, ", "), argStr)
+	end
 end

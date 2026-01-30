@@ -1,10 +1,6 @@
 -- GETGLOBAL
 return function(inst,shift,constant,settings)
-	local output = [=[
-		Stack[:A:] = Env[Constants[:B:+1]]
-	]=]
-	
-	return output
+	local reg_b = _G.getReg(inst,"B")
+	local mappedIdx = _G.getMappedConstant(reg_b)
+	return ("\tStack[:A:] = Env[C[%d]]"):format(mappedIdx)
 end
-
--- Stack[:A:] = Env[Constants[:B:+1]]

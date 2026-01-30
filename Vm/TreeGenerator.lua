@@ -16,6 +16,7 @@ return function(parasedBytecode)
 	local stringEncryptorFunction = require("Resources.EncryptStrings")(nil,true)
 	local stringEncryptorTemplate = require("Resources.Templates.DecryptStringsTemplate")
 	local ControlFlowFlattening = require("Resources.ControlFlowFlattening")
+	local junkConstants = require("Resources.Templates.FakeConstants")
 
 	local decryptStr = tostring(_G.Random(100,400))
 
@@ -113,52 +114,131 @@ return function(parasedBytecode)
 		return out
 	end
 
-	-- Load constants
-	local function getConstants(targetConstants)
+	-- Generate junk constant value
+	local function generateJunkConstant()
+		return tostring(junkConstants[math.random(1, #junkConstants)])
+	end
+
+	-- Shuffle constants and create mapping
+	local function shuffleConstants(targetConstants)
+		local shuffled = {}
+		local indexMap = {} 
+		local reverseMap = {} 
+		
+		-- Add junk constants (random amount)
+		local junkCount = math.random(2, 6)
+		local totalSize = #targetConstants + junkCount
+		
+		-- shuffle stuff
+		local positions = {}
+		for i = 1, totalSize do
+			positions[i] = i
+		end
+		
+		for i = totalSize, 2, -1 do
+			local j = math.random(1, i)
+			positions[i], positions[j] = positions[j], positions[i]
+		end
+		
+		for origIdx = 1, #targetConstants do
+			local newPos = positions[origIdx]
+			shuffled[newPos] = targetConstants[origIdx]
+			indexMap[origIdx] = newPos
+			reverseMap[newPos] = origIdx
+		end
+		
+		-- Add junk constants
+		for i = #targetConstants + 1, totalSize do
+			local newPos = positions[i]
+			shuffled[newPos] = generateJunkConstant()
+		end
+		
+		return shuffled, indexMap
+	end
+
+	-- Store constant mappings globally for opcodes to use
+	_G.constantMaps = {}
+	_G.currentMapId = "base"
+
+	-- Generate constant mapping
+	local function prepareConstantMapping(targetConstants, mapId)
+		-- Shuffle constants
+		local shuffledConstants, indexMap = shuffleConstants(targetConstants)
+		
+		-- Store mapping for this constant table
+		_G.constantMaps[mapId or "base"] = {
+			shuffled = shuffledConstants,
+			indexMap = indexMap
+		}
+		
+		return shuffledConstants, indexMap
+	end
+
+	-- Load constants (generated mapping)
+	local function getConstants(targetConstants, mapId)
+		mapId = mapId or _G.currentMapId or "base"
+		
+		local mapData = _G.constantMaps[mapId]
+		local shuffledConstants
+		
+		if mapData then
+			shuffledConstants = mapData.shuffled
+		else
+			shuffledConstants = shuffleConstants(targetConstants)
+		end
+		
 		local constantsStr = ""
-		for i, const in ipairs(targetConstants) do
+		for i = 1, #shuffledConstants do
+			local const = shuffledConstants[i]
+			if not const then
+				-- add junk constant
+				constantsStr = constantsStr .. '(""),'
+			else
+				local costAt = type(const) == "table" and tostring(const.Value) or tostring(const)
+				local byted = costAt
 
-			local costAt = type(const) == "table" and tostring(const.Value) or tostring(const)
-			local byted = costAt
-
-			--[[
-			local byted = costAt:gsub(".", function(b) return "\\" .. b:byte()+(shiftAmount) end)
-			local split = string.split(byted,"\\")
-
-			if split[#split] == "0" or split[#split]  == tostring(shiftAmount) then -- Prevent null bytes
-				byted = string.sub(byted,1,#byted-2)
-			end
-			]]
-
-			-- CONSTANT TYPES:
-			-- Identifier for constant protection
-			if settingsSelected.ConstantProtection then  -- byte 4
-				if string.sub(byted,#byted,#byted) == "\\" then
-					byted = string.sub(byted,1,#byted-1)
+				-- CONSTANT TYPES:
+				-- Identifier for constant protection
+				if settingsSelected.ConstantProtection then  -- byte 4
+					if string.sub(byted,#byted,#byted) == "\\" then
+						byted = string.sub(byted,1,#byted-1)
+					end
+					byted = byted..string.char(4)
 				end
-				byted = byted..string.char(4)
-			end
 
-			-- Number Identifier
-			if const.Type == "number" then  -- byte 11
-				byted = byted..string.char(11)
-			end
+				-- Number Identifier
+				if const.Type == "number" then  -- byte 11
+					byted = byted..string.char(11)
+				end
 
-			-- Boolean Identifier
-			if const.Type == "boolean" then -- byte 7
-				byted = byted..string.char(7)
-			end
+				-- Boolean Identifier
+				if const.Type == "boolean" then -- byte 7
+					byted = byted..string.char(7)
+				end
 
-			-- nil Identifier
-			if const.Type == "nil" then -- byte 6
-				byted = byted..string.char(6)
-			end
+				-- nil Identifier
+				if const.Type == "nil" then -- byte 6
+					byted = byted..string.char(6)
+				end
 
-			constantsStr = constantsStr..('%s("%s")%s,'):format(tonumber(const) and "(" or "",byted,tonumber(const) and ")" or "")
+				constantsStr = constantsStr..('%s("%s")%s,'):format(tonumber(const) and "(" or "",byted,tonumber(const) and ")" or "")
+			end
 		end
 		constantsStr = stringEncryptor(constantsStr)
 		return constantsStr
 	end
+
+	-- Get mapped constant index
+	local function getMappedConstantIndex(origIndex, mapId)
+		mapId = mapId or _G.currentMapId or "base"
+		local mapData = _G.constantMaps[mapId]
+		if mapData and mapData.indexMap and mapData.indexMap[origIndex + 1] then
+			return mapData.indexMap[origIndex + 1]
+		end
+		return origIndex + 1 -- fallback
+	end
+	
+	_G.getMappedConstant = getMappedConstantIndex
 
 	_G.shiftAmount = shiftAmount -- For other scripts (Decrypt key)
 
@@ -179,7 +259,7 @@ return function(parasedBytecode)
 				local constGot = constants[B+1]
 
 				if B and constGot and constGot.Type == "number" then
-					const= constGot
+					const = constGot
 				end
 			end
 
@@ -298,7 +378,7 @@ return function(parasedBytecode)
 
 		return output
 	end
-	
+
 	-- Process prototypes
 	local function processPrototypes()
 		local currentLevel = {}
@@ -315,12 +395,18 @@ return function(parasedBytecode)
 				local extra = protoData.extra
 				protoAt = protoAt + 1
 				local protoName = ("PROTOTYPE%sHERE"):format(tostring(protoAt))
+				local protoMapId = "proto_" .. tostring(protoAt)
 
 				_G.display("--> Reading prototype: "..tostring(protoAt)..(extra or ""),"yellow")
 
 				local numParams = proto.NumUpvalues
+				
+				-- Prepare constant mapping BEFORE reading instructions
+				_G.currentMapId = protoMapId
+				prepareConstantMapping(proto.Constants, protoMapId)
+				
 				local newInstructions = readInstructions(require("Vm.Resources.ModifyInstructions")(proto.Instructions,proto.Constants,proto.Prototypes),nil,"PROTOTYPE "..tostring(protoAt),extra)
-				local constants = getConstants(proto.Constants)
+				local constants = getConstants(proto.Constants, protoMapId)
 
 				-- Instructions
 				tree = tree:gsub("INST_"..protoName, function() return newInstructions end)
@@ -357,44 +443,37 @@ return function(parasedBytecode)
 		processPrototypes()
 	end
 
-	-- Add VM
+	-- Prepare base constant mapping FIRST (before reading instructions)
+	_G.currentMapId = "base"
+	prepareConstantMapping(constants, "base")
+
+	-- Add VM (now opcodes can access the pre-generated mapping)
 	local insertInstructions = readInstructions(instructions,constants)
 	tree = tree..insertInstructions
 
 	-- Prototypes
 	getPrototypes(prototypes)
 
-	-- Insert constants
-	header = header:gsub("CONSTANTS_HERE_BASEVM",getConstants(constants))
+	-- Insert constants (uses the pre-generated mapping)
+	header = header:gsub("CONSTANTS_HERE_BASEVM",getConstants(constants, "base"))
 
-	-- Format VM
+	-- Format VM (optimized - fewer format args)
 	tree = vm:format(
 		header,
 		"",
-		settingsSelected.LuaU_Syntax and ":any" or "",
 		(not settingsSelected.ConstantProtection and [[
-		local removedByte = sub(toSend,1,#toSend-1)
-		value = tonumber(removedByte)
+				return tonumber(sub(toSend, 1, len - 1))
 		]] or ([[
-		local removedByte = sub(toSend,1,#toSend-2)
-		local decrypted = {}
-		for i =1,#removedByte  do
-			insert(decrypted,char(byte(removedByte,i)-%s)) 
-		end
-		value = tonumber(concat(decrypted))
+				local removedByte = sub(toSend, 1, len - 1)
+				local decrypted = {}
+				local n = 0
+				for i = 1, #removedByte do
+					n = n + 1
+					decrypted[n] = char(byte(removedByte, i) - %s)
+				end
+				return tonumber(concat(decrypted))
 		]]):format(tostring(_G.shiftAmount))),
-		settingsSelected.ConstantProtection and [=[
-		local const = ConstantsCopy[at]
-		if byte(const,#const) == 11 then
-			return Constants[at]
-		end
-		local removedByte = sub(const,1,#const-1)
-		Constants[at] = removedByte
-		return removedByte
-		]=] or [[
-		local const = ConstantsCopy[at]
-		Constants[at] = const
-		return const]],
+		settingsSelected.LuaU_Syntax and ":any" or "",
 		tree,
 		settingsSelected.LuaU_Syntax and "pointer+=1" or "pointer = pointer + 1"
 	)

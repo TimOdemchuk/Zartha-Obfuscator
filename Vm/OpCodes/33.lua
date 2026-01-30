@@ -1,19 +1,17 @@
--- TFORPREP
-return [[
-	local A = :A:
-	local C = :C:
-	local Result = {
-		Stack[A](Stack[A + 1], 
-		Stack[A + 2])
-	}
-
-	for i = 1, C do
-		Stack[A + 2 +i] = Result[i]
+-- TFORLOOP
+return function(instruction, shiftAmount, constant, settings)
+	local reg_a = _G.getReg(instruction, "A")
+	local reg_c = _G.getReg(instruction, "C")
+	
+	return ([=[
+	local _result = {Stack[%d](Stack[%d], Stack[%d])}
+	for i = 1, %d do
+		Stack[%d + i] = _result[i]
 	end
-
-	if Stack[A + 3] ~= nil then
-		Stack[A +2] = Stack[A + 3]
+	if Stack[%d] ~= nil then
+		Stack[%d] = Stack[%d]
 	else
 		pointer = pointer + 1
 	end
-]]
+	]=]):format(reg_a, reg_a + 1, reg_a + 2, reg_c, reg_a + 2, reg_a + 3, reg_a + 2, reg_a + 3)
+end

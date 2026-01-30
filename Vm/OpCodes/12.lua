@@ -4,14 +4,8 @@ return function(Inst,shiftAmount,constant,settings)
 	local reg_b = _G.getReg(Inst,"B",true)
 	local reg_c = _G.getReg(Inst,"C",true)
 	
-	local output = ([[
-	Stack[:A:] = (%s and Constants[:B:+1] or Stack[:B:]) + (%s and Constants[:C:+1] or Stack[:C:])
-	]]):format(tostring(reg_b.k),tostring(reg_c.k))
+	local b_access = reg_b.k and ("C[%d]"):format(_G.getMappedConstant(reg_b.i)) or ("Stack[%d]"):format(reg_b.i)
+	local c_access = reg_c.k and ("C[%d]"):format(_G.getMappedConstant(reg_c.i)) or ("Stack[%d]"):format(reg_c.i)
 	
-	return output
+	return ("\tStack[:A:] = %s + %s"):format(b_access, c_access)
 end
-
-
---[[
-Stack[Inst.reg_a] = (Inst.reg_b.k and Constants[Inst.reg_b.i] or Stack[Inst.reg_b.i]) + (Inst.reg_c.k and Constants[Inst.reg_c.i] or Stack[Inst.reg_c.i])
-]]

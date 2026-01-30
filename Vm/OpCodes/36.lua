@@ -4,15 +4,27 @@ return function(inst,shiftAmount,constant,settings)
 	local prevStack = Stack
 	local prevUpvalues = Upvalues
 	
-	Stack[:A:] = function(...) -- PROTOTYPE :PROTOHERE:
-		local Constants = {CONSTANTS_PROTOTYPE:PROTOHERE:HERE}
-		
-		local Varargs,Stack,Args,Temp,Upvalues,pointer,top,ConstantsCopy,Map,argCount = {},{},{...},{},{},1,0,{},:MAPPING:
-		-- Fix constant int
-		for i, Value in pairs(Constants) do
-			ConstantsCopy[i] = Value
-			Constants[i] = nil
+	local rawConsts:PROTOHERE: = {CONSTANTS_PROTOTYPE:PROTOHERE:HERE}
+	local C:PROTOHERE: = {}
+	for i, v in pairs(rawConsts:PROTOHERE:) do
+		local len = #v
+		local lastByte = byte(v, len)
+		if lastByte == 11 then
+			%s
+		elseif lastByte == 7 then
+			C:PROTOHERE:[i] = byte(v, 1) == 116
+		elseif lastByte == 6 then
+			C:PROTOHERE:[i] = nil
+		else
+			C:PROTOHERE:[i] = v
 		end
+	end
+	rawConsts:PROTOHERE: = nil
+	
+	Stack[:A:] = function(...) -- PROTOTYPE :PROTOHERE:
+		local Varargs, Stack, Temp, Upvalues, pointer, top, Map = {}, {}, {}, {}, 1, 0, :MAPPING:
+		local Args = {...}
+		local C = C:PROTOHERE:
 		
 		-- fix upvalues
 		if next(Map) then
@@ -43,68 +55,27 @@ return function(inst,shiftAmount,constant,settings)
 		-- Args
 		local argCount = #Args
 		for i = 1, argCount do
-			local arg = Args[i]
-			Stack[i - 1] = arg
-			Varargs[i] = arg
+			Stack[i - 1] = Args[i]
+			Varargs[i] = Args[i]
 		end
 		
-		setmeta(Constants, {
-		[__index] = function(Self, Key)
-			local toSend = ConstantsCopy[Key]
-			local len = #toSend
-			local lastByte = byte(toSend, len)
-			local value
-
-			if lastByte == 11 then
-				%s
-			elseif lastByte == 7 then -- Boolean support
-				value = byte(toSend, 1) == 116
-			elseif lastByte == 6 then -- nil support
-				return nil
-			else
-				value = ConstantsCopy[Key]
-			end
-			Constants[Key] = value
-			return value
-		end,
-		[__metatable] = {},
-		[__tostring] = function()
-			pointer = pointer ^10
-			return ttostring(pointer)
-		end,
-		[__call] = function(_,at)
-			%s
-		end,
-		[__pairs] = function() return function() pointer = pointer +15 end end,
-        [__ipairs] = function() return function() pointer = pointer +10 end end
-	})
 		while true do
 		INST_PROTOTYPE:PROTOHERE:HERE
 		pointer = pointer+1
 		end
 	end
 ]=]):format((not settings.ConstantProtection and [[
-		local removedByte = sub(toSend,1,#toSend-1)
-		value = tonumber(removedByte)
+			C:PROTOHERE:[i] = tonumber(sub(v, 1, len - 1))
 		]] or ([[
-		local removedByte = sub(toSend,1,#toSend-1)
-		local decrypted = {}
-		for i =1,#removedByte  do
-			insert(decrypted,char(byte(removedByte,i)-%s)) 
-		end
-		value = tonumber(concat(decrypted))
-		]]):format(tostring(_G.shiftAmount))),settings.ConstantProtection and [=[
-		local const = ConstantsCopy[at]
-		if byte(const,#const) == 11 then
-			return Constants[at]
-		end
-		local removedByte = sub(const,1,#const-1)
-		Constants[at] = removedByte
-		return removedByte
-		]=] or [[
-		local const = ConstantsCopy[at]
-		Constants[at] = const
-		return const]])
+			local removedByte = sub(v, 1, len - 1)
+			local decrypted = {}
+			local n = 0
+			for j = 1, #removedByte do
+				n = n + 1
+				decrypted[n] = char(byte(removedByte, j) - %s)
+			end
+			C:PROTOHERE:[i] = tonumber(concat(decrypted))
+		]]):format(tostring(_G.shiftAmount))))
 	
 	return output
 end

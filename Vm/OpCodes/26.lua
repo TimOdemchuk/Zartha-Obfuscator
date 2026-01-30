@@ -1,16 +1,8 @@
 -- TEST
 return function(Inst,shiftAmount,constant,settings)
-	local output = ([=[
-	if %s Stack[:A:] then
-		pointer = pointer + 1
-		%s
-	end]=])
+	local reg_a = _G.getReg(Inst, "A")
+	local reg_c = _G.getReg(Inst, "C")
 	
-	if _G.getReg(Inst,"C")== 0 then
-		output = output:format("",settings.Debug and "print('[VM]:','JMP -- > ',pointer)" or "")
-	else
-		output = output:format("not",settings.Debug and "print('[VM]:','JMP -- > ',pointer)" or "")
-	end
-	
-	return output
+	local check = reg_c == 0 and ("Stack[%d]"):format(reg_a) or ("not Stack[%d]"):format(reg_a)
+	return ("\tif %s then pointer = pointer + 1 end"):format(check)
 end
