@@ -1,3 +1,5 @@
+-- Convert all Luau-specific syntax to standard Lua
+
 local Sanitizer = {}
 
 local TOKEN_TYPES = {
