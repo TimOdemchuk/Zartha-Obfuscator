@@ -24,10 +24,10 @@ end
 function main:generateState(opcodeMap)
 	local output = {}
 
-	-- Obfuscated check generator
+	-- Obfuscated check generator (Generate pointer check)
 	local function getObfuscatedCheck(target)
-		local m = math.random(17, 189)  
-		local a = math.random(1500, 99999) 
+		local m = math.random(10, 500)  
+		local a = math.random(10, 500) 
 
 		if math.random() > 0.5 then
 			local result = (target * m) + a
@@ -42,10 +42,17 @@ function main:generateState(opcodeMap)
 	local function getJunk()
 		local v = math.random(100, 999)
 		local junkOptions = {
-			string.format("local _v%d = Stack[top]\n\t\t\tif _v%d then top = top - 1 end", v, v),
-			string.format("local _v%d = Env[Constants[1]]\n\t\t\tStack[top] = _v%d", v, v),
 			string.format("if (pointer * 2) < 0 then Env[1] = nil end"),
-			string.format("Stack[pointer] = Constants[pointer]")
+			string.format("Stack[%d] = Constants[%d+1]",math.random(1,55),math.random(1,5)),
+			string.format("Stack[pointer] = Env[Constants[%d+1]]",math.random(1,55)),
+			string.format("Stack[%d] = Env[Constants[%d+1]]",math.random(1,10),math.random(1,10)),
+			string.format("Stack[%d] = -Stack[%d]",math.random(1,10),math.random(1,10)),
+			string.format("pointer = pointer + %d",math.random(1,3)),
+			string.format("do\npointer = pointer + %d\nend",math.random(1,3)),
+			string.format("Stack[%d] = (%s and Constants[%d+1] or Stack[%d]) * (%s and Constants[%d+1] or Stack[%d])",math.random(1,10),math.random(0,1) == 1 and "true" or "false",math.random(1,10),math.random(1,10),math.random(0,1) == 1 and "true" or "false",math.random(1,10),math.random(1,10)),
+			string.format("Stack[%d] = (%d == 1)",math.random(1,10),math.random(0,1)),
+			string.format("Stack[%d] = nil",math.random(1,10)),
+			string.format("do\nStack[%d] = Env[Constants[%d+1]]\nend",math.random(1,10),math.random(1,10)),
 		}
 		return junkOptions[math.random(1, #junkOptions)]
 	end

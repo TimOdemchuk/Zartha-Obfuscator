@@ -1,1 +1,671 @@
-return(("File generated using [Zartha]")and(function()return(function(d,n,n,e)local g,E,c,r,e,e,w,Y,i,W,f,u,s,y,h,N,v,_,V,F,o,x,Z=d[e("\065\066\067\081\092\081","2618")][e("\087\094\085\070","464")],d[e("\064\085\082\088\081","440")][e("\091\089\071\087\064\067","2742")],d[e("\066\066\069\093\095\081","1674")][e("\087\074\077\080","539")],d[e("\065\069\066\095\092\086","2106")][e("\065\064\080","2525")],d[e("\066\071\074\088\093\095","138")][e("\092\082\065\080\089","1353")],d[e("\069\085\090\092\084","1480")][e("\087\071\084\092\075\080","1519")],d[e("\069\093\067\066\067\091\094\081","1206")],d[e("\073\091\086\085\084","987")],d[e("\069\088\080\093\092","192")][e("\071\086\070\089\081\083","2868")],d[e("\069\089\082\094\084","1802")][e("\081\089\088\083\083\066","2660")],d[e("\070\093\090\064\095\080\081\071","2245")],d[e("\066\081\064\084\084\064\085\077\080\086\088\092","1449")],e("\110\111\093\080\069\081\068\084\083\092\085","1005"),e("\110\107\071\093\066\064\065\091\095\083","1432"),e("\105\111\080\088\084\092\078","609"),e("\110\109\081\089\093\094","1228"),d[e("\092\085\070\072\064\095\073\065","2018")],d[e("\065\074\095\092\069","1862")],e("\110\107\071\085\088\070\068","1474"),e("\103\102\089\072\088\089\074\074","890"),{(e("\087\071","846")),(e("\082\094\089\083\090","1260")),(e("\000\058","1138")),(e("\008\000\006\004\001\000\061","1064")),(e("\003\059","1086")),(e("\002\051","1815")),(e("\065\066\091\089\069","1027")),(e("\127\068\093\090\069\090\086\095\019\123\084\093\090\089\094\088\067\088\025\099\086\074\068\095\077\066","913")),},d[e("\065\088\095\075\066","1969")],e("\109\106\090\083\069\092\090\082\087\077","2546")return(function()local l={}local e={}local b={}local n=1 local a={}local t=0 local a,a,a=(function()local function l(...)local e=true and#{...}return e end local e=false d[h]=function()e=true end if e then n=100 else local e=nil local l,l=Y(function()e=(v(_))end)if e then n=50 else n=1 end end local e=l(1,2,3)if e<2 then n=50 end end)(),(function()for e,n in x(o)do a[e]=n o[e]=nil end end)(),(function()u(o,{[h]=function(e,d)local e=a[d]local t=#e local l=c(e,t)local n if l==11 then local e=r(e,1,#e-1)n=f(e)elseif l==4 then local l=r(e,1,t-1)local e={}for d=1,#l do E(e,g(c(l,d)-0))end n=W(e)elseif l==7 then n=c(e,1)==116 elseif l==6 then return nil else n=a[d]end o[d]=n return n end,[s]={},[N]=function(e,n)local e=a[n]o[n]=e return e end,[y]=function()n=n^10 return w(n)end,[V]=function()return function()n=n+15 end end,[F]=function()return function()n=n+10 end end})end)()while true do if(n+114)*93404==12516136 then do local d=n+431 if d>n then do e[1]=4 e[2]=7+1 e[3]=o[e[2]]l[e[1]]=e[3]end else l[n]=o[n]end end elseif(n*127)+74198==76103 then do local i=n+547 if i>n then do e[1]=2 e[2]=0+1 e[3]=o[e[2]]e[4]=d[e[3]]l[e[1]]=e[4]end else local e=d[o[1]]l[t]=e end end elseif(n*172)+13590==16686 then do local e=n-315 if e>n then local e=l[t]if e then t=t-1 end else do l[2]=(false and o[2+1]or l[2])-(false and o[1+1]or l[1])end end end elseif(n*135)+59039==60254 then do local e=n+708 if e>n then do l[6]=l[0]end else l[n]=o[n]end end elseif(n*148)+95695==96583 then do local d=n+552 if d>n then do e[1]=3 e[2]=3+1 e[3]=o[e[2]]l[e[1]]=e[3]end else local e=l[t]if e then t=t-1 end end end elseif(n*131)+37675==39902 then do local o=n+836 if o>n then do e[1]=2 e[2]=1 e[3]={}e[4]={}if e[2]==0 then e[5]=t else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=l[n]end e[4]={l[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+2-2 do l[n]=e[4][n+1-e[1]]end e={}end else if(n*2)<0 then d[1]=nil end end end elseif(n*136)+33144==36544 then do local e=n+110 if e>n then do local n={}local e=0 for d=0,0+1-2 do e=e+1 n[e]=l[d]end return i(n,1,e)end else local e=d[o[1]]l[t]=e end end elseif(n*98)+90708==90904 then do local i=n+935 if i>n then do e[1]=1 e[2]=0+1 e[3]=o[e[2]]e[4]=d[e[3]]l[e[1]]=e[4]end else local e=l[t]if e then t=t-1 end end end elseif(n*56)+13602==14834 then do local t=n+770 if t>n then do e[1]=3 e[2]=6+1 e[3]=o[e[2]]e[4]=d[e[3]]l[e[1]]=e[4]end else if(n*2)<0 then d[1]=nil end end end elseif(n+116)*35742==4324782 then do local d=n+557 if d>n then do e[1]=2 e[2]=2+1 e[3]=o[e[2]]l[e[1]]=e[3]end else l[n]=o[n]end end elseif(n+23)*91023==3276828 then do local d=n+597 if d>n then do e[1]=6 e[2]=4 e[3]={}e[4]={}if e[2]==0 then e[5]=t else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=l[n]end e[4]={l[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+1-2 do l[n]=e[4][n+1-e[1]]end e={}end else local e=l[t]if e then t=t-1 end end end elseif(n*36)+79973==80369 then do local d=n+822 if d>n then do e[1]=8 e[2]=4+1 e[3]=o[e[2]]l[e[1]]=e[3]end else l[n]=o[n]end end elseif(n*21)+50210==50693 then do local e=n-709 if e>n then l[n]=o[n]else do l[4]=l[2]end end end elseif(n*23)+93720==94203 then do local d=n-738 if d>n then local e=l[t]if e then t=t-1 end else do e[1]=3 e[2]=2 e[3]={}e[4]={}if e[2]==0 then e[5]=t else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=l[n]end e[4]={l[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+1-2 do l[n]=e[4][n+1-e[1]]end e={}end end end elseif(n*96)+59402==61226 then do local t=n+644 if t>n then do e[1]=3 e[2]=6+1 e[3]=o[e[2]]e[4]=d[e[3]]l[e[1]]=e[4]end else if(n*2)<0 then d[1]=nil end end end elseif(n+56)*66007==4488476 then do local d=n+166 if d>n then do e[1]=9 e[2]=5+1 e[3]=o[e[2]]l[e[1]]=e[3]end else l[n]=o[n]end end elseif(n*37)+42307==42825 then do local d=n-381 if d>n then l[n]=o[n]else do e[1]=2 e[2]=-6 local o=l[e[1]+2]local t=l[e[1]+1]local d=l[e[1]]+o l[e[1]]=d if(o>0 and d<=t)or(o<=0 and d>=t)then n=n+e[2]l[e[1]+3]=d end end end end elseif(n*124)+67630==68126 then do local o=n+893 if o>n then do e[1]=1 e[2]=1 e[3]={}e[4]={}if e[2]==0 then e[5]=t else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=l[n]end e[4]={l[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+2-2 do l[n]=e[4][n+1-e[1]]end e={}end else if(n*2)<0 then d[1]=nil end end end elseif(n+83)*35180==3201380 then do local o=n-456 if o>n then if(n*2)<0 then d[1]=nil end else do e[1]=2 e[2]=5 local t=f(l[e[1]])local o=f(l[e[1]+1])local d=f(l[e[1]+2])l[e[1]]=t-d l[e[1]+1]=o l[e[1]+2]=d n=n+e[2]end end end elseif(n+75)*17191==1461235 then do local e=n-98 if e>n then if(n*2)<0 then d[1]=nil end else do l[7]=l[5]end end end elseif(n+84)*51382==5138200 then do local t=n+183 if t>n then do e[1]=o[1+1]l[2]=l[2][e[1]]end else if(n*2)<0 then d[1]=nil end end end elseif(n*156)+38204==39296 then do local i=n+922 if i>n then do e[1]=4 e[2]=2+1 e[3]=o[e[2]]l[e[1]]=e[3]end else local e=d[o[1]]l[t]=e end end elseif(n+41)*44444==1866648 then do local e=n-623 if e>n then local e=l[t]if e then t=t-1 end else do local a=l local g=b l[0]=function(...)local l={}local E={}local n={}local b={...}local e={}local _={}local e=1 local o=0 local o={}for e,n in x(l)do o[e]=n l[e]=nil end local t={}if next(t)then u(_,{[h]=function(n,e)local e=t[e]if not e then return nil end if e[1]==0 then return a[e[2]]else return g[e[2]]end end,[Z]=function(l,e,n)local e=t[e]if not e then return end if e[1]==0 then a[e[2]]=n else g[e[2]]=n end end,[s]={}})end local t=#b for e=1,t do local l=b[e]n[e-1]=l E[e]=l end u(l,{[h]=function(e,t)local n=o[t]local e=#n local d=c(n,e)local e if d==11 then local n=r(n,1,#n-1)e=f(n)elseif d==7 then e=c(n,1)==116 elseif d==6 then return nil else e=o[t]end l[t]=e return e end,[s]={},[y]=function()e=e^10 return w(e)end,[N]=function(e,n)local e=o[n]l[n]=e return e end,[V]=function()return function()e=e+15 end end,[F]=function()return function()e=e+10 end end})while true do if(e*35)+19208==19278 then do local o=e-517 if o>e then if(e*2)<0 then d[1]=nil end else do n[3]=(false and l[0+1]or n[0])+(false and l[3+1]or n[3])end end end elseif(e+18)*57079==1255738 then do local l=e-125 if l>e then if(e*2)<0 then d[1]=nil end else do local l={}local e=0 for d=0,0+1-2 do e=e+1 l[e]=n[d]end return i(l,1,e)end end end elseif(e+89)*84218==7748056 then do local d=e+281 if d>e then do local l={}local e=0 for d=3,3+2-2 do e=e+1 l[e]=n[d]end return i(l,1,e)end else n[e]=l[e]end end elseif(e*96)+20549==20645 then do local o=e-697 if o>e then if(e*2)<0 then d[1]=nil end else do n[3]=(false and l[1+1]or n[1])*(false and l[2+1]or n[2])end end end end e=e+1 end end end end end elseif(n+168)*28106==4806126 then do local d=n-236 if d>n then l[n]=o[n]else do e[1]=o[1+1]l[1]=l[1][e[1]]end end end elseif(n*124)+68126==71102 then do local f=n-899 if f>n then local e=d[o[1]]l[t]=e else do e[1]=3 e[2]=2 e[3]={}e[4]={}if e[2]==0 then e[5]=t else e[5]=e[1]+e[2]-1 end for n=e[1]+1,e[5]do e[3][n-e[1]]=l[n]end e[4]={l[e[1]](i(e[3],1,e[5]-e[1]))}for n=e[1],e[1]+1-2 do l[n]=e[4][n+1-e[1]]end e={}end end end end n=n+1 end end)()end)((_ENV or getfenv()),{},0,function(e,d)local l={}for n=(6*9-32+(((-21)))),#e do local o=string.byte(e,n)local e=string.byte(d,(n-(36*13-65+(((-402)))))%#d+(6*5-17+(((-12)))))table.insert(l,string.char(bit32.bxor(o,e)))end return table.concat(l)end)end)())
+--discord.gg/boronide, code generated using luamin.js™
+
+
+
+
+return (("File generated using [Zartha]") and (function()
+	return (function(o, n, n, e)
+		local v, Y, i, u, e, e, y, E, t, b, a, h, s, w, r, N, _, g, x, F, d, V, Z = o[e("\065\069\066\095\092\086", "2106")][e("\081\090\080\068", "2216")], o[e("\069\085\086\085\084", "1449")][e("\091\092\071\086\064\070", "2243")], o[e("\065\066\068\095\092\081", "2666")][e("\080\077\077\087", "2492")], o[e("\066\066\068\080\095\081", "1669")][e("\075\076\091", "899")], o[e("\066\071\075\081\095\084", "1398")][e("\090\087\071\084\094", "763")], o[e("\067\083\090\091\087", "728")][e("\085\071\082\086\079\082", "357")], o[e("\070\086\071\077\064\080\090\094", "2949")], o[e("\071\087\081\091\088", "740")], o[e("\070\086\083\094\087", "2712")][e("\071\095\070\088\081\090", "2169")], o[e("\071\088\090\095\092", "398")][e("\081\091\092\083\083\064", "2420")], o[e("\069\088\091\065\092\085\080\070", "1754")], o[e("\065\081\069\090\087\064\080\067\083\086\093\082", "2417")], e("\110\103\084\080\069\089\077\084\083\084\092", "1895"), e("\109\108\069\095\065\071\067\089\092\084", "2310"), e("\109\111\088\086\086\085\073", "2018"), e("\109\103\086\083\084\089", "285"), o[e("\092\081\070\068\064\091\073\077", "2414")], o[e("\065\068\095\090\069", "1664")], e("\109\111\070\088\091\066\069", "2069"), e("\108\106\092\067\084\092\065\070", "355"), {
+			(e("\094\064", "1333")),
+			(e("\081\089\087\087\089", "2584")),
+			(e("\003\057", "2212")),
+			(e("\012\001\008\005\001\008\062", "518")),
+			(e("\000\058", "2184")),
+			(e("\011\051", "882")),
+			(e("\067\066\088\093\068", "301")),
+			(e("\116\076\088\082\070\080\089\095\018\123\083\095\081\081\091\080\064\082\022\099\087\074\067\093\070\074", "2961")),
+		}, o[e("\068\083\092\070\065", "425")], e("\110\104\089\082\070\094\089\083\084\079", "1777")
+		return (function()
+			local l = {}
+			local e = {}
+			local W = {}
+			local n = 1
+			local c = {}
+			local f = 0
+			local c, c, c = (function()
+				local function l(...)
+					local e = true and #{
+						...
+					}
+					return e
+				end
+				local e = false
+				o[r] = function()
+					e = true
+				end
+				if e then
+					n = 100
+				else
+					local e = nil
+					local l, l = E(function()
+						e = (_(g))
+					end)
+					if e then
+						n = 50
+					else
+						n = 1
+					end
+				end
+				local e = l(1, 2, 3)
+				if e < 2 then
+					n = 50
+				end
+			end)(), (function()
+				for e, n in V(d) do
+					c[e] = n
+					d[e] = nil
+				end
+			end)(), (function()
+				h(d, {
+					[r] = function(e, o)
+						local e = c[o]
+						local t = #e
+						local l = i(e, t)
+						local n
+						if l == 11 then
+							local e = u(e, 1, #e - 1)
+							n = a(e)
+						elseif l == 4 then
+							local l = u(e, 1, t - 1)
+							local e = {}
+							for d = 1, #l do
+								Y(e, v(i(l, d) - 0))
+							end
+							n = b(e)
+						elseif l == 7 then
+							n = i(e, 1) == 116
+						elseif l == 6 then
+							return nil
+						else
+							n = c[o]
+						end
+						d[o] = n
+						return n
+					end,
+					[s] = {},
+					[N] = function(n, e)
+						local n = c[e]
+						d[e] = n
+						return n
+					end,
+					[w] = function()
+						n = n ^ 10
+						return y(n)
+					end,
+					[x] = function()
+						return function()
+							n = n + 15
+						end
+					end,
+					[F] = function()
+						return function()
+							n = n + 10
+						end
+					end
+				})
+			end)()
+			while true do
+				if (n + 483) * 422 == 205514 then
+					do
+						local o = n + 711
+						if o > n then
+							do
+								e[1] = 1
+								e[2] = 1
+								e[3] = {}
+								e[4] = {}
+								if e[2] == 0 then
+									e[5] = f
+								else
+									e[5] = e[1] + e[2] - 1
+								end
+								for n = e[1] + 1, e[5] do
+									e[3][n - e[1]] = l[n]
+								end
+								e[4] = {
+									l[e[1]](t(e[3], 1, e[5] - e[1]))
+								}
+								for n = e[1], e[1] + 2 - 2 do
+									l[n] = e[4][n + 1 - e[1]]
+								end
+								e = {}
+							end
+						else
+							l[49] = d[2 + 1]
+						end
+					end
+				elseif (n + 251) * 153 == 38709 then
+					do
+						local e = n - 782
+						if e > n then
+							l[1] = (false and d[9 + 1] or l[6]) * (false and d[4 + 1] or l[1])
+						else
+							do
+								l[1] = o[d[0 + 1]]
+							end
+						end
+					end
+				elseif (n + 278) * 141 == 40749 then
+					do
+						local e = n - 670
+						if e > n then
+							l[10] = nil
+						else
+							do
+								l[8] = d[4 + 1]
+							end
+						end
+					end
+				elseif (n + 210) * 108 == 24948 then
+					do
+						local o = n + 779
+						if o > n then
+							do
+								e[1] = 3
+								e[2] = 2
+								e[3] = {}
+								e[4] = {}
+								if e[2] == 0 then
+									e[5] = f
+								else
+									e[5] = e[1] + e[2] - 1
+								end
+								for n = e[1] + 1, e[5] do
+									e[3][n - e[1]] = l[n]
+								end
+								e[4] = {
+									l[e[1]](t(e[3], 1, e[5] - e[1]))
+								}
+								for n = e[1], e[1] + 1 - 2 do
+									l[n] = e[4][n + 1 - e[1]]
+								end
+								e = {}
+							end
+						else
+							l[2] = (false and d[5 + 1] or l[8]) * (true and d[10 + 1] or l[7])
+						end
+					end
+				elseif (n + 224) * 275 == 65725 then
+					do
+						local e = n + 402
+						if e > n then
+							do
+								l[2] = o[d[0 + 1]]
+							end
+						else
+							l[n] = o[d[41 + 1]]
+						end
+					end
+				elseif (n + 261) * 341 == 89342 then
+					do
+						local e = n + 877
+						if e > n then
+							do
+								local c = l
+								local b = W
+								l[0] = function(...)
+									local n = {}
+									local _ = {}
+									local l = {}
+									local g = {
+										...
+									}
+									local e = {}
+									local E = {}
+									local e = 1
+									local d = 0
+									local d = {}
+									for e, l in V(n) do
+										d[e] = l
+										n[e] = nil
+									end
+									local f = {}
+									if next(f) then
+										h(E, {
+											[r] = function(n, e)
+												local e = f[e]
+												if not e then
+													return nil
+												end
+												if e[1] == 0 then
+													return c[e[2]]
+												else
+													return b[e[2]]
+												end
+											end,
+											[Z] = function(l, e, n)
+												local e = f[e]
+												if not e then
+													return
+												end
+												if e[1] == 0 then
+													c[e[2]] = n
+												else
+													b[e[2]] = n
+												end
+											end,
+											[s] = {}
+										})
+									end
+									local f = #g
+									for e = 1, f do
+										local n = g[e]
+										l[e - 1] = n
+										_[e] = n
+									end
+									h(n, {
+										[r] = function(e, o)
+											local e = d[o]
+											local l = #e
+											local t = i(e, l)
+											local l
+											if t == 11 then
+												local e = u(e, 1, #e - 1)
+												l = a(e)
+											elseif t == 7 then
+												l = i(e, 1) == 116
+											elseif t == 6 then
+												return nil
+											else
+												l = d[o]
+											end
+											n[o] = l
+											return l
+										end,
+										[s] = {},
+										[w] = function()
+											e = e ^ 10
+											return y(e)
+										end,
+										[N] = function(l, e)
+											local l = d[e]
+											n[e] = l
+											return l
+										end,
+										[x] = function()
+											return function()
+												e = e + 15
+											end
+										end,
+										[F] = function()
+											return function()
+												e = e + 10
+											end
+										end
+									})
+									while true do
+										if (e + 132) * 237 == 31521 then
+											do
+												local d = e - 962
+												if d > e then
+													l[e] = o[n[3 + 1]]
+												else
+													do
+														l[3] = (false and n[1 + 1] or l[1]) * (false and n[2 + 1] or l[2])
+													end
+												end
+											end
+										elseif (e * 356) + 297 == 1365 then
+											do
+												local n = e + 940
+												if n > e then
+													do
+														local n = {}
+														local e = 0
+														for d = 3, 3 + 2 - 2 do
+															e = e + 1
+															n[e] = l[d]
+														end
+														return t(n, 1, e)
+													end
+												else
+													e = e + 1
+												end
+											end
+										elseif (e + 215) * 162 == 35478 then
+											do
+												local d = e + 845
+												if d > e then
+													do
+														local n = {}
+														local e = 0
+														for d = 0, 0 + 1 - 2 do
+															e = e + 1
+															n[e] = l[d]
+														end
+														return t(n, 1, e)
+													end
+												else
+													l[2] = o[n[7 + 1]]
+												end
+											end
+										elseif (e + 480) * 82 == 39524 then
+											do
+												local d = e - 423
+												if d > e then
+													do
+														l[3] = o[n[2 + 1]]
+													end
+												else
+													do
+														l[3] = (false and n[0 + 1] or l[0]) + (false and n[3 + 1] or l[3])
+													end
+												end
+											end
+										end
+										e = e + 1
+									end
+								end
+							end
+						else
+							do
+								n = n + 3
+							end
+						end
+					end
+				elseif (n + 253) * 469 == 127568 then
+					do
+						local e = n - 363
+						if e > n then
+							l[4] = o[d[9 + 1]]
+						else
+							do
+								l[3] = o[d[6 + 1]]
+							end
+						end
+					end
+				elseif (n * 434) + 335 == 9015 then
+					do
+						local e = n - 465
+						if e > n then
+							do
+								l[6] = o[d[9 + 1]]
+							end
+						else
+							do
+								l[4] = d[7 + 1]
+							end
+						end
+					end
+				elseif (n * 329) + 335 == 7573 then
+					do
+						local e = n + 793
+						if e > n then
+							do
+								l[3] = o[d[6 + 1]]
+							end
+						else
+							if (n * 2) < 0 then
+								o[1] = nil
+							end
+						end
+					end
+				elseif (n + 141) * 181 == 27874 then
+					do
+						local a = n + 735
+						if a > n then
+							do
+								e[1] = 6
+								e[2] = 4
+								e[3] = {}
+								e[4] = {}
+								if e[2] == 0 then
+									e[5] = f
+								else
+									e[5] = e[1] + e[2] - 1
+								end
+								for n = e[1] + 1, e[5] do
+									e[3][n - e[1]] = l[n]
+								end
+								e[4] = {
+									l[e[1]](t(e[3], 1, e[5] - e[1]))
+								}
+								for n = e[1], e[1] + 1 - 2 do
+									l[n] = e[4][n + 1 - e[1]]
+								end
+								e = {}
+							end
+						else
+							l[n] = o[d[30 + 1]]
+						end
+					end
+				elseif (n * 459) + 71 == 11546 then
+					do
+						local e = n + 482
+						if e > n then
+							do
+								local n = {}
+								local e = 0
+								for d = 0, 0 + 1 - 2 do
+									e = e + 1
+									n[e] = l[d]
+								end
+								return t(n, 1, e)
+							end
+						else
+							l[30] = d[1 + 1]
+						end
+					end
+				elseif (n + 423) * 482 == 206778 then
+					do
+						local e = n + 291
+						if e > n then
+							do
+								l[3] = d[3 + 1]
+							end
+						else
+							l[3] = (0 == 1)
+						end
+					end
+				elseif (n + 284) * 321 == 93732 then
+					do
+						local o = n - 702
+						if o > n then
+							l[3] = (true and d[9 + 1] or l[8]) * (false and d[4 + 1] or l[7])
+						else
+							do
+								e[1] = 2
+								e[2] = 5
+								local o = a(l[e[1]])
+								local t = a(l[e[1] + 1])
+								local d = a(l[e[1] + 2])
+								l[e[1]] = o - d
+								l[e[1] + 1] = t
+								l[e[1] + 2] = d
+								n = n + e[2]
+							end
+						end
+					end
+				elseif (n * 296) + 180 == 5212 then
+					do
+						local d = n + 263
+						if d > n then
+							do
+								e[1] = 2
+								e[2] = 1
+								e[3] = {}
+								e[4] = {}
+								if e[2] == 0 then
+									e[5] = f
+								else
+									e[5] = e[1] + e[2] - 1
+								end
+								for n = e[1] + 1, e[5] do
+									e[3][n - e[1]] = l[n]
+								end
+								e[4] = {
+									l[e[1]](t(e[3], 1, e[5] - e[1]))
+								}
+								for n = e[1], e[1] + 2 - 2 do
+									l[n] = e[4][n + 1 - e[1]]
+								end
+								e = {}
+							end
+						else
+							l[6] = (1 == 1)
+						end
+					end
+				elseif (n * 480) + 128 == 7808 then
+					do
+						local o = n + 749
+						if o > n then
+							do
+								e[1] = d[1 + 1]
+								l[2] = l[2][e[1]]
+							end
+						else
+							l[2] = nil
+						end
+					end
+				elseif (n + 155) * 249 == 43077 then
+					do
+						local e = n + 760
+						if e > n then
+							do
+								l[2] = (false and d[2 + 1] or l[2]) - (false and d[1 + 1] or l[1])
+							end
+						else
+							l[5] = (false and d[8 + 1] or l[9]) * (false and d[6 + 1] or l[8])
+						end
+					end
+				elseif (n + 299) * 260 == 80340 then
+					do
+						local e = n + 458
+						if e > n then
+							do
+								l[7] = l[5]
+							end
+						else
+							l[8] = (0 == 1)
+						end
+					end
+				elseif (n + 55) * 283 == 16414 then
+					do
+						local o = n + 71
+						if o > n then
+							do
+								e[1] = d[1 + 1]
+								l[1] = l[1][e[1]]
+							end
+						else
+							l[10] = (false and d[5 + 1] or l[6]) * (true and d[3 + 1] or l[5])
+						end
+					end
+				elseif (n + 417) * 313 == 134903 then
+					do
+						local d = n - 798
+						if d > n then
+							l[3] = (0 == 1)
+						else
+							do
+								e[1] = 2
+								e[2] = -6
+								local o = l[e[1] + 2]
+								local t = l[e[1] + 1]
+								local d = l[e[1]] + o
+								l[e[1]] = d
+								if (o > 0 and d <= t) or (o <= 0 and d >= t) then
+									n = n + e[2]
+									l[e[1] + 3] = d
+								end
+							end
+						end
+					end
+				elseif (n + 266) * 345 == 99705 then
+					do
+						local e = n - 189
+						if e > n then
+							l[6] = (false and d[2 + 1] or l[9]) * (false and d[10 + 1] or l[2])
+						else
+							do
+								l[4] = l[2]
+							end
+						end
+					end
+				elseif (n * 116) + 432 == 1244 then
+					do
+						local e = n + 61
+						if e > n then
+							do
+								l[4] = d[2 + 1]
+							end
+						else
+							l[15] = d[1 + 1]
+						end
+					end
+				elseif (n * 93) + 19 == 1135 then
+					do
+						local e = n - 239
+						if e > n then
+							l[n] = o[d[29 + 1]]
+						else
+							do
+								l[9] = d[5 + 1]
+							end
+						end
+					end
+				elseif (n + 273) * 466 == 131412 then
+					do
+						local e = n + 258
+						if e > n then
+							do
+								l[6] = l[0]
+							end
+						else
+							l[10] = nil
+						end
+					end
+				elseif (n + 372) * 222 == 87912 then
+					do
+						local d = n + 812
+						if d > n then
+							do
+								e[1] = 3
+								e[2] = 2
+								e[3] = {}
+								e[4] = {}
+								if e[2] == 0 then
+									e[5] = f
+								else
+									e[5] = e[1] + e[2] - 1
+								end
+								for n = e[1] + 1, e[5] do
+									e[3][n - e[1]] = l[n]
+								end
+								e[4] = {
+									l[e[1]](t(e[3], 1, e[5] - e[1]))
+								}
+								for n = e[1], e[1] + 1 - 2 do
+									l[n] = e[4][n + 1 - e[1]]
+								end
+								e = {}
+							end
+						else
+							l[2] = (0 == 1)
+						end
+					end
+				elseif (n + 360) * 80 == 29200 then
+					do
+						local e = n - 827
+						if e > n then
+							l[1] = nil
+						else
+							do
+								l[2] = d[2 + 1]
+							end
+						end
+					end
+				end
+				n = n + 1
+			end
+		end)()
+	end)((_ENV or getfenv()), {}, 0, function(e, d)
+		local l = {}
+		for n = (6 * 9 - 32 + (((-21)))), #e do
+			local o = string.byte(e, n)
+			local e = string.byte(d, (n - (36 * 13 - 65 + (((-402))))) % #d + (6 * 5 - 17 + (((-12)))))
+			table.insert(l, string.char(bit32.bxor(o, e)))
+		end
+		return table.concat(l)
+	end)
+end)())
