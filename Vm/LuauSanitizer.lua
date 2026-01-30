@@ -1,5 +1,4 @@
 -- Convert all Luau-specific syntax to standard Lua
-
 local Sanitizer = {}
 
 local TOKEN_TYPES = {
@@ -279,9 +278,21 @@ function Lexer:tokenize()
 				value = "..="
 			})
 			self:advance(3)
+		elseif c3 == "//=" then
+			table.insert(self.tokens, {
+				type = TOKEN_TYPES.COMPOUND_ASSIGN,
+				value = "//="
+			})
+			self:advance(3)
 		elseif c2 == "+=" or c2 == "-=" or c2 == "*=" or c2 == "/=" or c2 == "%=" or c2 == "^=" then
 			table.insert(self.tokens, {
 				type = TOKEN_TYPES.COMPOUND_ASSIGN,
+				value = c2
+			})
+			self:advance(2)
+		elseif c2 == "//" then
+			table.insert(self.tokens, {
+				type = TOKEN_TYPES.OPERATOR,
 				value = c2
 			})
 			self:advance(2)
@@ -537,6 +548,7 @@ end
 
 function Parser:collectVariable()
 	local varTokens = {}
+	local wsTokens = {}
 	local i = #self.output
 	local parenDepth = 0
 	local bracketDepth = 0
@@ -544,44 +556,67 @@ function Parser:collectVariable()
 	while i >= 1 do
 		local val = self.output[i]
 		if val:match("^%s+$") then
+			-- Store whitespace separately, remove from output
+			table.insert(wsTokens, 1, val)
+			self.output[i] = nil
 			i = i - 1
 		elseif val == ")" then
+			-- Clear any pending whitespace since we're continuing
+			wsTokens = {}
 			parenDepth = parenDepth + 1
 			table.insert(varTokens, 1, val)
 			self.output[i] = nil
 			i = i - 1
 		elseif val == "(" then
 			if parenDepth > 0 then
+				wsTokens = {}
 				parenDepth = parenDepth - 1
 				table.insert(varTokens, 1, val)
 				self.output[i] = nil
 				i = i - 1
 			else
+				-- Put back whitespace that wasn't part of var
+				for _, ws in ipairs(wsTokens) do
+					table.insert(self.output, ws)
+				end
 				break
 			end
 		elseif val == "]" then
+			wsTokens = {}
 			bracketDepth = bracketDepth + 1
 			table.insert(varTokens, 1, val)
 			self.output[i] = nil
 			i = i - 1
 		elseif val == "[" then
 			if bracketDepth > 0 then
+				wsTokens = {}
 				bracketDepth = bracketDepth - 1
 				table.insert(varTokens, 1, val)
 				self.output[i] = nil
 				i = i - 1
 			else
+				-- Put back whitespace that wasn't part of var
+				for _, ws in ipairs(wsTokens) do
+					table.insert(self.output, ws)
+				end
 				break
 			end
-		elseif val:match("^[%w_]+$") or val == "." or val == ":" then
+		elseif val:match("^[%a_][%w_]*$") or val == "." or val == ":" then
+			-- Only match identifiers (start with letter/underscore, not numbers)
+			wsTokens = {}
 			table.insert(varTokens, 1, val)
 			self.output[i] = nil
 			i = i - 1
 		else
+			-- Put back whitespace that wasn't part of var
+			for _, ws in ipairs(wsTokens) do
+				table.insert(self.output, ws)
+			end
 			break
 		end
 	end
 
+	-- Clean up nil entries from the end of output
 	while #self.output > 0 and self.output[#self.output] == nil do
 		table.remove(self.output)
 	end
@@ -690,12 +725,63 @@ function Parser:parse()
 				end
 			elseif t.type == TOKEN_TYPES.COMPOUND_ASSIGN then
 				local op = t.value:sub(1, #t.value - 1)
+				-- Handle //= (floor division)
+				if op == "//" then
+					op = "math.floor(a/b)" -- placeholder, handled specially below
+				end
 				local varStr = self:collectVariable()
-				self:emit(varStr)
-				self:emit(" = ")
-				self:emit(varStr)
-				self:emit(" " .. op .. " ")
-				self:advance()
+				if varStr == "" then
+					-- Fallback if we couldn't collect a variable
+					self:emit(t.value)
+					self:advance()
+				else
+					if t.value == "//=" then
+						-- Floor division: x //= y becomes x = math.floor(x / y)
+						self:emit(varStr)
+						self:emit(" = math.floor(")
+						self:emit(varStr)
+						self:emit(" / ")
+						self:advance()
+						-- Collect the right-hand side expression
+						while self:current().type == TOKEN_TYPES.WHITESPACE do
+							self:advance()
+						end
+						local depth = 0
+						while self:current().type ~= TOKEN_TYPES.EOF do
+							local curr = self:current()
+							if curr.value == "(" or curr.value == "[" or curr.value == "{" then
+								depth = depth + 1
+								self:emitToken(self:advance())
+							elseif curr.value == ")" or curr.value == "]" or curr.value == "}" then
+								if depth > 0 then
+									depth = depth - 1
+									self:emitToken(self:advance())
+								else
+									break
+								end
+							elseif depth == 0 and (curr.type == TOKEN_TYPES.WHITESPACE and curr.value:find("\n")) then
+								break
+							elseif depth == 0 and (curr.value == ";" or curr.value == ",") then
+								break
+							elseif curr.type == TOKEN_TYPES.KEYWORD and 
+								   (curr.value == "then" or curr.value == "do" or curr.value == "end" or 
+								    curr.value == "else" or curr.value == "elseif" or curr.value == "local" or
+								    curr.value == "return" or curr.value == "if" or curr.value == "while" or
+								    curr.value == "for" or curr.value == "function" or curr.value == "repeat") then
+								break
+							else
+								self:emitToken(self:advance())
+							end
+						end
+						self:emit(")")
+					else
+						self:emit(varStr)
+						self:emit(" = ")
+						self:emit(varStr)
+						self:emit(" " .. op .. " ")
+						self:advance()
+					end
+				end
 			elseif t.type == TOKEN_TYPES.INTERPOLATED_STRING then
 				self:parseInterpolatedString(t)
 				self:advance()
