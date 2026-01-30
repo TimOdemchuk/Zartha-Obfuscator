@@ -24,6 +24,8 @@ return function(parasedBytecode)
 		header = stringEncryptor(header,decryptStr)
 	end
 
+	-- Initialize variables
+	local protoAt = 0
 	local tree = ""
 	local protosCount = 0
 	local scannedProtos = {}
@@ -77,13 +79,15 @@ return function(parasedBytecode)
 	local prototypes = parasedBytecode.Prototypes
 	local instructions,constants = require("Vm.Resources.ModifyInstructions")(parasedBytecode.Instructions,constants,prototypes) 
 
-	-- Display parsed data
-    _G.display("---------------- CONSTANTS ---------------","yellow")
-	_G.display(dump(constants))
-    _G.display("---------------- INSTRUCTIONS ---------------","yellow")
-	_G.display(dump(instructions))
-    _G.display("---------------- PROTOTYPES ---------------","yellow")
-	_G.display(dump(prototypes))
+	do
+		-- Display parsed data
+		_G.display("---------------- CONSTANTS ---------------","yellow")
+		_G.display(dump(constants))
+		_G.display("---------------- INSTRUCTIONS ---------------","yellow")
+		_G.display(dump(instructions))
+		_G.display("---------------- PROTOTYPES ---------------","yellow")
+		_G.display(dump(prototypes))
+	end
 
 	-- Get opcode path
 	local function getOpcode(num,name)
@@ -215,7 +219,7 @@ return function(parasedBytecode)
 					end
 				end
 
-				local mapString = "local Map = {" .. table.concat(mapParts, ", ") .. "}"
+				local mapString = "{" .. table.concat(mapParts, ", ") .. "}"
 
 				replaced = replace(replaced, "MAPPING", mapString)
 
@@ -269,8 +273,6 @@ return function(parasedBytecode)
 
 				addToTree(opcodeGenerated)
 			end
-
-			local opcodesOutput = ("OPCODE:		%s (%s),		REG: (%s, %s, %s)"):format(inst.OpcodeName or "unknown",inst.Opcode,tostring(getCorrectRegister(inst,"A")),tostring(getCorrectRegister(inst,"B")),tostring(getCorrectRegister(inst,"C")))
 		end
 
 		-- ControlFlowFlattening
@@ -290,10 +292,6 @@ return function(parasedBytecode)
 
 		return output
 	end
-
-	-- Generate prototypes
-	local protoAt = 0
-
 	-- Process prototypes
 	local function processPrototypes()
 		local currentLevel = {}

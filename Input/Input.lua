@@ -1,14 +1,8 @@
-local function f(a, b, c) 
-    return a + b * c 
+local hi = "123"
+local hi1 = "123423423"
+local hi2 = "123423423"
+local hi3 = "123423423423"
+function aa()
+    print(hi,hi1,hi2,hi3)
 end
-
-local start = os.clock()
-
-for i = 1, 900000 do
-     f(i, 2, 3)
-end
-
-local elapsed = os.clock() - start
-
-print("Function Benchmark Results")
-print(elapsed)
+aa()

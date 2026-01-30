@@ -7,23 +7,12 @@ return function(inst,shiftAmount,constant,settings)
 	Stack[:A:] = function(...) -- PROTOTYPE :PROTOHERE:
 		local Constants = {CONSTANTS_PROTOTYPE:PROTOHERE:HERE}
 		
-		local Varargs = {}
-		local Stack = {}
-		local Args = {...}
-		local Temp = {}
-		local Upvalues = {}
-		local pointer = 1	
-		local top = 0
-		
-		local ConstantsCopy = {}
+		local Varargs,Stack,Args,Temp,Upvalues,pointer,top,ConstantsCopy,Map,argCount = {},{},{...},{},{},1,0,{},:MAPPING:
 		-- Fix constant int
 		for i, Value in pairs(Constants) do
 			ConstantsCopy[i] = Value
 			Constants[i] = nil
 		end
-		
-		-- upvalue mapping
-		:MAPPING:
 		
 		-- fix upvalues
 		if next(Map) then
@@ -58,6 +47,7 @@ return function(inst,shiftAmount,constant,settings)
 			Stack[i - 1] = arg
 			Varargs[i] = arg
 		end
+		
 		setmeta(Constants, {
 		[__index] = function(Self, Key)
 			local toSend = ConstantsCopy[Key]
