@@ -245,33 +245,39 @@ return function(parasedBytecode)
 		end
 
 		-- Opcode reading
+		local isFirst = true
 		for i, inst in ipairs(currentInstructions) do
-			local pointer = i
-			local opcodeType = inst.Opcode -- opcode index
-			local generatedOpcode = generateOpcode(inst, i, currentInstructions)
+			-- Skip PSEUDO opcodes (-1)
+			if inst.OpcodeName ~= "PSEUDO" and inst.Opcode ~= -1 then
+				local pointer = i
+				local opcodeType = inst.Opcode -- opcode index
+				local generatedOpcode = generateOpcode(inst, i, currentInstructions)
 
-			local generatedInfo = {
-				["generatedOpcode"] = generatedOpcode,
-				["tatementType"] = pointer == 1 and "if" or "elseif",
-				["currentPointer"] = tostring(pointer),
-				["debugInfo"] = (" -- %s [%s]"):format(opcodeType,inst.OpcodeName or "unknown"),
-				["endType"] = pointer == #currentInstructions and "end" or "",
-			}
+				local generatedInfo = {
+					["generatedOpcode"] = generatedOpcode,
+					["tatementType"] = isFirst and "if" or "elseif",
+					["currentPointer"] = tostring(pointer),
+					["debugInfo"] = (" -- %s [%s]"):format(opcodeType,inst.OpcodeName or "unknown"),
+					["endType"] = pointer == #currentInstructions and "end" or "",
+				}
 
-			 -- ControlFlowFlattening
-			if settingsSelected.ControlFlowFlattening then
-				opcodeMap[pointer] = generatedInfo.generatedOpcode
-			else
-				-- Normal generation
-				local opcodeGenerated = ("%s pointer == %s then%s \n %s \n%s"):format(
-					i == 1 and "if" or "elseif", -- Else or elseif start with
-					tostring(i), -- pointer
-					(" -- %s [%s]"):format(opcodeType,inst.OpcodeName), --debug code
-					generatedInfo.generatedOpcode, -- the generated opcode
-					i == #currentInstructions and "end" or "" -- if its end of vm
-				)
+				 -- ControlFlowFlattening
+				if settingsSelected.ControlFlowFlattening then
+					opcodeMap[pointer] = generatedInfo.generatedOpcode
+				else
+					-- Normal generation
+					local opcodeGenerated = ("%s pointer == %s then%s \n %s \n%s"):format(
+						isFirst and "if" or "elseif", -- Else or elseif start with
+						tostring(i), -- pointer
+						(" -- %s [%s]"):format(opcodeType,inst.OpcodeName), --debug code
+						generatedInfo.generatedOpcode, -- the generated opcode
+						i == #currentInstructions and "end" or "" -- if its end of vm
+					)
 
-				addToTree(opcodeGenerated)
+					addToTree(opcodeGenerated)
+				end
+
+				isFirst = false
 			end
 		end
 
@@ -292,6 +298,7 @@ return function(parasedBytecode)
 
 		return output
 	end
+	
 	-- Process prototypes
 	local function processPrototypes()
 		local currentLevel = {}

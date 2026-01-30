@@ -50,22 +50,22 @@ return [=[
 	end
 	
 	if Tamper then
-		pointer = 100
+		pointer = 10^5
 	else
 		local Checked = nil
 		local _,er = pcall(function()
 			Checked = (proxy(pnt)) 
 		end)
 		if Checked then
-			pointer = 50
+			pointer = 50^5
 		else
-			pointer = 1
+			pointer = 1^5
 		end
 	end
 	local counter = ooptest(1, 2, 3)
 	
 	if counter <2 then
-		pointer = 50
+		pointer = 5^5
 	end
 end)()
 ]=]
