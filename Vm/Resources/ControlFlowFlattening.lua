@@ -48,13 +48,15 @@ function main:generateState(opcodeMap)
 			string.format("Stack[%d] = Env[Constants[%d+1]]",math.random(1,10),math.random(1,10)),
 			string.format("Stack[%d] = -Stack[%d]",math.random(1,10),math.random(1,10)),
 			string.format("pointer = pointer + %d",math.random(1,3)),
-			string.format("do\npointer = pointer + %d\nend",math.random(1,3)),
+			string.format("pointer = pointer + %d",math.random(1,3)),
 			string.format("Stack[%d] = (%s and Constants[%d+1] or Stack[%d]) * (%s and Constants[%d+1] or Stack[%d])",math.random(1,10),math.random(0,1) == 1 and "true" or "false",math.random(1,10),math.random(1,10),math.random(0,1) == 1 and "true" or "false",math.random(1,10),math.random(1,10)),
 			string.format("Stack[%d] = (%d == 1)",math.random(1,10),math.random(0,1)),
 			string.format("Stack[%d] = nil",math.random(1,10)),
-			string.format("do\nStack[%d] = Env[Constants[%d+1]]\nend",math.random(1,10),math.random(1,10)),
+			string.format("Stack[%d] = Env[Constants[%d+1]]",math.random(1,10),math.random(1,10)),
 		}
-		return junkOptions[math.random(1, #junkOptions)]
+		local choice = junkOptions[math.random(1, #junkOptions)]
+	
+		return choice
 	end
 
 	for i, data in ipairs(shuffle(opcodeMap)) do
@@ -62,6 +64,12 @@ function main:generateState(opcodeMap)
 		local offset = math.random(50, 999)
 		local vName = "_v" .. math.random(1000, 9999)
 		local junk = getJunk()
+
+
+		-- Make sure op is never empty
+		if not op or op == "" or op:match("^%s*$") then
+			op = getJunk()
+		end
 
 		local mathCheck = getObfuscatedCheck(ptr)
 
