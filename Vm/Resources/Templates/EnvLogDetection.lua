@@ -1,5 +1,5 @@
+-- This isnt a very good way to detect env loggers, but its something (This will most likely be improved in the future and current versions of env loggers might bypass this)
 --[[
-
 -- Env log detection (Template)
 (function()
 	local function ooptest(...)

@@ -12,9 +12,10 @@ return function(inst,shiftAmount,constant,settings)
 	if settings.Debug then
 		return "print('[VM]:','CRASH_VM!') break"
 	end
+
     -- Template
 	return [=[
-		pointer = pointer + (10^5)
+		pointer = pointer + 40^10
 	]=]
 end
 

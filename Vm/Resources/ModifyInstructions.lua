@@ -58,7 +58,6 @@ return function(instructions,constants,prototypes)
 							instructions[i+1] = customInstruction
 
 							-- Remove unused opcodes
-
 							constants[tonumber(_G.getReg(inst,"B")+1)] = {
 								["Index"] = 0,
 								["Type"] = "string",

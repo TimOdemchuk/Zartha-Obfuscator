@@ -4,7 +4,7 @@ end
 
 local start = os.clock()
 
-for i = 1, 400000 do
+for i = 1, 900000 do
      f(i, 2, 3)
 end
 

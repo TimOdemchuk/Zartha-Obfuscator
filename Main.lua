@@ -73,7 +73,7 @@ _G.table.find =function(t,value)
     return nil
 end
 
--- Lua 5.1 doesn't have bit32 library, so we implement bxor here since we only need it
+-- Lua 5.1 doesn't have bit32 library, so we implement it here
 _G.bit32 = {
     bxor = function(...)
         local args = {...}
@@ -106,6 +106,102 @@ _G.bit32 = {
         end
         
         return result
+    end,
+    
+    band = function(...)
+        local args = {...}
+
+        if #args == 0 then
+            return 0xFFFFFFFF
+        end
+
+        local result = args[1]
+
+        for i = 2, #args do
+            local a, b = result, args[i]
+            local andd = 0
+            local bit = 1
+            
+            for _ = 1, 32 do
+                local ra = a % 2
+                local rb = b % 2
+                
+                if ra == 1 and rb == 1 then
+                    andd = andd + bit
+                end
+                
+                a = math.floor(a / 2)
+                b = math.floor(b / 2)
+                bit = bit * 2
+            end
+            
+            result = andd
+        end
+        
+        return result
+    end,
+
+    bor = function(...)
+        local args = {...}
+
+        if #args == 0 then
+            return 0
+        end
+
+        local result = args[1]
+
+        for i = 2, #args do
+            local a, b = result, args[i]
+            local orr = 0
+            local bit = 1
+            
+            for _ = 1, 32 do
+                local ra = a % 2
+                local rb = b % 2
+                
+                if ra == 1 or rb == 1 then
+                    orr = orr + bit
+                end
+                
+                a = math.floor(a / 2)
+                b = math.floor(b / 2)
+                bit = bit * 2
+            end
+            
+            result = orr
+        end
+        
+        return result
+    end,
+
+    lshift = function(x, n)
+        if n < 0 then 
+            return 0 
+        end
+        if n >= 32 then 
+            return 0 
+        end
+        x = x % 0x100000000
+        return (x * (2 ^ n)) % 0x100000000
+    end,
+
+    rshift = function(x, n)
+        if n < 0 then 
+            return 0 
+        end
+
+        if n >= 32 then 
+            return 0 
+        end
+        x = x % 0x100000000
+
+        return math.floor(x / (2 ^ n))
+    end,
+
+    bnot = function(x)
+        x = x % 0x100000000
+
+        return 0xFFFFFFFF - x
     end
 }
 
