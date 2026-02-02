@@ -22,7 +22,7 @@ return function(parasedBytecode)
 	local constantShifter = tostring(_G.Random(3,10))
 
 
-	print("DECRRR",constantShifter)
+	print("CONSTANT SHIFT AMOUNT:",constantShifter)
 
 	-- Encrypt header 
 	if settingsSelected.EncryptStrings then
@@ -214,14 +214,7 @@ return function(parasedBytecode)
 				byted = byted:gsub(".", function(bb) 
 					return string.char(bb:byte()-constantShifter) 
 				end)
-
-				if settingsSelected.ConstantProtection then  -- byte 4
-					if string.sub(byted,#byted,#byted) == "\\" then
-						byted = string.sub(byted,1,#byted-1)
-					end
-					byted = byted..string.char(4)
-				end
-
+				
 				-- Number Identifier
 				if const.Type == "number" then  -- byte 11
 					byted = byted..string.char(11)
