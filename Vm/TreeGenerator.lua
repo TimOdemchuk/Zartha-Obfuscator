@@ -469,7 +469,6 @@ return function(parasedBytecode)
 
 	-- Insert constants
 	header = header:gsub("CONSTANTS_HERE_BASEVM",getConstants(constants, "base"))
-	vm = vm:gsub(":CONSTANT_SHIFTER:",tostring(constantShifter))
 	-- VM Format
 	tree = vm:format(
 		header,
@@ -478,7 +477,8 @@ return function(parasedBytecode)
 		tree,
 		settingsSelected.LuaU_Syntax and "pointer+=1" or "pointer = pointer + 1"
 	)
-	tree = tree:gsub(":SHIFTAMOUNT:",tostring(_G.shiftAmount))
+	tree = tree:gsub(":CONSTANT_SHIFTER:",tostring(constantShifter))
+	
 	
 	-- Wrap in function
 	tree = ([[return (("%s") and (function() return(function(Env,Constants,shiftKey,decrypt)%s %s end)((_ENV or getfenv()),{},0%s) end)())]]):format(settingsSelected.Watermark,settingsSelected.LuaU_Syntax and ":any" or "",tree,","..stringEncryptorTemplate)

@@ -7,6 +7,9 @@ return function(inst,shiftAmount,constant,settings)
 	local rawConsts:PROTOHERE: = {CONSTANTS_PROTOTYPE:PROTOHERE:HERE}
 	local C:PROTOHERE: = {}
 	for i, v in pairs(rawConsts:PROTOHERE:) do
+		v = gsub(v, dot, function(bb) 
+			return char(byte(bb) + :CONSTANT_SHIFTER:) 
+		end)
 		local len = #v
 		local lastByte = byte(v, len)
 		if lastByte == 11 then
