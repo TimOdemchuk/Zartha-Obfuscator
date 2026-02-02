@@ -19,6 +19,10 @@ return function(parasedBytecode)
 	local junkConstants = require("Resources.Templates.FakeConstants")
 
 	local decryptStr = tostring(_G.Random(100,400))
+	local constantShifter = tostring(_G.Random(3,10))
+
+
+	print("DECRRR",constantShifter)
 
 	-- Encrypt header 
 	if settingsSelected.EncryptStrings then
@@ -205,6 +209,12 @@ return function(parasedBytecode)
 				-- CONSTANT TYPES:
 				-- Because constants can be either string, number, boolean, nil we need the identifiers so the VM knows what to convert the constant to. This solves the VM trying to compare string on string when its suppoosed to be number on number
 				-- Identifier for constant protection
+				
+				-- Hide constants from plain view
+				byted = byted:gsub(".", function(bb) 
+					return string.char(bb:byte()-constantShifter) 
+				end)
+
 				if settingsSelected.ConstantProtection then  -- byte 4
 					if string.sub(byted,#byted,#byted) == "\\" then
 						byted = string.sub(byted,1,#byted-1)
@@ -466,23 +476,11 @@ return function(parasedBytecode)
 
 	-- Insert constants
 	header = header:gsub("CONSTANTS_HERE_BASEVM",getConstants(constants, "base"))
-
+	vm = vm:gsub(":CONSTANT_SHIFTER:",tostring(constantShifter))
 	-- VM Format
 	tree = vm:format(
 		header,
 		"",
-		(not settingsSelected.ConstantProtection and [[
-				return tonumber(sub(toSend, 1, len - 1))
-		]] or ([[
-				local removedByte = sub(toSend, 1, len - 1)
-				local decrypted = {}
-				local n = 0
-				for i = 1, #removedByte do
-					n = n + 1
-					decrypted[n] = char(byte(removedByte, i) - %s)
-				end
-				return tonumber(concat(decrypted))
-		]]):format(tostring(_G.shiftAmount))),
 		settingsSelected.LuaU_Syntax and ":any" or "",
 		tree,
 		settingsSelected.LuaU_Syntax and "pointer+=1" or "pointer = pointer + 1"

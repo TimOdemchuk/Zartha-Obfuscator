@@ -237,7 +237,7 @@ if not outputFile or isFlag(outputFile) then
 end
 
 -- Settings inputs
-settings.ConstantProtect = table.find(args,"--constantprotection") and true or false
+settings.ConstantProtection = table.find(args,"--constantprotection") and true or false
 settings.Minify = table.find(args,"--minify") and true or false
 settings.Debug = table.find(args,"--debug") and true or false
 settings.AntiTamper = table.find(args,"--antitamper") and true or false
