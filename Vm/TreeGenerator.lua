@@ -48,6 +48,7 @@ return function(parasedBytecode)
 	-- print out tables
     local function dump(tableData, indent)
         indent = indent or 0
+
         local function serializeValue(value, level)
             level = level or 0
             if type(value) == "string" then
@@ -58,7 +59,9 @@ return function(parasedBytecode)
                 return tostring(value)
             end
         end
+
         local result = "{\n"
+
         for k, v in pairs(tableData) do
             local keyIndent = string.rep(" ", indent + 2)
             local valueIndent = string.rep(" ", indent + 4)
@@ -69,6 +72,7 @@ return function(parasedBytecode)
             end
             result = result..serializeValue(v, indent + 2)..",\n"
         end
+
         result = result..string.rep(" ", indent).."}"
         return result
     end
@@ -188,6 +192,7 @@ return function(parasedBytecode)
 		end
 		
 		local constantsStr = ""
+
 		for i = 1, #shuffledConstants do
 			local const = shuffledConstants[i]
 			if not const then
@@ -198,6 +203,7 @@ return function(parasedBytecode)
 				local byted = costAt
 
 				-- CONSTANT TYPES:
+				-- Because constants can be either string, number, boolean, nil we need the identifiers so the VM knows what to convert the constant to. This solves the VM trying to compare string on string when its suppoosed to be number on number
 				-- Identifier for constant protection
 				if settingsSelected.ConstantProtection then  -- byte 4
 					if string.sub(byted,#byted,#byted) == "\\" then
@@ -251,7 +257,7 @@ return function(parasedBytecode)
 		local getOpcodeFormat = getOpcode(inst.Opcode,inst.OpcodeName)
 
 		if type(getOpcodeFormat) == "function" then
-			-- LOADK number support + constant protection
+			-- LOADK number support
 			local const = nil
 
 			if inst.Opcode == 1  then
@@ -299,6 +305,7 @@ return function(parasedBytecode)
 					end
 				end
 
+				-- Upvalue map
 				local mapString = "{" .. table.concat(mapParts, ", ") .. "}"
 
 				replaced = replace(replaced, "MAPPING", mapString)
@@ -389,7 +396,7 @@ return function(parasedBytecode)
 		end
 		
 		while #currentLevel > 0 do
-			-- Process all prototypes at current level
+			-- Process all prototypes at current level (sub prototypes supported here)
 			for _, protoData in ipairs(currentLevel) do
 
 				local proto = protoData.proto

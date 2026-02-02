@@ -11,3 +11,5 @@ return function(instruction, shiftAmount, constant, settings)
 		return ("\tStack[%d] = %s"):format(reg_a, boolVal)
 	end
 end
+
+

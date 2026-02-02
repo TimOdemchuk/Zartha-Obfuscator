@@ -14,7 +14,6 @@ return function(Inst, shiftAmount, constant, settings)
 	]=]):format(reg_a, reg_a, reg_a, reg_a)
 	end
 	
-	-- Fixed args - generate direct call
 	local args = {}
 	for i = 1, reg_b - 1 do
 		args[i] = ("Stack[%d]"):format(reg_a + i)
