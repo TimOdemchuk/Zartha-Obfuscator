@@ -391,9 +391,12 @@ return function(parasedBytecode)
 		while #currentLevel > 0 do
 			-- Process all prototypes at current level
 			for _, protoData in ipairs(currentLevel) do
+
 				local proto = protoData.proto
 				local extra = protoData.extra
+
 				protoAt = protoAt + 1
+
 				local protoName = ("PROTOTYPE%sHERE"):format(tostring(protoAt))
 				local protoMapId = "proto_" .. tostring(protoAt)
 
@@ -420,7 +423,7 @@ return function(parasedBytecode)
 				--:NumUpvalues:
 				tree = tree:gsub("UPVALS_"..protoName,proto.NumUpvalues)
 
-				--STACK_LOCATION
+				-- STACK_LOCATION
 				tree = tree:gsub("STACK_LOCATION_"..protoName,
 					extra == nil and "prevStack" or "Upvalues"
 				)
@@ -447,17 +450,17 @@ return function(parasedBytecode)
 	_G.currentMapId = "base"
 	prepareConstantMapping(constants, "base")
 
-	-- Add VM (now opcodes can access the pre-generated mapping)
+	-- Add main VM instructions
 	local insertInstructions = readInstructions(instructions,constants)
 	tree = tree..insertInstructions
 
-	-- Prototypes
+	-- Generate Prototypes
 	getPrototypes(prototypes)
 
-	-- Insert constants (uses the pre-generated mapping)
+	-- Insert constants
 	header = header:gsub("CONSTANTS_HERE_BASEVM",getConstants(constants, "base"))
 
-	-- Format VM (optimized - fewer format args)
+	-- VM Format
 	tree = vm:format(
 		header,
 		"",
