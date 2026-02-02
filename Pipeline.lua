@@ -8,6 +8,15 @@ local settings = require("Input.Settings")
 
 
 return function(inputFile,outputTo)
+    local savedInput = _G.readFile(inputFile)
+    
+    -- Add input template
+    local addToInput = _G.readFile("Vm/Resources/Templates/AddToInput.lua")
+    local inputHandle = io.open(inputFile, "w")
+   
+    inputHandle:write(addToInput .. "\n" .. savedInput)
+    inputHandle:close()
+ 
 
     -- Remove all LuaU specific syntax 
     if settings.LuaUCompatibility then
@@ -59,4 +68,9 @@ return function(inputFile,outputTo)
     end
 
     print("File has been obfuscated.")
+
+    -- Revert back to normal input file
+    local inputFile = io.open(inputFile, "w")
+    inputFile:write(savedInput)
+    inputFile:close()
 end
