@@ -3,16 +3,19 @@ return [=[
 %s
 %s
 		-- VM function
-		return (function()%s
-			local ConstantsCache = {}
+		return (function()
 			local Stack = {}
 			local Temp = {}
 			local Upvalues = {}
+			local ConstantsCache = {}
 			local pointer = 1
 			local top = 0
-			local Checks,ConstantsFunc = :INSERTENVLOG:,(function() -- Constants decode
+			local Checks,ConstantsDecode = :INSERTENVLOG:,(function() -- Constants decode
 				for i, v in pairs(Constants) do
-					v = gsub(v, dot, function(bb) 
+					v = gsub(v, dot, function(bb)
+						if table.find({11,4,7,6},byte(bb)) then
+							return bb 
+						end
 						return char(byte(bb) +:CONSTANT_SHIFTER:) 
 					end)
 					ConstantsCache[i] = (function(toSend)
@@ -40,7 +43,7 @@ return [=[
 				end
 			end)()
 
-			local C = ConstantsCache -- Constant table
+			local C = ConstantsCache
 
 			-- VM STARTS HERE
 			while true do

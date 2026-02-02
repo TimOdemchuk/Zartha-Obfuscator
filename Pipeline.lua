@@ -69,8 +69,10 @@ return function(inputFile,outputTo)
 
     print("File has been obfuscated.")
 
-    -- Revert back to normal input file
-    local inputFile = io.open(inputFile, "w")
+    -- Restore original input file
+    savedInput = savedInput:gsub("\r\n", "\n"):gsub("\r", "\n")
+
+    local inputFile = io.open(inputFile, "wb")
     inputFile:write(savedInput)
     inputFile:close()
 end

@@ -472,7 +472,6 @@ return function(parasedBytecode)
 	-- VM Format
 	tree = vm:format(
 		header,
-		"",
 		settingsSelected.LuaU_Syntax and ":any" or "",
 		tree,
 		settingsSelected.LuaU_Syntax and "pointer+=1" or "pointer = pointer + 1"

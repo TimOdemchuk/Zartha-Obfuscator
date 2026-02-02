@@ -1,5 +1,4 @@
-
-local function abc()
-    print("HI")
-end
-abc()
+function a()
+     print(type(123))
+end
+a()

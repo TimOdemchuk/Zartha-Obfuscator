@@ -7,8 +7,11 @@ return function(inst,shiftAmount,constant,settings)
 	local rawConsts:PROTOHERE: = {CONSTANTS_PROTOTYPE:PROTOHERE:HERE}
 	local C:PROTOHERE: = {}
 	for i, v in pairs(rawConsts:PROTOHERE:) do
-		v = gsub(v, dot, function(bb) 
-			return char(byte(bb) + :CONSTANT_SHIFTER:) 
+		v = gsub(v, dot, function(bb)
+			if table.find({11,4,7,6},byte(bb)) then
+				return bb 
+			end
+			return char(byte(bb) +:CONSTANT_SHIFTER:) 
 		end)
 		local len = #v
 		local lastByte = byte(v, len)
