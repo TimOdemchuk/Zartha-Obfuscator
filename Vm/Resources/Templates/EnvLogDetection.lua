@@ -14,7 +14,15 @@
 	getfenv()["runtime"] = function() -- Env loggers would run to see what this function is
 		Tamper = true
 	end
-	
+
+	local _, err = pcall(function() 
+		getfenv()["__newindex"]() 
+	end)
+
+	if find(err,stringv) then -- env loggers errors sometimes contain "string"
+		pointer = 5^5
+	end
+
 	if Tamper then
 		return -- Detect
 	else
@@ -44,9 +52,15 @@ return [=[
 		}
 		return a
 	end
+	local _, err = pcall(function() 
+		Env["__newindex"](1) 
+	end)
 	local Tamper = false
 	Env[__index] = function() 
 		Tamper = true
+	end
+	if find(err,stringv) then
+		pointer = 5^5
 	end
 	
 	if Tamper then
