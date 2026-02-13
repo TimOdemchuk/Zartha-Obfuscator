@@ -59,30 +59,74 @@ function main:generateState(opcodeMap)
 		return choice
 	end
 
+	local function IfStatments(op, pointer)
+		local count = math.random(1, 3)
+		local result = op
+		for _ = 1, count do
+			local style = math.random(1, 8)
+			local m = math.random(2, 500)
+			local a = math.random(1, 500)
+
+			-- If statment styles
+			if style == 1 then
+				local r = pointer * m + a
+				result = string.format("if (pointer * %d) + %d == %d then\n\t\t\t\t\t%s\n\t\t\t\tend", m, a, r, result)
+			elseif style == 2 then
+				local r = (pointer + a) * m
+				result = string.format("if (pointer + %d) * %d == %d then\n\t\t\t\t\t%s\n\t\t\t\tend", a, m, r, result)
+			elseif style == 3 then
+				local r = pointer * m - a
+				result = string.format("if pointer * %d - %d == %d then\n\t\t\t\t\t%s\n\t\t\t\tend", m, a, r, result)
+			elseif style == 4 then
+				local wrongPointer = pointer + math.random(1, 200)
+				local r = wrongPointer * m + a
+				result = string.format("if (pointer * %d) + %d ~= %d then\n\t\t\t\t\t%s\n\t\t\t\tend", m, a, r, result)
+			elseif style == 5 then
+				local r = (pointer * m) * (pointer + a)
+				result = string.format("if (pointer * %d) * (pointer + %d) == %d then\n\t\t\t\t\t%s\n\t\t\t\tend", m, a, r, result)
+			elseif style == 6 then
+				local wrongTarget = pointer + math.random(1, 300)
+				local wr = wrongTarget * m + a
+				result = string.format("if (pointer * %d) + %d == %d then\n\t\t\t\t\tStack[%d] = nil\n\t\t\t\tend\n\t\t\t\t%s", m, a, wr, math.random(1, 10), result)
+			elseif style == 7 then
+				local r = pointer * m + a
+				local wrongTarget = pointer + math.random(1, 150)
+				local wr = wrongTarget * m + a
+				result = string.format("if (pointer * %d) + %d == %d then\n\t\t\t\t\t%s\n\t\t\t\telseif (pointer * %d) + %d == %d then\n\t\t\t\t\tStack[%d] = Env[%d]\n\t\t\t\tend", m, a, r, result, m, a, wr, math.random(1, 10), math.random(1, 10))
+			else
+				local r = pointer + m * a
+				result = string.format("if pointer + %d == %d then\n\t\t\t\t\t%s\n\t\t\t\tend", m * a, r, result)
+			end
+		end
+		return result
+	end
+
 	for i, data in ipairs(shuffle(opcodeMap)) do
-		local ptr, op = data.p, data.c
+		local pointer, op = data.p, data.c
 		local offset = math.random(50, 999)
 		local vName = "_v" .. math.random(1000, 9999)
 		local junk = getJunk()
-
-
+		
 		-- Make sure op is never empty
 		if not op or op == "" or op:match("^%s*$") then
 			op = getJunk()
 		end
 
-		local mathCheck = getObfuscatedCheck(ptr)
+		-- apply if statements
+		op = IfStatments(op, pointer)
+
+		local mathCheck = getObfuscatedCheck(pointer)
 
 		local content = nil
 
 		if math.random() > 0.5 then
-			-- Real opcode in 'then', Junk in 'else'
+			-- Real opcode in then, Junk in else
 			content = string.format(
 				"local %s = pointer + %d\n\t\tif %s > pointer then\n\t\t\tdo\n\t\t\t\t%s\n\t\t\tend\n\t\telse\n\t\t\t%s\n\t\tend", 
 				vName, offset, vName, op, junk
 			)
 		else
-			-- Junk in 'then', Real opcode in 'else'
+			-- Junk in then, Real opcode in else
 			content = string.format(
 				"local %s = pointer - %d\n\t\tif %s > pointer then\n\t\t\t%s\n\t\telse\n\t\t\tdo\n\t\t\t\t%s\n\t\t\tend\n\t\tend", 
 				vName, offset, vName, junk, op
