@@ -446,7 +446,7 @@ return function(parasedBytecode)
 					extra == nil and "prevStack" or "Upvalues"
 				)
 				
-				-- Collect sub-prototypes for next level
+				-- Collect the next sub prototypes
 				if proto.Prototypes and #proto.Prototypes > 0 then
 					for _, subProto in pairs(proto.Prototypes) do
 						table.insert(nextLevel, {proto = subProto, extra = "(SUB)"})
@@ -476,6 +476,7 @@ return function(parasedBytecode)
 	getPrototypes(prototypes)
 
 	-- Insert constants
+	
 	header = header:gsub("CONSTANTS_HERE_BASEVM",getConstants(constants, "base"))
 	-- VM Format
 	tree = vm:format(
