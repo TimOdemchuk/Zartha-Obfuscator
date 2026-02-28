@@ -3,29 +3,32 @@ return function(inst,shiftAmount,constant,settings)
 	local output = ([=[
 	local prevStack = Stack
 	local prevUpvalues = Upvalues
+	local C1 = {}
 	
-	local rawConsts:PROTOHERE: = {CONSTANTS_PROTOTYPE:PROTOHERE:HERE}
-	local C:PROTOHERE: = {}
-	for i, v in pairs(rawConsts:PROTOHERE:) do
-		v = gsub(v, dot, function(bb)
-			if tfind({11,4,7,6},byte(bb)) then
-				return bb 
+	if not ProtosConstants[:PROTOHERE:] then
+		ProtosConstants[:PROTOHERE:] = {CONSTANTS_PROTOTYPE:PROTOHERE:HERE}
+
+		for i, v in pairs(ProtosConstants[:PROTOHERE:]) do
+			v = gsub(v, dot, function(bb)
+				if tfind({11,4,7,6},byte(bb)) then
+					return bb 
+				end
+				return char(byte(bb) +:CONSTANT_SHIFTER:) 
+			end)
+			local len = #v
+			local lastByte = byte(v, len)
+			if lastByte == 11 then
+				%s
+			elseif lastByte == 7 then
+				ProtosConstants[:PROTOHERE:] = byte(v, 1) == 116
+			elseif lastByte == 6 then
+				ProtosConstants[:PROTOHERE:] = nil
+			else
+				ProtosConstants[:PROTOHERE:] = v
 			end
-			return char(byte(bb) +:CONSTANT_SHIFTER:) 
-		end)
-		local len = #v
-		local lastByte = byte(v, len)
-		if lastByte == 11 then
-			%s
-		elseif lastByte == 7 then
-			C:PROTOHERE:[i] = byte(v, 1) == 116
-		elseif lastByte == 6 then
-			C:PROTOHERE:[i] = nil
-		else
-			C:PROTOHERE:[i] = v
 		end
+		C1 = ProtosConstants[:PROTOHERE:]
 	end
-	rawConsts:PROTOHERE: = nil
 	
 	Stack[:A:] = function(...) -- PROTOTYPE :PROTOHERE:
 		local Varargs, Stack, Temp, Upvalues, pointer, top, Map = {}, {}, {}, {}, 1, 0, :MAPPING:

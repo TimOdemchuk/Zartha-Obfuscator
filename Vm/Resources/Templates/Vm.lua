@@ -8,6 +8,7 @@ return [=[
 			local Temp = {}
 			local Upvalues = {}
 			local ConstantsCache = {}
+			local ProtosConstants = {}
 			local pointer = 1
 			local top = 0
 			local Checks,ConstantsDecode = :INSERTENVLOG:,(function() -- Constants decode
