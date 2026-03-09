@@ -104,7 +104,7 @@ function main:generateState(opcodeMap)
 	for i, data in ipairs(shuffle(opcodeMap)) do
 		local pointer, op = data.p, data.c
 		local offset = math.random(50, 999)
-		local vName = "_v" .. math.random(1000, 9999)
+		local vName = "_v" .. math.random(100, 1000)
 		local junk = getJunk()
 		
 		-- Make sure op is never empty
