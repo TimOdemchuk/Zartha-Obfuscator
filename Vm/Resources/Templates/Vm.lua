@@ -4,14 +4,8 @@ return [=[
 %s
 		-- VM function
 		return (function()
-			local Stack = {}
-			local Temp = {}
-			local Upvalues = {}
-			local ConstantsCache = {}
-			local ProtosConstants = {}
-			local vmEnv = {}
-			local pointer = 1
-			local top = 0
+			local Stack,Temp,Upvalues,ConstantsCache,ProtosConstants,vmEnv,pointer,top = {},{},{},{},{},{},1,0
+
 			local Checks,ConstantsDecode = :INSERTENVLOG:,(function() -- Constants decode
 				for i, v in pairs(Constants) do
 					v = gsub(v, dot, function(bb)
