@@ -77,7 +77,7 @@ return function(inst,shiftAmount,constant,settings)
 		end
 	end
 ]=]):format((not settings.ConstantProtection and [[
-			C:PROTOHERE:[i] = tonumber(sub(v, 1, len - 1))
+			C1[i] = tonumber(sub(v, 1, len - 1))
 		]] or ([[
 			local removedByte = sub(v, 1, len - 1)
 			local decrypted = {}
@@ -86,7 +86,7 @@ return function(inst,shiftAmount,constant,settings)
 				n = n + 1
 				decrypted[n] = char(byte(removedByte, j) - %s)
 			end
-			C:PROTOHERE:[i] = tonumber(concat(decrypted))
+			C1[i] = tonumber(concat(decrypted))
 		]]):format(tostring(_G.shiftAmount))))
 	
 	return output
