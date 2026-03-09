@@ -4,7 +4,7 @@ return [=[
 local triggerTamper = false
 
 -- Simple check to see if any of the functions are hooked
-local bait = newproxy(true) or setmetatable({},{})
+local bait = newproxy and newproxy(true) or setmetatable({},{})
 local getmeta = getmetatable(bait)
 
 getmeta.__tostring = function()
