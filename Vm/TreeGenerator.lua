@@ -355,15 +355,14 @@ return function(parasedBytecode)
 				local opcodeType = inst.Opcode -- opcode index
 				local generatedOpcode = generateOpcode(inst, i, currentInstructions)
 
+
 				-- SUPER INSTRUCTIONS!!! (Instead of generating separate opcodes we can merge them together this makes it more optimised and harder to detect patterns)
-				
 				-- Super Instruction: LOADK + CALL merged into one
 				if inst.Opcode == 1 then -- LOADK
 					local nextInst = currentInstructions[i+1]
-
+					
 					if nextInst and nextInst.Opcode == 28 then -- CALL
 						local callOpcode = generateOpcode(nextInst, i+1, currentInstructions)
-
 						generatedOpcode = generatedOpcode .. "\n" .. callOpcode .. "\n\tpointer = pointer + 1"
 						skipNext = true
 						_G.display(("--> Super Instruction: LOADK_AND_CALL at instruction %d"):format(i), "yellow")
@@ -380,7 +379,6 @@ return function(parasedBytecode)
 
 						if getA == nextB then
 							local tableOpcode = generateOpcode(nextInst, i+1, currentInstructions)
-
 							generatedOpcode = generatedOpcode .. "\n" .. tableOpcode .. "\n\tpointer = pointer + 1"
 							skipNext = true
 							_G.display(("--> Super Instruction: GETGLOBAL_TABLE at instruction %d"):format(i), "yellow")
@@ -388,7 +386,7 @@ return function(parasedBytecode)
 					end
 				end
 
-				-- Super Instruction: GETTABLE + CALL merged into one 
+				-- Super Instruction: GETTABLE + CALL merged into one (e.g. obj:method() or tbl.func())
 				if inst.Opcode == 6 and not skipNext then -- GETTABLE
 					local nextInst = currentInstructions[i+1]
 
@@ -398,7 +396,6 @@ return function(parasedBytecode)
 
 						if getA == callA then
 							local callOpcode = generateOpcode(nextInst, i+1, currentInstructions)
-
 							generatedOpcode = generatedOpcode .. "\n" .. callOpcode .. "\n\tpointer = pointer + 1"
 							skipNext = true
 							_G.display(("--> Super Instruction: TABLE_CALL at instruction %d"):format(i), "yellow")

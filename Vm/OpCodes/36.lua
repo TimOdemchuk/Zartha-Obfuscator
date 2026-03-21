@@ -37,7 +37,7 @@ return function(inst,shiftAmount,constant,settings)
 		local Varargs, Stack, Temp, Upvalues, pointer, top, Map = {}, {}, {}, {}, 1, 0, :MAPPING:
 		local Args = {...}
 		local C = C1
-		
+
 		-- fix upvalues
 		if next(Map) then
 			setmeta(Upvalues, {

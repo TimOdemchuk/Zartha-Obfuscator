@@ -39,7 +39,7 @@ return [=[
 			end)()
 
 			local C = ConstantsCache
-
+		
 			-- VM STARTS HERE
 			while true do
 				%s
