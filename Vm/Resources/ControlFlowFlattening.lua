@@ -110,8 +110,12 @@ function main:generateState(opcodeMap)
 
 	-- Process all opcodes into entries
 	local entries = {}
+	local shuffledOpcodes = shuffle(opcodeMap)
 
-	for pointer, op in pairs(opcodeMap) do
+	for _, shuffledEntry in ipairs(shuffledOpcodes) do
+		local pointer = shuffledEntry.p
+		local op = shuffledEntry.c
+
 		if not op or op == "" or op:match("^%s*$") then
 			op = getJunk()
 		end
