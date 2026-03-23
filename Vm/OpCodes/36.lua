@@ -19,7 +19,7 @@ return function(inst,shiftAmount,constant,settings)
 			local len = #v
 			local lastByte = byte(v, len)
 			if lastByte == 11 then
-				%s
+				C1[i] = tonumber(sub(v, 1, #v-1))
 			elseif lastByte == 7 then
 				C1[i] = byte(v, 1) == 116
 			elseif lastByte == 6 then
@@ -76,18 +76,7 @@ return function(inst,shiftAmount,constant,settings)
 		pointer = pointer+1
 		end
 	end
-]=]):format((not settings.ConstantProtection and [[
-			C1[i] = tonumber(sub(v, 1, len - 1))
-		]] or ([[
-			local removedByte = sub(v, 1, len - 1)
-			local decrypted = {}
-			local n = 0
-			for j = 1, #removedByte do
-				n = n + 1
-				decrypted[n] = char(byte(removedByte, j) - %s)
-			end
-			C1[i] = tonumber(concat(decrypted))
-		]]):format(tostring(_G.shiftAmount))))
+]=])
 	
 	return output
 end
