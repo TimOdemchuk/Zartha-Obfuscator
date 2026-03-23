@@ -62,6 +62,7 @@ return [=[
 	if find(err,stringv) then
 		pointer = 5^5
 	end
+	Env[4] = 11
 	
 	if Tamper then
 		pointer = 10^5
