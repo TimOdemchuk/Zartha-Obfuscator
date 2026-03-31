@@ -1,1 +1,123 @@
-return(("File generated using [Zartha]")and(function()return(function(t,e,e,d)local c,l,s,e,i,_,Y,E,F,x,u,v,y,r,b,V,N,w,a,W,M,g=t[d("\065\070\070\091\092\085","2242")][d("\082\093\088\067","1591")],t[d("\065\069\069\093\092\086","2174")][d("\083\079\067\084","1671")],t[d("\068\067\075\094\089\094","779")][d("\065\071\091","2298")],t[d("\069\089\064\064\067\095\093\083","1634")],t[d("\072\087\085\084\088","844")],t[d("\076\080\080\084\084","812")][d("\068\095\072\087\082\090","1186")]or t[d("\068\095\070\089\082\090","1168")],t[d("\070\083\087\092\087","2250")][d("\082\088\090\091\080\067","1748")],t[d("\070\093\095\070\095\080\084\065","2213")],t[d("\066\087\071\089\084\070\082\064\080\080\095\081","1234")],d("\103\102\085\093\077\089\076\088\090\084\092","898"),d("\110\103\090\086\085\093\075","1838"),t[d("\095\086\071\073\067\092\072\064","1309")],t[d("\066\074\088\094\070","2810")],{(d("\087\107\099\083\083","1241")),(d("\011\084\103\081\091\114\103\091\105","2608")),(d("\120\100\084\086\105\091\033\106\105\089\108\105\088\104\109","2370")),(d("\000\080\098\080\091\113\110\081\110","925")),(d("\088\086\085\089\081\107\106\090","2312")),(d("\022\050","1902")),(d("\084\080\111\084\088","2800")),(d("\027\017\058","1710")),(d("\119\112\115\013\119\114\112","2692")),(d("\111\081\095\081\081","497")),(d("\100\102\083\092\088\089\081\102\085\110","1399")),(d("\100\102\085\098\091\100\092\110\105\081\109","1369")),(d("\103\114\001\014\124\112\011\000\115\009\013","279")),(d("\103\097\102\082\105\092","2498")),(d("\081\097\091\109\108","2614")),(d("\100\096\106\081\107\110\091","1555")),(d("\015\104","1725")),((d("\023\020\023","1004"))),(d("\042\106\020","1050")),(d("\091\111\095\085\105\094\098\092\101\108\087\109","2456")),},t[d("\066\089\095\071\065","2865")],d("\104\103\089\082\079\094\089\092\082\079","787"),t[d("\092\084\074\077","2129")],d("\028","2594"),t[d("\065\071\070\088\092\084","2341")][d("\095\067\064\090","805")],d("\066\066\070\081\095\081","1648"),t[d("\065\077\064\091\087\085","292")][d("\081\093\093\083","743")],t[d("\071\089\085\095\093","387")][d("\082\081\092\080","482")]or function(e,n)for d,e in pairs(e)do if e==n then return d end end return nil end return(function()local n,P,p,Z,o,f,e,h={},{},{},{},{},{},1,0 local i,i=(function()local function l(...)local e=true and#{...}return e end local n,d=i(function()t[V](1)end)local n=false t[u]=function()n=true end if M(d,W)then e=5^5 end t[4]=11 if n then e=10^5 else local n=nil local d,d=i(function()n=(v(y))end)if n then e=50^5 else e=1^5 end end local n=l(1,2,3)if n<2 then e=5^5 end end)(),(function()for n,i in b(r)do i=a(i,w,function(e)if g({11,4,7,6},l(e))then return e end return c(l(e)+10)end)Z[n]=(function(n)local t=#n local d=l(n,t)if d==11 then return E(s(n,e,t-e))elseif d==4 then local d=s(n,e,t-e)local n={}local e=0 for t=1,#d do e=e+1 n[e]=c(l(d,t)-0)end return Y(n)elseif d==7 then return l(n,1)==116 elseif d==6 then return nil end return n end)(i)end end)()local i=Z while true do if e*2<=42 then if e-3<=8 then if e-12<=-6 then if e*2<=4 then if e*3-12==-9 then do local d=e+78 if d>e then do if e*3-12==-9 then n[0]=false else n[6]=nil end end else if(e*2)<0 then t[1]=nil end end end elseif e-7==-5 then do local i=e-20 if i>e then if(e*2)<0 then t[1]=nil end else do if e*2+14==18 then local h=n local r=p local i if not o[1]then i={}local e={(d("\119\106\085\106\110\085\108","1110")),(d("\005\081\085","2374")),(d("\103\010\122\001\123\013","2326")),}for n,e in b(e)do e=a(e,w,function(e)if g({11,4,7,6},l(e))then return e end return c(l(e)+10)end)local d=#e local d=l(e,d)if d==11 then i[n]=E(s(e,1,#e-1))elseif d==7 then i[n]=l(e,1)==116 elseif d==6 then i[n]=nil else i[n]=e end end o[1]=i else i=o[1]end n[1]=function(...)local o,n,l,f,e,l,d={},{},{},{},1,0,{[0]={0,0}}local l={...}local i=i if N(d)then F(f,{[u]=function(n,e)local e=d[e]if not e then return nil end if e[1]==0 then return h[e[2]]else return r[e[2]]end end,[V]=function(t,e,n)local e=d[e]if not e then return end if e[1]==0 then h[e[2]]=n else r[e[2]]=n end end,[x]={}})end local d=#l for e=1,d do n[e-1]=l[e]o[e]=l[e]end while true do if e-14<=-12 then if e*3-13==-7 then do if e+2==4 then f[0]=n[0]end end elseif e*2+7==9 then do do if e-5==-4 then if e+14==19 then n[6]=nil end n[0]=true elseif e-5==0 then n[1]=t[7]end end end end else if e*2+14==20 then do do if e*2-6==0 then end end end elseif e+10==15 then do do if e-9==-4 then return end end end elseif e-4==0 then do local d=e+18 if d>e then do if e-5==-1 then if e*3-11==1 then e=e+40^10 else n[3]=nil end elseif e-5==14 then n[7]=t[2]end end else if(e*2)<0 then t[1]=nil end end end end end e=e+1 end end end end end end end else if e+13==17 then do local d=e+25 if d>e then do if e+3~=13 then n[2]=f[i[20]]or t[i[20]]end end else if(e*2)<0 then t[1]=nil end end end elseif e*3-4==14 then do local d=e+26 if d>e then do if e*2-9==3 then if e*2+9==21 then n[4]={}end end end else n[5]=n[1]or r[8+1]end end elseif e+1==6 then do do if e-14==-9 then if e*2-5==5 then if e+11==16 then n[3]={}end end elseif e-14==11 then n[8]=t[5]end end end end end else if e-6<=2 then if e+8==15 then do if e+2==9 then n[4][i[11]]=n[1]end end elseif e+4==12 then do if e+14==22 then n[4][i[14]]=n[1]end end end else if e*3-12==21 then do do if e-11==0 then if e*2-2==20 then if e*3-3==30 then n[2]=n[2](n[3],n[4])else n[5]=nil end end end end end elseif e+4==14 then do do if e-12==-2 then if e*2+5==25 then n[4][i[12]]=i[6]end elseif e-12==9 then n[1]=t[8]end end end elseif e+7==16 then do if e+3==12 then n[4][i[16]]=n[1]end end end end end else if e*2<=32 then if e-3<=10 then if e*3-11==28 then do local d=e+71 if d>e then do if e-7==6 then if e+13==26 then n[4]=f[i[1]]or t[i[1]]end end end else n[6]=-n[3]end end elseif e*2+1==25 then do local d=e-37 if d>e then if(e*2)<0 then t[1]=nil end else do if e+7==23 then n[3]=nil end n[3]=f[i[1]]or t[i[1]]end end end end else if e*2+5==33 then do if e+8==22 then n[5]=n[2]end end elseif e-3==13 then do do if e+14==35 then n[1]=nil end n[3](n[4],n[5],n[6])end end elseif e*2+11==41 then do if e+6==21 then n[6]=n[2]end end end end else if e*3-5<=49 then if e+15==33 then do if e+15==33 then n[4]=f[i[5]]or t[i[5]]end end elseif e*3-10==41 then do local d=e-89 if d>e then n[2]=-n[5]else do if e+13==32 then n[6]=nil end n[3]=f[i[1]]or t[i[1]]end end end end else if e+13==34 then do if e+11==32 then n[3]=f[i[1]]or t[i[1]]end end elseif e*3-6==54 then do local d=e-89 if d>e then n[6]=nil else do if e+15==43 then n[6]=nil end if e-8==12 then n[3](n[4],n[5])end end end end elseif e+6==25 then do do if e-6==13 then n[5]=n[2]elseif e-6==29 then n[6]=t[6]end end end end end end end else if e+9<=41 then if e+7<=33 then if e*2<=46 then if e*2+14==58 then do do if e+14==36 then local r=n local h=p local i if not o[2]then i={}local e={(d("\110\098\027","952")),(d("\012\109\105\110","2240")),(d("\014\102\093\102\080","2171")),(d("\114\097\093\084\083\081","165")),}for n,e in b(e)do e=a(e,w,function(e)if g({11,4,7,6},l(e))then return e end return c(l(e)+10)end)local d=#e local d=l(e,d)if d==11 then i[n]=E(s(e,1,#e-1))elseif d==7 then i[n]=l(e,1)==116 elseif d==6 then i[n]=nil else i[n]=e end end o[2]=i else i=o[2]end n[4]=function(...)local s,n,l,o,e,l,d={},{},{},{},1,0,{}local l={...}local i=i if N(d)then F(o,{[u]=function(n,e)local e=d[e]if not e then return nil end if e[1]==0 then return r[e[2]]else return h[e[2]]end end,[V]=function(t,e,n)local e=d[e]if not e then return end if e[1]==0 then r[e[2]]=n else h[e[2]]=n end end,[x]={}})end local d=#l for e=1,d do n[e-1]=l[e]s[e]=l[e]end while true do if e*2+12==14 then do local d=e-99 if d>e then n[2]=nil else do if e-14==-13 then n[0]=f[i[1]]or t[i[1]]elseif e-14==-8 then n[1]=t[6]end end end end elseif e*3-7==-1 then do local d=e+63 if d>e then do if e-14==-12 then if e-2==0 then if e*2+14==18 then n[0]()end end end end else if e>186 then n[1]=n[5]end end end elseif e*2+6==12 then do if e+1==4 then return end end end e=e+1 end end end end end elseif e*2+13==59 then do if e+9==32 then n[3],n[4]=n[3](n[4])end end end else if e+4==30 then do if e+1==27 then n[5]=f[i[5]]or t[i[5]]end end elseif e+15==39 then do if e+3==27 then if not n[0]then e=e+1 end end end elseif e-6==19 then do do if e+6==31 then if e-15==10 then e+=7 end end end end end end else if e*2<=56 then if e*2+2==58 then do local d=e-82 if d>e then n[6]=n[5]or r[5+1]else do if e*2+15==71 then if e-1==27 then if e+2==30 then n[8]=i[19]local t={n[6](n[7],n[8])}local d=#t if d==0 then n[6]=nil h=6 else h=6+d-1 for e=1,d do n[6+e-1]=t[e]end end e=e+1 end end end end end end elseif e+13==40 then do local d=e-54 if d>e then if e>177 then n[1]=n[4]end else do if e-5==22 then if e+6==33 then if e+3~=46 then n[7]=n[4]if n[7]then n[6]=n[4][i[15]]end end end elseif e-5==39 then n[5]=t[7]end end end end end else if e+2==32 then do do if e+15==45 then if e-9==21 then local d={}for e=5+1,h do d[e-5]=n[e]end local d={n[5](_(d,1,h-5))}for e=1,1 do n[5+e-1]=d[e]end elseif e-9==24 then n[2]=t[6]end end end end elseif e+7==38 then do do if e-4==27 then if i[8]<n[5]then e=e+1 end elseif e-4==46 then n[1]=t[4]end end end elseif e*2+4==68 then do if e+7==39 then e+=6 end end end end end else if e*2<=74 then if e*2<=68 then if e+8==41 then do local d=e+63 if d>e then do if e*2-7==59 then if e+8~=47 then if e+13~=55 then n[5]=n[1]end end end end else n[3]=n[4]or r[7+1]end end elseif e-5==29 then do do if e*2+12==80 then n[5]()end end end end else if e*3-15==90 then do if e+6==41 then n[5]=f[i[10]]or t[i[10]]end end elseif e*3-3==105 then do local d=e-69 if d>e then n[2]=t[r[8+1]]else do if e*3-8==100 then if e+3~=44 then n[6]=i[3]end else n[7]=nil end end end end elseif e*2+12==86 then do local d=e-68 if d>e then if(e*2)<0 then t[1]=nil end else do if e+13~=63 then if e+8==53 then n[6]=nil end return n[5](n[6])end end end end end end else if e+6<=46 then if e-12==28 then do if e+11==51 then f[i[13]]=n[5]end end elseif e*2+11==87 then do if e+8==46 then local d={}local e=0 for t=5,h do e=e+1 d[e]=n[t]end return _(d,1,e)end end elseif e+3==42 then do do if e-14==25 then if e*2-4==74 then n[5]=true end end end end end else if e-3==39 then do do if e+15==57 then if e+4==65 then n[1]=nil end if e+5==66 then n[3]=nil end n[6]=i[17]n[5](n[6])e=e+1 end end end elseif e*2+2==84 then do if e+2==43 then n[5]=f[i[7]]or t[i[7]]end end elseif e-7==37 then do if e+15==59 then return end end end end end end end e+=1 end end)()end)((_ENV or getfenv()),{},0,function(i,l)local f={}local h=#l local o=string.byte local r=string.char local n=bit32 and bit32.bxor or function(n,e)local t,d=0,1 for i=1,8 do if n%2~=e%2 then t=t+d end n,e,d=(n-n%2)/2,(e-e%2)/2,d*2 end return t end for e=1,#i do f[e]=r(n(o(i,e),o(l,(e-1)%h+1)))end return table.concat(f)end)end)())
+return (("File generated using [Zartha]") and (function() return(function(Env,Constants,shiftKey,decrypt) -- Vars
+local char,byte,sub,ttostring,pcall,unpack,concat,tonumber,setmeta,__metatable,__index,proxy,pnt,EncryptedConstants,pairs,__newindex,next,dot,gsub,stringv,find,tfind = Env["string"]["char"],Env["string"]["byte"],Env["string"]["sub"],Env["tostring"],Env["pcall"],Env["table"]["unpack"] or Env["unpack"],Env["table"]["concat"],Env["tonumber"],Env["setmetatable"],"__metatable","__index",Env["newproxy"],Env["print"],{(decrypt("\116\082", "1402")),((decrypt("\031\026\007\031\006", "2132"))),(decrypt("\098\080\089\068\067\104\095\115\090\091\068\068\123\104\093\107\085\084\089", "1665")),(decrypt("\092\093\081\094\064", "1275")),(decrypt("\123\092\106\084\084\091\080", "2045")),((decrypt("\028\030\029\030\031\030", "2303"))),(decrypt("\110\123\008\113\096\103\119\012\099\117\118", "2772")),},Env["pairs"],"__newindex",Env["next"],".",Env["string"]["gsub"],"string",Env["string"]["find"],Env["table"]["find"] or function(targetTable, value)
+	for i,v in pairs(targetTable) do
+		if v == value then
+			return i
+		end
+	end
+	
+	return nil
+end
+
+		-- VM function
+		return (function()
+			local Stack,Temp,Upvalues,Constants,ProtosConstants,vmEnv,pointer,top = {},{},{},{},{},{},1,0
+
+			local Checks,ConstantsDecode = (function() -- Env log detection
+	local function ooptest(...)
+		local a = true and #{ -- troll
+			...
+		}
+		return a
+	end
+	local _, err = pcall(function() 
+		Env[__newindex](1) 
+	end)
+	local Tamper = false
+	Env[__index] = function() 
+		Tamper = true
+	end
+	if find(err,stringv) then
+		pointer = 5^5
+	end
+	Env[4] = 11
+	
+	if Tamper then
+		pointer = 10^5
+	else
+		local Checked = nil
+		local _,er = pcall(function()
+			Checked = (proxy(pnt)) 
+		end)
+		if Checked then
+			pointer = 50^5
+		else
+			pointer = 1^5
+		end
+	end
+	local counter = ooptest(1, 2, 3)
+	
+	if counter <2 then
+		pointer = 5^5
+	end
+end)()
+,(function() -- Constants decode
+				for i, v in pairs(EncryptedConstants) do
+					v = gsub(v, dot, function(bb)
+						if tfind({11,4,7,6},byte(bb)) then
+							return bb 
+						end
+						return char(byte(bb) +3) 
+					end)
+					Constants[i] = (function(toSend)
+						local len = #toSend
+						local lastByte = byte(toSend, len)
+						if lastByte == 11 then
+							return tonumber(sub(toSend, pointer, len - pointer))
+						elseif lastByte == 4 then
+							local removedByte = sub(toSend, pointer, len - pointer)
+							local decrypted = {}
+							local n = 0
+							for i = 1, #removedByte do
+								n = n + 1
+								decrypted[n] = char(byte(removedByte, i) - 0)
+							end
+							return concat(decrypted)
+						elseif lastByte == 7 then
+							return byte(toSend, 1) == 116
+						elseif lastByte == 6 then
+							return nil
+						end
+						return toSend
+					end)(v)
+				end
+			end)()
+
+			-- VM STARTS HERE
+			while true do
+				if pointer == 1 then -- 2 [LOADBOOL] 
+ 	Stack[0] = true 
+elseif pointer == 2 then -- 7 [SETGLOBAL] 
+ 	vmEnv[Constants[7]] = Stack[0] 
+elseif pointer == 3 then -- 5 [GETGLOBAL] 
+ 	Stack[0] = vmEnv[Constants[4]] or Env[Constants[4]] 
+elseif pointer == 4 then -- 1 [LOADK] 
+ 	Stack[1] = Constants[1]
+	Stack[0](Stack[1])
+	pointer = pointer + 1 
+elseif pointer == 6 then -- 30 [RETURN] 
+ 	return 
+end
+				pointer = pointer + 1
+			end
+		end)()
+
+ end)((_ENV or getfenv()),{},0,function(str, key) -- Decrypt vars
+	local result = {}
+	local keyLen = #key
+	local sbyte = string.byte
+	local schar = string.char
+	local bxor = bit32 and bit32.bxor or function(a, b)
+		local r, p = 0, 1
+		for _ = 1, 8 do
+			if a % 2 ~= b % 2 then r = r + p end
+			a, b, p = (a - a % 2) / 2, (b - b % 2) / 2, p * 2
+		end
+		return r
+	end
+	for i = 1, #str do
+		result[i] = schar(bxor(sbyte(str, i), sbyte(key, (i - 1) % keyLen + 1)))
+	end
+	return table.concat(result)
+end
+) end)())

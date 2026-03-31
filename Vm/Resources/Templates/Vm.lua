@@ -3,17 +3,17 @@ return [=[
 %s
 		-- VM function
 		return (function()
-			local Stack,Temp,Upvalues,ConstantsCache,ProtosConstants,vmEnv,pointer,top = {},{},{},{},{},{},1,0
+			local Stack,Temp,Upvalues,Constants,ProtosConstants,vmEnv,pointer,top = {},{},{},{},{},{},1,0
 
 			local Checks,ConstantsDecode = :INSERTENVLOG:,(function() -- Constants decode
-				for i, v in pairs(Constants) do
+				for i, v in pairs(EncryptedConstants) do
 					v = gsub(v, dot, function(bb)
 						if tfind({11,4,7,6},byte(bb)) then
 							return bb 
 						end
 						return char(byte(bb) +:CONSTANT_SHIFTER:) 
 					end)
-					ConstantsCache[i] = (function(toSend)
+					Constants[i] = (function(toSend)
 						local len = #toSend
 						local lastByte = byte(toSend, len)
 						if lastByte == 11 then
@@ -37,8 +37,6 @@ return [=[
 				end
 			end)()
 
-			local C = ConstantsCache
-		
 			-- VM STARTS HERE
 			while true do
 				%s

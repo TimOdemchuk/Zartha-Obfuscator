@@ -7,7 +7,7 @@ return function(inst,shiftAmount,constant,settings)
 		-- C is a constant reference - direct access
 		local mappedIdx = _G.getMappedConstant(C.i)
 		return ([=[
-	Stack[:A:] = Stack[:B:][C[%d]]
+	Stack[:A:] = Stack[:B:][Constants[%d]]
 	]=]):format(mappedIdx)
 	else
 		-- C is a register reference

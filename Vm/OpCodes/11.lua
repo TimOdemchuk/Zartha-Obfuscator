@@ -5,7 +5,7 @@ return function(inst,shiftAmount,constant,settings)
 	local reg_a = _G.getReg(inst,"A")
 	local reg_b = _G.getReg(inst,"B")
 	
-	local c_access = C.k and ("C[%d]"):format(_G.getMappedConstant(C.i)) or ("Stack[%d]"):format(C.i)
+	local c_access = C.k and ("Constants[%d]"):format(_G.getMappedConstant(C.i)) or ("Stack[%d]"):format(C.i)
 	
 	return ([=[
 	Stack[%d] = Stack[%d]
