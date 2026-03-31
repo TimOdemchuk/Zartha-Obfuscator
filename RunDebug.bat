@@ -1,3 +1,3 @@
 @echo off
-lua Main.lua Input/Input.lua Input/Output.lua --debug --constantprotection --luau
+lua Main.lua Input/Input.lua Input/Output.lua --debug --constantprotection
 pause
