@@ -9,7 +9,7 @@ pcall(pcall, bait, bait)--lol
 pcall(tonumber, bait)
 
 local _, e = pcall(function() aa3() end) 
-if tampered or tonumber(e:match("%d+")) > 10 then -- Max lines the script can be is 10
+if tampered or tonumber(e:match("%d+")) > 40 then -- Max lines the script can be is 40
     Crash()
     return error("Tamper detected")
 end

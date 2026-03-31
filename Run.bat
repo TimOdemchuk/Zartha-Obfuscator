@@ -1,3 +1,3 @@
 @echo off
-lua Main.lua Input/Input.lua Input/Output.lua --encryptstrings --controlflowflattening --minify --antitamper --constantprotection
+lua Main.lua Input/Input.lua Input/Output.lua --encryptstrings --controlflowflattening --minify --antitamper --constantprotection --luau
 pause

@@ -10,4 +10,5 @@ return {
 	["Minify"] = false, 								-- Minfies the output for smaller size
     ["Watermark"] = "File generated using [Zartha]", 	-- Input any watermark you want here
 	["LuaUCompatibility"] = false,						-- Removes Luau specific syntax to make it compatible with Lua 5.1 compiler
+	["LuaUSyntax"] = false,							-- Uses Luau syntax in output
 }

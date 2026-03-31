@@ -243,8 +243,8 @@ settings.Debug = table.find(args,"--debug") and true or false
 settings.AntiTamper = table.find(args,"--antitamper") and true or false
 settings.EncryptStrings = table.find(args,"--encryptstrings") and true or false
 settings.ControlFlowFlattening = table.find(args,"--controlflowflattening") and true or false
-settings.LuaUCompatibility = table.find(args,"--luau") and true or false
-
+settings.LuaUCompatibility = table.find(args,"--lc") and true or false
+settings.LuaUSyntax = table.find(args,"--luau") and true or false
 -- Run pipeline
 _G.display("Starting obfuscation pipeline...", "green")
 pipeline(inputFile, outputFile)

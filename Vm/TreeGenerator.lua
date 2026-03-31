@@ -18,7 +18,7 @@ return function(parasedBytecode)
 	local settingsSelected = require("Input.Settings")
 	local stringEncryptor = require("Resources.EncryptStrings")
 	local stringEncryptorFunction = require("Resources.EncryptStrings")(nil, true)
-	local stringEncryptorTemplate = require("Resources.Templates.DecryptStringsTemplate")
+	local stringEncryptorTemplate = require("Vm.Resources.Templates.DecryptStrings")
 	local ControlFlowFlattening = require("Resources.ControlFlowFlattening")
 	local junkConstants = require("Resources.Templates.FakeConstants")
 
@@ -543,15 +543,14 @@ return function(parasedBytecode)
 	-- VM Format
 	tree = vm:format(
 		header,
-		settingsSelected.LuaU_Syntax and ":any" or "",
 		tree,
-		settingsSelected.LuaU_Syntax and "pointer+=1" or "pointer = pointer + 1"
+		settingsSelected.LuaUSyntax and "pointer+=1" or "pointer = pointer + 1"
 	)
 	tree = tree:gsub(":CONSTANT_SHIFTER:", tostring(constantShifter))
 	
 	
 	-- Wrap in function
-	tree = ([[return (("%s") and (function() return(function(Env,Constants,shiftKey,decrypt)%s %s end)((_ENV or getfenv()),{},0%s) end)())]]):format(settingsSelected.Watermark, settingsSelected.LuaU_Syntax and ":any" or "", tree, "," .. stringEncryptorTemplate)
+	tree = ([[return (("%s") and (function() return(function(Env,Constants,shiftKey,decrypt) %s end)((_ENV or getfenv()),{},0%s) end)())]]):format(settingsSelected.Watermark, tree, "," .. stringEncryptorTemplate)
 
 	return tree
 end

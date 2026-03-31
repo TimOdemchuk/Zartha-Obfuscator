@@ -18,7 +18,8 @@ lua Main.lua <InputPath> <OutputPath>
 - `--encryptstrings` – encrypts all strings in the output.
 - `--controlflowflattening` – flattens control flow for simple obfuscation hardening.
 - `--debug` – enables debugging tools to help diagnose errors.
-- `--luau` – converts luau syntax into normal lua to feed into compiler
+- `--lc` – converts luau syntax into normal lua to feed into compiler
+- `--luau` – uses luau syntax in obfuscated output
 
 ## Requirements
 For Zartha to function you must have Lua 5.1 installed.

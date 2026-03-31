@@ -1,7 +1,6 @@
 -- Vm Template
 return [=[
 %s
-%s
 		-- VM function
 		return (function()
 			local Stack,Temp,Upvalues,ConstantsCache,ProtosConstants,vmEnv,pointer,top = {},{},{},{},{},{},1,0
