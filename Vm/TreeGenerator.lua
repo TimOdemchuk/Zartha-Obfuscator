@@ -19,8 +19,9 @@ return function(parasedBytecode)
 	local stringEncryptor = require("Resources.EncryptStrings")
 	local stringEncryptorFunction = require("Resources.EncryptStrings")(nil, true)
 	local stringEncryptorTemplate = require("Vm.Resources.Templates.DecryptStrings")
-	local ControlFlowFlattening = require("Resources.ControlFlowFlattening")
+	local controlFlowFlattening = require("Resources.ControlFlowFlattening")
 	local junkConstants = require("Resources.Templates.FakeConstants")
+	local constantEncryption = require("Resources.ConstantEncryption")
 
 	local decryptStr = tostring(_G.Random(100, 400))
 	local constantShifter = tostring(_G.Random(3, 10))
@@ -161,7 +162,7 @@ return function(parasedBytecode)
 			shuffled[newPos] = generateJunkConstant()
 		end
 		
-		return shuffled, indexMap
+		return shuffled, indexMap, reverseMap
 	end
 
 	-- Store constant mappings globally for opcodes to use
@@ -171,12 +172,13 @@ return function(parasedBytecode)
 	-- Generate constant mapping
 	local function prepareConstantMapping(targetConstants, mapId)
 		-- Shuffle constants
-		local shuffledConstants, indexMap = shuffleConstants(targetConstants)
-		
-		-- Store mapping for this constant table
+		local shuffledConstants, indexMap, reverseMap = shuffleConstants(targetConstants)
+
 		_G.constantMaps[mapId or "base"] = {
 			shuffled = shuffledConstants,
-			indexMap = indexMap
+			indexMap = indexMap,
+			reverseMap = reverseMap,
+			encryptionMeta = {}
 		}
 		
 		return shuffledConstants, indexMap
@@ -188,12 +190,16 @@ return function(parasedBytecode)
 		
 		local mapData = _G.constantMaps[mapId]
 		local shuffledConstants
+		local reverseMap
 		
 		if mapData then
 			shuffledConstants = mapData.shuffled
+			reverseMap = mapData.reverseMap
 		else
 			shuffledConstants = shuffleConstants(targetConstants)
 		end
+
+		local encryptionMeta = {}
 		
 		local constantsStr = ""
 
@@ -206,11 +212,28 @@ return function(parasedBytecode)
 			else
 				local costAt = type(const) == "table" and tostring(const.Value) or tostring(const)
 				local byted = costAt
+				local byteKey = nil
 
 				-- CONSTANT TYPES:
 				-- Because constants can be either string, number, boolean, nil we need the identifiers so the VM knows what to convert the constant to. This solves the VM trying to compare string on string when its suppoosed to be number on number
 				-- Identifier for constant protection
 				
+				if settingsSelected.ConstantProtection then -- im too lazy ngl
+					byteKey = math.random(2, 30)
+
+					if const.Type == "string" then
+						local src = byted
+						local t = {}
+
+						for i = 1, #src do
+							local byte = string.byte(src, i)
+							t[i] = string.char(bit32.bxor(byte, byteKey))
+						end
+
+						byted = table.concat(t)
+					end
+				end
+
 				-- Hide constants from plain view
 				byted = byted:gsub(".", function(bb) 
 					return string.char(bb:byte() - constantShifter) 
@@ -235,13 +258,32 @@ return function(parasedBytecode)
 				local key = tostring(math.random(100, 3000))
 				local encryptedData = stringEncryptorFunction(byted, key)
 				local safeEncrypted = ""
+
 				for ci = 1, #encryptedData do
 					safeEncrypted = safeEncrypted .. string.format("\\%03d", string.byte(encryptedData, ci))
 				end
 
+				encryptionMeta[i] = { -- constant table
+					constant = const,
+					encrypted = safeEncrypted,
+					key = key,
+					byteKey = byteKey,
+					origIndex = reverseMap and reverseMap[i] or nil,
+				}
+
 				constantsStr = constantsStr .. ('%s(decrypt("%s", "%s"))%s,'):format(tonumber(const) and "(" or "", safeEncrypted, key, tonumber(const) and ")" or "")
 			end
 		end
+
+		if _G.constantMaps[mapId] then
+			_G.constantMaps[mapId].encryptionMeta = encryptionMeta
+		else
+			_G.constantMaps[mapId] = {
+				shuffled = shuffledConstants,
+				encryptionMeta = encryptionMeta
+			}
+		end
+
 		return constantsStr
 	end
 
@@ -265,6 +307,40 @@ return function(parasedBytecode)
 			return "-- [PSEUDO] Handled by CLOSURE"
 		end
 
+		local function getInstructionConstant() -- more easy way to gather correct constant
+			if inst.Opcode == 1 or inst.Opcode == 5 or inst.Opcode == 7 then
+				local bIndex = getCorrectRegister(inst, "B")
+				if type(bIndex) == "number" then
+					return constants[bIndex + 1], getMappedConstantIndex(bIndex)
+				end
+			end
+
+			local regB = getCorrectRegister(inst, "B", true)
+			if type(regB) == "table" and regB.k and type(regB.i) == "number" then
+				return constants[regB.i + 1], getMappedConstantIndex(regB.i)
+			end
+
+			local regC = getCorrectRegister(inst, "C", true)
+			if type(regC) == "table" and regC.k and type(regC.i) == "number" then
+				return constants[regC.i + 1], getMappedConstantIndex(regC.i)
+			end
+
+			return nil, nil
+		end
+
+		local constant, mappedConstantIndex = getInstructionConstant()
+		local encryptedConstant = nil
+		local constantByteKey = nil
+		local encryptionMetaMap = nil
+
+		do
+			local mapData = _G.constantMaps[_G.currentMapId or "base"]
+			if mapData and mapData.encryptionMeta and mappedConstantIndex then
+				encryptedConstant = mapData.encryptionMeta[mappedConstantIndex]
+				constantByteKey = encryptedConstant and encryptedConstant.byteKey or nil
+			end
+			encryptionMetaMap = mapData and mapData.encryptionMeta or nil
+		end
 		local getOpcodeFormat = getOpcode(inst.Opcode, inst.OpcodeName)
 
 		if type(getOpcodeFormat) == "function" then
@@ -288,6 +364,16 @@ return function(parasedBytecode)
 			local replaced = replace(getOpcodeFormat, "a", tostring(getCorrectRegister(inst, "A")))
 			replaced = replace(replaced, "c", tostring(getCorrectRegister(inst, "C")))
 			replaced = replace(replaced, "b", tostring(getCorrectRegister(inst, "B")))
+
+			-- ConstantEncryption
+			if settingsSelected.ConstantProtection and replaced:find("Constants", 1, true) then
+				local encryptedOpcode = constantEncryption(replaced, constant, encryptedConstant, constantByteKey, encryptionMetaMap)
+				if type(encryptedOpcode) == "string" then
+					replaced = encryptedOpcode
+				end
+			end
+
+			 -- String Encryption
 
 			-- CLOSURE MAPPING (UPVALUES)
 			if inst.OpcodeName == "CLOSURE" then
@@ -349,7 +435,7 @@ return function(parasedBytecode)
 		for i, inst in ipairs(currentInstructions) do
 			if skipNext then
 				skipNext = false
-			-- Skip PSEUDO opcodes (-1)
+				-- Skip PSEUDO opcodes (-1)
 			elseif inst.OpcodeName ~= "PSEUDO" and inst.Opcode ~= -1 then
 				local pointer = i
 				local opcodeType = inst.Opcode -- opcode index
@@ -441,7 +527,7 @@ return function(parasedBytecode)
 			end
 
 			-- Generate control flow flattened opcodes
-			local controlFlowed = ControlFlowFlattening:generateState(opcodeMap)
+			local controlFlowed = controlFlowFlattening:generateState(opcodeMap)
 
 			return controlFlowed
 		end
@@ -480,9 +566,9 @@ return function(parasedBytecode)
 				-- Prepare constant mapping BEFORE reading instructions
 				_G.currentMapId = protoMapId
 				prepareConstantMapping(proto.Constants, protoMapId)
-				
-				local newInstructions = readInstructions(require("Vm.Resources.ModifyInstructions")(proto.Instructions, proto.Constants, proto.Prototypes), nil, "PROTOTYPE " .. tostring(protoAt), extra)
+
 				local constants = getConstants(proto.Constants, protoMapId)
+				local newInstructions = readInstructions(require("Vm.Resources.ModifyInstructions")(proto.Instructions, proto.Constants, proto.Prototypes), nil, "PROTOTYPE " .. tostring(protoAt), extra)
 
 				-- Instructions
 				tree = tree:gsub("INST_" .. protoName, function()
@@ -529,6 +615,7 @@ return function(parasedBytecode)
 	-- Prepare base constant mapping FIRST (before reading instructions)
 	_G.currentMapId = "base"
 	prepareConstantMapping(constants, "base")
+	local baseConstants = getConstants(constants, "base")
 
 	-- Add main VM instructions
 	local insertInstructions = readInstructions(instructions, constants)
@@ -538,8 +625,7 @@ return function(parasedBytecode)
 	getPrototypes(prototypes)
 
 	-- Insert constants
-	
-	header = header:gsub("CONSTANTS_HERE_BASEVM", getConstants(constants, "base"))
+	header = header:gsub("CONSTANTS_HERE_BASEVM", baseConstants)
 	-- VM Format
 	tree = vm:format(
 		header,

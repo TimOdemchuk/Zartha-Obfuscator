@@ -6,7 +6,6 @@ local LuauSanitizer = require("Vm.LuauSanitizer")
 local luasrcdiet = require("luasrcdiet.init")
 local settings = require("Input.Settings")
 
-
 return function(inputFile,outputTo)
     local savedInput = _G.readFile(inputFile)
     
