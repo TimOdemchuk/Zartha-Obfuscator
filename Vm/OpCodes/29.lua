@@ -6,11 +6,11 @@ return function(Inst, shiftAmount, constant, settings)
 	if reg_b == 0 then
 		-- Variable args from stack
 		return ([=[
-	local _args = {}
+	Temp[1] = {}
 	for i = %d + 1, top do
-		_args[i - %d] = Stack[i]
+		Temp[1][i - %d] = Stack[i]
 	end
-	return Stack[%d](unpack(_args, 1, top - %d))
+	return Stack[%d](unpack(Temp[1], 1, top - %d))
 	]=]):format(reg_a, reg_a, reg_a, reg_a)
 	end
 	

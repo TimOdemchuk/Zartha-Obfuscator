@@ -5,28 +5,34 @@ return function(Inst, shiftAmount, constant, settings)
 	local reg_c = _G.getReg(Inst, "C")
 	
 	local args = {}
+
+	--[[
+	Temp[1] = Args
+	Temp[2] = Results
+	Temp[3] = len
+	]]
 	if reg_b == 0 then
 		return ([=[
-	local Args = {}
+	Temp[1] = {}
 	for i = :A: + 1, top do
-		Args[i - :A:] = Stack[i]
+		Temp[1][i - :A:] = Stack[i]
 	end
-	local Results = {Stack[:A:](unpack(Args, 1, top - :A:))}
+	Temp[2] = {Stack[:A:](unpack(Temp[1], 1, top - :A:))}
 	%s
 	]=]):format(reg_c < 1 and [=[
-	local len = #Results
-	if len == 0 then
+	Temp[3]  = #Temp[2]
+	if Temp[3]  == 0 then
 		Stack[:A:] = nil
 		top = :A:
 	else
-		top = :A: + len - 1
-		for i = 1, len do
-			Stack[:A: + i - 1] = Results[i]
+		top = :A: + Temp[3]  - 1
+		for i = 1, Temp[3]  do
+			Stack[:A: + i - 1] = Temp[2][i]
 		end
 	end
 	]=] or ([=[
 	for i = 1, %d do
-		Stack[:A: + i - 1] = Results[i]
+		Stack[:A: + i - 1] = Temp[2][i]
 	end
 	]=]):format(reg_c - 1))
 	end
@@ -40,15 +46,15 @@ return function(Inst, shiftAmount, constant, settings)
 	if reg_c < 1 then
 		-- Variable return count
 		return ([=[
-	local Results = {Stack[:A:](%s)}
-	local len = #Results
-	if len == 0 then
+	Temp[2] = {Stack[:A:](%s)}
+	Temp[3] = #Temp[2]
+	if Temp[3] == 0 then
 		Stack[:A:] = nil
 		top = :A:
 	else
-		top = :A: + len - 1
-		for i = 1, len do
-			Stack[:A: + i - 1] = Results[i]
+		top = :A: + Temp[3] - 1
+		for i = 1, Temp[3] do
+			Stack[:A: + i - 1] = Temp[2][i]
 		end
 	end
 	]=]):format(argStr)

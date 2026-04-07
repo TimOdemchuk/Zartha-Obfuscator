@@ -23,20 +23,30 @@ end
 
 function main:generateState(opcodeMap)
 	-- Obfuscated check generator (Generate pointer check)
-	local function getObfuscatedCheck(target)
-		local a = random(1, 15)
-		local s = random(1, 4)
+    local function getObfuscatedCheck(target)
+        local a = random(2, 15)
+        local b = random(5, 50)
+        local s = random(1, 4)
 
-		if s == 1 then
-			return format("pointer + %d == %d", a, target + a)
-		elseif s == 2 then
-			return format("pointer - %d == %d", a, target - a)
-		elseif s == 3 then
-			return format("pointer * 2 + %d == %d", a, target * 2 + a)
-		else
-			return format("pointer * 3 - %d == %d", a, target * 3 - a)
-		end
-	end
+        if s == 1 then
+            local res = (target * target) + (a * target)
+
+            return format("(pointer * pointer) + (%d * pointer) == %d", a, res)
+        elseif s == 2 then
+            local res = (target * target) + b
+
+            return format("(pointer * pointer) + %d == %d", b, res)
+        elseif s == 3 then
+            local res = (target * a) + (target * b)
+
+            return format("(pointer * %d) + (pointer * %d) == %d", a, b, res)
+        else
+            local a_small = random(2, 5)
+            local res = (target * target * a_small) + target
+
+            return format("(pointer * pointer * %d) + pointer == %d", a_small, res)
+        end
+    end
 
 	-- Junk generator
 	local function getJunk()
@@ -44,9 +54,17 @@ function main:generateState(opcodeMap)
 		if s == 1 then
 			return format("if (pointer * 2) < 0 then Env[1] = nil end")
 		elseif s == 2 then
-			return format("Stack[%d] = Constants[%d+1]", random(1,20), random(1,5))
+			return format([=[Temp[%d] = %d
+			Temp[%d] = Constants
+			Temp[%d] = %d
+			Stack[Temp[%d]] = Temp[%d][Temp[%d]]]=], random(1,20), random(1,5), random(1,20), random(1,20), random(1,20), random(1,20), random(1,20), random(1,20))
 		elseif s == 3 then
-			return format("Stack[%d] = Env[Constants[%d+1]]", random(1,8), random(1,8))
+			return format([=[
+			Temp[%d] = vmEnv
+			Temp[%d] = %d
+			Temp[%d] = Constants[Temp[%d]]
+			Temp[%d] = %d
+			Temp[%d][Temp[%d]] = Temp[%d]]=], random(1,20), random(1,20), random(1,20), random(1,20), random(1,20), random(1,20), random(1,20), random(1,20), random(1,20), random(1,20))
 		elseif s == 4 then
 			return format("Stack[%d] = -Stack[%d]", random(1,8), random(1,8))
 		elseif s == 5 then
@@ -94,19 +112,21 @@ function main:generateState(opcodeMap)
 	end
 
 	-- Obfuscated split compare
-	local function getObfuscatedSplit(splitPoint)
-		local a = random(1, 15)
-		local s = random(1, 4)
-		if s == 1 then
-			return format("pointer + %d <= %d", a, splitPoint + a)
-		elseif s == 2 then
-			return format("pointer - %d <= %d", a, splitPoint - a)
-		elseif s == 3 then
-			return format("pointer * 2 <= %d", splitPoint * 2)
-		else
-			return format("pointer * 3 - %d <= %d", a, splitPoint * 3 - a)
-		end
-	end
+    local function getObfuscatedSplit(splitPoint)
+        local a = random(2, 15)
+        local s = random(1, 3)
+        
+        if s == 1 then
+            local res = (splitPoint * splitPoint) + (a * splitPoint)
+            return format("(pointer * pointer) + (%d * pointer) <= %d", a, res)
+        elseif s == 2 then
+            local res = (splitPoint * a) + splitPoint
+            return format("(pointer * %d) + pointer <= %d", a, res)
+        else
+            local res = splitPoint * splitPoint
+            return format("pointer * pointer <= %d", res)
+        end
+    end
 
 	-- Process all opcodes into entries
 	local entries = {}
@@ -138,21 +158,22 @@ function main:generateState(opcodeMap)
 		else
 			-- Normal
 			local offset = random(5, 99)
-			local vName = "_v" .. random(10, 99)
 			local junk = getJunk()
 			op = IfStatments(op, pointer)
 
-			if random() > 0.5 then
-				content = format(
-					"local %s = pointer + %d\n\t\tif %s > pointer then\n\t\t\tdo\n\t\t\t\t%s\n\t\t\tend\n\t\telse\n\t\t\t%s\n\t\tend", 
-					vName, offset, vName, op, junk
-				)
-			else
-				content = format(
-					"local %s = pointer - %d\n\t\tif %s > pointer then\n\t\t\t%s\n\t\telse\n\t\t\tdo\n\t\t\t\t%s\n\t\t\tend\n\t\tend", 
-					vName, offset, vName, junk, op
-				)
-			end
+            if random() > 0.5 then
+                --true
+                content = format(
+                    "if (pointer + %d) > pointer then\n\t\t\tdo\n\t\t\t\t%s\n\t\t\tend\n\t\telse\n\t\t\t%s\n\t\tend", 
+                    offset, op, junk
+                )
+            else
+				-- false
+                content = format(
+                    "if (pointer - %d) > pointer then\n\t\t\t%s\n\t\telse\n\t\t\tdo\n\t\t\t\t%s\n\t\t\tend\n\t\tend", 
+                    offset, junk, op
+                )
+            end
 		end
 
 		entries[#entries + 1] = {

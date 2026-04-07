@@ -6,13 +6,13 @@ return function(instruction, shiftAmount, constant, settings)
     if reg_b == 0 then
         -- Variable return count (use top)
         return [=[
-            local _out = {}
-            local _n = 0
+            Temp[1] = {}
+            Temp[2] = 0
             for i = :A:, top do
-                _n = _n + 1
-                _out[_n] = Stack[i]
+                Temp[2] = Temp[2] + 1
+                Temp[1][Temp[2]] = Stack[i]
             end
-            return unpack(_out, 1, _n)
+            return unpack(Temp[1], 1, Temp[2])
         ]=]
     elseif reg_b == 1 then
         -- No return values
