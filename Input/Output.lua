@@ -1,5 +1,5 @@
 return (("File generated using [Zartha]") and (function() return(function(Env,Constants,shiftKey,decrypt) -- Vars
-local char,byte,sub,ttostring,pcall,unpack,concat,tonumber,setmeta,__metatable,__index,proxy,pnt,EncryptedConstants,pairs,__newindex,next,dot,gsub,stringv,find,tfind,bxor = Env["string"]["char"],Env["string"]["byte"],Env["string"]["sub"],Env["tostring"],Env["pcall"],Env["table"]["unpack"] or Env["unpack"],Env["table"]["concat"],Env["tonumber"],Env["setmetatable"],"__metatable","__index",Env["newproxy"],Env["print"],{(decrypt("\091\093\082\090\095", "1112")),(decrypt("\112\107\087\084\093", "241")),(decrypt("\012\120\090\107\086\103", "1860")),((decrypt("\025\016\002\003\008", "382"))),(decrypt("\121\088\106\095\089\091\108\088\110\095\105\066", "741")),(decrypt("\096\125\009\121\123\120\004\015\123\006\010", "945")),(decrypt("\125\104\080\111\082\095\084\092\080", "1774")),(decrypt("\114\109\089\103\094\091", "865")),},Env["pairs"],"__newindex",Env["next"],".",Env["string"]["gsub"],"string",Env["string"]["find"],Env["table"]["find"] or function(targetTable, value)
+local char,byte,sub,ttostring,pcall,unpack,concat,tonumber,setmeta,__metatable,__index,proxy,pnt,EncryptedConstants,pairs,__newindex,next,dot,gsub,stringv,find,tfind,bxor = Env["string"]["char"],Env["string"]["byte"],Env["string"]["sub"],Env["tostring"],Env["pcall"],Env["table"]["unpack"] or Env["unpack"],Env["table"]["concat"],Env["tonumber"],Env["setmetatable"],"__metatable","__index",Env["newproxy"],Env["print"],{(decrypt("\092\087\095\094\064", "1895")),((decrypt("\005\000\002\006\000", "620"))),(decrypt("\100", "2245")),(decrypt("\111\120\014\112\102\097\115\010\096\113\117", "341")),(decrypt("\105\104\084", "774")),(decrypt("\098\072\105\080\090\036\070\095\108\089\085", "2970")),(decrypt("\084\083\095\095\093", "1166")),},Env["pairs"],"__newindex",Env["next"],".",Env["string"]["gsub"],"string",Env["string"]["find"],Env["table"]["find"] or function(targetTable, value)
 	for i,v in pairs(targetTable) do
 		if v == value then
 			return i
@@ -64,7 +64,7 @@ end)()
 						if tfind({11,4,7,6},byte(bb)) then
 							return bb 
 						end
-						return char(byte(bb) +6) 
+						return char(byte(bb) +3) 
 					end)
 					Constants[i] = (function(toSend)
 						local len = #toSend
@@ -93,16 +93,50 @@ end)()
 			-- VM STARTS HERE
 			while true do
 				if pointer == 1 then -- 2 [LOADBOOL] 
- 	Stack[0] = true 
+ Temp[1] = 0
+Temp[2] = ttostring ~= __metatable
+Stack[Temp[1]] = Temp[3] 
 elseif pointer == 2 then -- 7 [SETGLOBAL] 
- 	vmEnv[Constants[6]] = Stack[0] 
-elseif pointer == 3 then -- 5 [GETGLOBAL] 
- 	Stack[0] = vmEnv[Constants[1]] or Env[Constants[1]] 
-elseif pointer == 4 then -- 1 [LOADK] 
- 	Stack[1] = Constants[2]
-	Stack[0](Stack[1])
-	pointer = pointer + 1 
-elseif pointer == 6 then -- 30 [RETURN] 
+ Temp[1] = vmEnv
+Temp[2] = 4
+Temp[3] = Constants[Temp[2]]
+Temp[4] = 0
+Temp[1][Temp[3]] = Temp[3] 
+elseif pointer == 3 then -- 1 [LOADK] 
+ Temp[1] = 0
+Temp[2] = Constants
+Temp[3] = 7
+Stack[Temp[1]] = Temp[2][Temp[3]] 
+elseif pointer == 4 then -- 7 [SETGLOBAL] 
+ Temp[1] = vmEnv
+Temp[2] = 5
+Temp[3] = Constants[Temp[2]]
+Temp[4] = 0
+Temp[1][Temp[3]] = Temp[3] 
+elseif pointer == 5 then -- 1 [LOADK] 
+ Temp[1] = 0
+Temp[2] = Constants
+Temp[3] = 5
+Stack[Temp[1]] = Temp[2][Temp[3]] 
+elseif pointer == 6 then -- 7 [SETGLOBAL] 
+ Temp[1] = vmEnv
+Temp[2] = 5
+Temp[3] = Constants[Temp[2]]
+Temp[4] = 0
+Temp[1][Temp[3]] = Temp[3] 
+elseif pointer == 7 then -- 5 [GETGLOBAL] 
+ Temp[1] = 0
+Temp[2] = 1
+Temp[3] = Constants[Temp[2]]
+Stack[Temp[1]] = vmEnv[Temp[3]] or Env[Temp[3]] 
+elseif pointer == 8 then -- 5 [GETGLOBAL] 
+ Temp[1] = 1
+Temp[2] = 5
+Temp[3] = Constants[Temp[2]]
+Stack[Temp[1]] = vmEnv[Temp[3]] or Env[Temp[3]] 
+elseif pointer == 9 then -- 28 [CALL] 
+ 	Stack[0](Stack[1]) 
+elseif pointer == 10 then -- 30 [RETURN] 
  	return 
 end
 				pointer = pointer + 1
