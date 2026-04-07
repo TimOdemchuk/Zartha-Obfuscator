@@ -1,3 +1,1 @@
-abc = "hello"
-abc = "abc"
-print(abc)
+print("Hello")
